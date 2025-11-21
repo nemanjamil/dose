@@ -1,112 +1,171 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
+/**
+ * Footer Component
+ *
+ * Main footer with navigation, links, and product showcase
+ * Based on Figma design: https://www.figma.com/design/I7GYdab3FirpOg941b6wTL/Dose-Web-Project?node-id=111-1211
+ */
+
+import Link from "next/link";
+import Image from "next/image";
+import CTAButton from "./CTAButton";
 
 const imgLogotype = "/images/brand/logotype.svg";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const quickLinks = [
+    { label: "Pocetna", href: "/" },
+    { label: "O nama", href: "/about-us" },
+    { label: "Blog", href: "/blog" },
+  ];
 
-  const navigationLinks = [
-    { label: 'HOME', href: '/' },
-    { label: 'ABOUT US', href: '/about-us' },
-    { label: 'SHOP', href: '/shop' },
-    { label: 'BLOG', href: '/blog' },
-    { label: 'CONTACT', href: '/contact-us' },
+  const shopLinks = [
+    { label: "Dose Max 1,2 L", href: "/shop" },
+    { label: "Dose Regular 0,88L", href: "/shop" },
+    { label: "Shop all", href: "/shop" },
   ];
 
   const legalLinks = [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'Returns', href: '#' },
-    { label: 'Shipping', href: '#' },
+    { label: "Politika privatnosti", href: "#" },
+    { label: "Uslovi koriscenja", href: "#" },
+    { label: "Politika povrata", href: "#" },
   ];
 
   const socialLinks = [
-    { label: 'Facebook', href: '#', icon: '👍' },
-    { label: 'Instagram', href: '#', icon: '📸' },
-    { label: 'Twitter', href: '#', icon: '𝕏' },
+    { label: "Facebook", href: "#" },
+    { label: "Instagram", href: "#" },
   ];
 
   return (
-    <footer className="bg-dose-dark text-white w-full">
-      <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] py-[48px] sm:py-[64px]">
-        {/* Top Section - Logo and Description */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px] sm:gap-[48px] mb-[48px] sm:mb-[64px] pb-[32px] sm:pb-[48px] border-b border-[rgba(255,255,255,0.1)]">
-          {/* Logo and Brand */}
-          <div className="flex flex-col gap-[16px] col-span-1 sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="h-[32px] w-[97.976px] hover:opacity-80 transition-opacity">
-              <img alt="Dose Logo" className="w-full h-full" src={imgLogotype} />
-            </Link>
-            <p className="font-medium font-medium text-dose-light text-[14px] sm:text-[16px] tracking-[-0.28px] sm:tracking-[-0.32px] leading-[1.5] max-w-[280px]">
-              Premium thermoses designed for your active lifestyle. Stay hydrated, stay stylish.
-            </p>
+    <footer className="w-full bg-dose-light rounded-t-[32px] overflow-hidden shadow-[0px_20px_48px_0px_rgba(135,84,55,0.1)]">
+      <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[var(--spacing-32)] lg:px-[64px] py-[64px] relative min-h-[550px]">
+        <div className="flex flex-col lg:flex-row gap-[48px] lg:gap-[64px]">
+          {/* Left Section - Navigation Links */}
+          <div className="flex flex-col sm:flex-row gap-[48px] sm:gap-[112px] flex-1">
+            {/* Quick Links */}
+            <div className="flex flex-col gap-[24px]">
+              <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
+                Brzi Linkovi
+              </h3>
+              <nav className="flex flex-col gap-[24px]">
+                {quickLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="font-medium text-dose-mid text-[14px] hover:text-dose-dark transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Shop Links */}
+            <div className="flex flex-col gap-[24px]">
+              <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
+                Shop
+              </h3>
+              <nav className="flex flex-col gap-[24px]">
+                {shopLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="font-medium text-dose-mid text-[14px] hover:text-dose-dark transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Legal Links */}
+            <div className="flex flex-col gap-[24px]">
+              <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
+                Legal
+              </h3>
+              <nav className="flex flex-col gap-[24px]">
+                {legalLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="font-medium text-dose-mid text-[14px] hover:text-dose-dark transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex flex-col gap-[24px]">
+              <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
+                Zaprati Nas
+              </h3>
+              <div className="flex flex-col gap-[12px]">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="bg-white px-[16px] py-[6px] rounded-[8px] h-[44px] flex items-center gap-[10px] hover:shadow-[0px_10px_24px_0px_rgba(135,84,55,0.15)] transition-shadow"
+                  >
+                    <span className="text-[14px]">
+                      {link.label === "Facebook" ? "f" : "📷"}
+                    </span>
+                    <span className="font-medium text-dose-mid text-[14px]">
+                      {link.label}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Navigation Links */}
-          <div className="flex flex-col gap-[12px] col-span-1">
-            <h3 className="font-bold font-bold text-[14px] sm:text-[16px] tracking-[-0.28px] sm:tracking-[-0.32px] uppercase text-dose-peach">
-              Navigation
-            </h3>
-            <nav className="flex flex-col gap-[8px]">
-              {navigationLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="font-medium font-medium text-[14px] tracking-[-0.28px] text-[rgba(255,255,255,0.7)] hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+          {/* Right Section - Product Card */}
+          <div className="flex-shrink-0 lg:absolute lg:right-[64px] lg:top-[64px] w-full sm:w-[304px]">
+            <div className="bg-dose-accent rounded-[16px] overflow-hidden p-[24px] flex flex-col gap-[24px] h-full">
+              {/* Logo */}
+              <Link
+                href="/"
+                className="h-[32px] w-[97.976px] hover:opacity-80 transition-opacity"
+              >
+                <img
+                  alt="Dose Logo"
+                  className="w-full h-full"
+                  src={imgLogotype}
+                />
+              </Link>
 
-          {/* Legal Links */}
-          <div className="flex flex-col gap-[12px] col-span-1">
-            <h3 className="font-bold font-bold text-[14px] sm:text-[16px] tracking-[-0.28px] sm:tracking-[-0.32px] uppercase text-dose-peach">
-              Legal
-            </h3>
-            <nav className="flex flex-col gap-[8px]">
-              {legalLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="font-medium font-medium text-[14px] tracking-[-0.28px] text-[rgba(255,255,255,0.7)] hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+              {/* Description */}
+              <p className="font-medium text-dose-light text-[14px] tracking-[-0.28px] leading-[1.5]">
+                Poseti shop, istrazi ponudu i pronadji svoj Dose termos koji se
+                idealno uklopa uz tvoj stil zivota.
+              </p>
 
-          {/* Social Links */}
-          <div className="flex flex-col gap-[12px] col-span-1 sm:col-span-2 lg:col-span-1">
-            <h3 className="font-bold font-bold text-[14px] sm:text-[16px] tracking-[-0.28px] sm:tracking-[-0.32px] uppercase text-dose-peach">
-              Follow Us
-            </h3>
-            <div className="flex gap-[16px]">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  aria-label={link.label}
-                  className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.2)] transition-colors text-[18px]"
-                  title={link.label}
-                >
-                  {link.icon}
-                </a>
-              ))}
+              {/* CTA Button */}
+              <CTAButton
+                onClick={() => (window.location.href = "/shop")}
+                label="Shop Now"
+                className="w-full"
+              />
+
+              {/* Product Image */}
+              <div className="relative w-full h-[200px] -mb-[12px]">
+                <Image
+                  src="/images/products/footerImage.png"
+                  alt="Featured Product"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section - Copyright */}
-        <div className="flex flex-col sm:flex-row gap-[16px] sm:gap-[24px] items-center sm:justify-between text-center sm:text-left">
-          <p className="font-medium font-medium text-[12px] sm:text-[14px] tracking-[-0.24px] sm:tracking-[-0.28px] text-[rgba(255,255,255,0.6)]">
-            © {currentYear} Dose. All rights reserved.
-          </p>
-          <p className="font-medium font-medium text-[12px] sm:text-[14px] tracking-[-0.24px] sm:tracking-[-0.28px] text-[rgba(255,255,255,0.6)]">
-            Crafted with care for your active lifestyle.
+        {/* Copyright */}
+        <div className="absolute bottom-[24px] left-1/2 transform -translate-x-1/2 text-center">
+          <p className="font-medium text-dose-mid/60 text-[12px] tracking-[-0.24px]">
+            @ Dose 2025. All rights reserved. Design by Growww.
           </p>
         </div>
       </div>
