@@ -3,88 +3,95 @@
 /**
  * DoseList Component
  *
- * Section displaying a list of DOSE products with features and benefits
+ * Product showcase displaying 4 DOSE products in a grid
+ * Each card features product image, rating, name, and price
+ * Based on Figma design: https://www.figma.com/design/I7GYdab3FirpOg941b6wTL/Dose-Web-Project?node-id=95-186
  */
+
+import Image from "next/image";
 
 export default function DoseList() {
   const doseProducts = [
     {
       id: 1,
-      name: "Mini Dose",
-      volume: "0.6L",
-      description: "Perfect for daily commutes and on-the-go hydration",
-      features: ["Lightweight", "Portable", "24h cold"],
+      name: "Summer Peach",
+      price: "5.997 RSD",
+      rating: "4.9/5.0",
+      image: "/images/products/DoseHome1.png",
     },
     {
       id: 2,
-      name: "Standard Dose",
-      volume: "1.0L",
-      description: "Ideal for work, gym, and outdoor activities",
-      features: ["Versatile", "Durable", "12h hot"],
+      name: "Ocean Blue",
+      price: "5.997 RSD",
+      rating: "4.8/5.0",
+      image: "/images/products/DoseHome2.png",
     },
     {
       id: 3,
-      name: "XL Dose",
-      volume: "1.5L",
-      description: "Great for sports, hiking, and family use",
-      features: ["Large capacity", "Rugged", "24h cold"],
+      name: "Forest Green",
+      price: "5.997 RSD",
+      rating: "4.9/5.0",
+      image: "/images/products/DoseHome3.png",
+    },
+    {
+      id: 4,
+      name: "Midnight Black",
+      price: "5.997 RSD",
+      rating: "4.7/5.0",
+      image: "/images/products/DoseHome4.png",
     },
   ];
 
   return (
-    <section className="w-full py-[var(--spacing-64)] px-[16px] sm:px-[var(--spacing-32)]">
+    <div className="py-[var(--spacing-64)] px-[16px] sm:px-[var(--spacing-32)]">
       <div className="max-w-[1440px] mx-auto">
-        <div className="flex flex-col gap-[var(--spacing-64)]">
-          {/* Heading */}
-          <div className="flex justify-center">
-            <div className="w-[675px] flex flex-col items-center gap-[16px]">
-              <h2 className="text-dose-dark font-bold text-[40px] sm:text-[56px] leading-[1.2] tracking-[-1.12px] text-center">
-                Our Dose Collection
-              </h2>
-              <p className="text-dose-mid font-medium text-[16px] sm:text-[18px] leading-[1.5] tracking-[-0.36px] text-center">
-                Choose the perfect size for your lifestyle
-              </p>
-            </div>
-          </div>
+        {/* Centered Text Content */}
+        <div className="flex flex-col gap-[16px] items-center text-center mb-[var(--spacing-64)] max-w-[675px] mx-auto">
+          <h2 className="font-bold text-dose-dark text-[40px] sm:text-[56px] tracking-[-0.64px] sm:tracking-[-1.12px] leading-[1.2]">
+            DOSE Collection
+          </h2>
+          <p className="font-medium text-dose-mid text-[16px] sm:text-[18px] tracking-[-0.32px] sm:tracking-[-0.36px] leading-[1.5]">
+            Discover the perfect DOSE for your lifestyle
+          </p>
+        </div>
 
-          {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px]">
-            {doseProducts.map((product) => (
-              <div
-                key={product.id}
-                className="flex flex-col gap-[24px] p-[var(--spacing-32)] rounded-[16px] bg-dose-light"
-              >
-                {/* Product Header */}
-                <div className="flex flex-col gap-[8px]">
-                  <h3 className="text-dose-dark font-bold text-[24px] tracking-[-0.48px]">
-                    {product.name}
-                  </h3>
-                  <p className="text-dose-mid font-medium text-[18px] tracking-[-0.36px]">
-                    {product.volume}
-                  </p>
-                </div>
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[24px]">
+          {doseProducts.map((product) => (
+            <div key={product.id} className="flex flex-col gap-[24px]">
+              {/* Product Card with Image and Rating */}
+              <div className="relative w-full h-[480px] rounded-[20px] overflow-hidden bg-dose-light">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
 
-                {/* Description */}
-                <p className="text-dose-mid font-medium text-[16px] tracking-[-0.32px] leading-[1.5]">
-                  {product.description}
-                </p>
-
-                {/* Features */}
-                <div className="flex flex-col gap-[12px]">
-                  {product.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-[12px]">
-                      <div className="w-[8px] h-[8px] rounded-full bg-dose-accent flex-shrink-0"></div>
-                      <span className="text-dose-dark font-medium text-[14px]">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
+                {/* Rating Badge */}
+                <div className="absolute top-[16px] left-[16px] z-10 bg-white/20 backdrop-blur-sm flex gap-[7px] items-center justify-center px-[16px] py-[8px] rounded-[99px]">
+                  <span className="text-white font-bold text-[16px] leading-[1.5]">
+                    ⭐ {product.rating}
+                  </span>
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Product Info */}
+              <div className="flex flex-col gap-[8px]">
+                <h3 className="font-bold text-dose-dark text-[24px] tracking-[-0.36px] leading-[1.5]">
+                  {product.name}
+                </h3>
+                <div className="bg-dose-peach px-[12px] py-[10px] rounded-[14px] w-fit">
+                  <p className="font-bold text-dose-dark text-[18px] tracking-[-0.36px] leading-[1.5]">
+                    {product.price}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
