@@ -15,12 +15,12 @@ import SliderProduct from "./SliderProduct/SliderProduct";
 
 export default function SliderSection() {
   return (
-    <div className="relative w-full bg-[#fef8f4] pt-[32px] sm:pt-[47px] md:pt-[60px] lg:pt-[80px]">
+    <div className="relative w-full bg-[#fef8f4] pt-[32px] sm:pt-[47px] md:pt-[60px] lg:pt-[0px]">
       <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px]">
         {/* Flex container for text and product parts */}
         <div className="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center lg:items-stretch">
           {/* Text Content - Title, Description, Button - 50% on desktop */}
-          <div className="w-full lg:w-1/2 flex items-center">
+          <div className="w-full lg:w-1/2 flex items-center lg:pl-[147px]">
             <SliderText />
           </div>
 

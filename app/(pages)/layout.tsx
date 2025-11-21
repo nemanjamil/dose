@@ -1,5 +1,5 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 /**
  * Main Pages Layout Wrapper
@@ -30,9 +30,7 @@ export default function PagesLayout({
       <Header />
 
       {/* Main content - Grows to fill available space */}
-      <main className="flex-grow pt-[80px] w-full">
-        {children}
-      </main>
+      <main className="flex-grow pt-[32px] w-full">{children}</main>
 
       {/* Footer - Sticky at bottom */}
       <Footer />

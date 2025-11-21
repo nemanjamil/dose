@@ -5,7 +5,7 @@
 
 export default function SlideIndicators() {
   return (
-    <div className="absolute right-[62px] top-[518px] flex h-[166px] w-[62px] items-center justify-center">
+    <div className="absolute right-[16px] bottom-[16px] flex h-[166px] w-[62px] items-center justify-center">
       <div className="rotate-90">
         <div className="bg-[rgba(255,255,255,0.4)] box-border flex gap-[6px] items-start p-[8px] rounded-[99px] shadow-[0px_10px_24px_0px_rgba(160,157,151,0.3)]">
           {/* Slide 01 */}
