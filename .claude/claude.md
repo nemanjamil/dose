@@ -211,6 +211,30 @@ All spacing values are defined in the theme and can be used with any Tailwind sp
 2. Remove inline font-family declarations (use global Albert Sans)
 3. Keep class lists clean and readable
 
+### Section Components - No Background Colors
+
+**Rule:** Section components (`app/components/sections/*`) should NOT have background colors applied to the `<section>` element.
+
+**Why?**
+- Allows for flexible page layouts
+- Enables background colors/images to be applied at the page level if needed
+- Keeps sections reusable and composable
+
+**Example:**
+```tsx
+// ❌ BAD - Section with background color
+<section className="py-[var(--spacing-64)] px-[16px] w-full bg-dose-light">
+  {/* content */}
+</section>
+
+// ✅ GOOD - Section without background color
+<section className="py-[var(--spacing-64)] px-[16px] w-full">
+  {/* content */}
+</section>
+```
+
+**Exception:** Background colors can be applied to inner containers (divs) for specific components like feature boxes, cards, or badges.
+
 ---
 
 ## 🛣️ Routes

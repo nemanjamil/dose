@@ -1,5 +1,6 @@
 import { SliderSection } from "../../components/sections/Slider";
 import DoseInRealLife from "../../components/sections/DoseInRealLife";
+import DesignTellsForItSelf from "../../components/sections/DesignTellsForItSelf";
 import HoldingDoseSlider from "../../components/sections/HoldingDoseSlider";
 
 /**
@@ -18,7 +19,11 @@ export default function HomePage() {
       {/* Section: Featured Product - Based on Figma node-id 95-15 */}
       <DoseInRealLife />
 
+      {/* Section: Testimonials - Holding Dose Slider */}
       <HoldingDoseSlider />
+
+      {/* Section: Design Philosophy - Based on Figma node-id 95-33 */}
+      <DesignTellsForItSelf />
     </div>
   );
 }
