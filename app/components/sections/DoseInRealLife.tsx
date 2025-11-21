@@ -38,17 +38,6 @@ export default function DoseInRealLife() {
             stvarno.
           </p>
         </div>
-
-        {/* Navigation Controls - Right Side */}
-        <div className="flex justify-end">
-          <ArrowButtonPair
-            currentSlide={currentSlide}
-            totalSlides={totalSlides}
-            onPrevious={handlePrevious}
-            onNext={handleNext}
-            layout="horizontal"
-          />
-        </div>
       </div>
     </div>
   );
