@@ -25,12 +25,12 @@ export default function FeatureBadge({
       className={`absolute bg-[rgba(255,255,255,0.4)] box-border flex flex-col gap-[10px] items-start pl-[8px] pr-[24px] py-[8px] rounded-[99px] shadow-[0px_10px_24px_0px_rgba(160,157,151,0.3)] ${positionClasses[position]}`}
     >
       <div className="flex gap-[12px] items-center">
-        <div className="bg-[#fff8f4] flex gap-[10px] items-center px-[11px] py-[10px] rounded-[99px] size-[46px] flex-shrink-0">
+        <div className="bg-dose-light flex gap-[10px] items-center px-[11px] py-[10px] rounded-[99px] size-[46px] flex-shrink-0">
           <div className="relative size-[24px]">
             <img alt="" className="w-full h-full" src={icon} />
           </div>
         </div>
-        <p className="font-['Albert_Sans:Bold',sans-serif] font-bold text-[#a7253b] text-[18px] tracking-[-0.36px]">
+        <p className="font-bold font-bold text-dose-accent text-[18px] tracking-[-0.36px]">
           {label}
         </p>
       </div>

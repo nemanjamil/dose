@@ -17,10 +17,10 @@ import ColorSwatch from './ColorSwatch';
 import SlideIndicators from './SlideIndicators';
 import TopBar from './TopBar';
 
-// Feature badge icons from Figma
-const iconBPAFree = "https://www.figma.com/api/mcp/asset/b61412cc-4293-40bc-8250-ad4f9e69712a";
-const iconLeakProof = "https://www.figma.com/api/mcp/asset/f3ed9156-6f1d-4faa-9379-2b6c2db329f2";
-const icon24hCold = "https://www.figma.com/api/mcp/asset/75ba8dcf-c5d8-4e38-8338-75f1e0722be1";
+// Feature badge icons - local images
+const iconBPAFree = "/images/icons/bpa-free.svg";
+const iconLeakProof = "/images/icons/leak-proof.svg";
+const icon24hCold = "/images/icons/24h-cold.svg";
 
 export default function SliderProduct() {
   return (

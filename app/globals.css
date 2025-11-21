@@ -10,11 +10,37 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand Colors */
+  --color-dose-dark: #6c2517;
+  --color-dose-mid: #9c5243;
+  --color-dose-accent: #a7253b;
+  --color-dose-light: #fef8f4;
+  --color-dose-peach: #ffe3d3;
+  --color-white: #ffffff;
+  --color-primary: #6c2517;
+  --color-secondary: #9c5243;
+  --color-tertiary: #a7253b;
+
+  /* Spacing Scale */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-64: 64px;
+  --spacing-128: 128px;
+  --spacing-164: 164px;
+
+  /* Font Weights */
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #fef8f4;
     --foreground: #ededed;
   }
 }

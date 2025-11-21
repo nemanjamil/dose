@@ -31,11 +31,11 @@ export function TestimonialsSection() {
       <div className="max-w-[1376px] mx-auto flex flex-col gap-[104px] items-center">
         <div className="flex flex-col gap-[16px] items-center justify-center max-w-[675px]">
           <div className="bg-[rgba(167,37,59,0.2)] flex gap-[12px] items-center px-[24px] py-[12px] rounded-[99px]">
-            <p className="font-['Albert_Sans:Medium',sans-serif] font-medium text-[#a7253b] text-[16px] tracking-[-0.32px]">
+            <p className="font-medium font-medium text-dose-accent text-[16px] tracking-[-0.32px]">
               650+ 5 star rating reviews
             </p>
           </div>
-          <p className="font-['Albert_Sans:Bold',sans-serif] font-bold text-[#6c2517] text-[56px] tracking-[-1.12px] text-center">
+          <p className="font-bold font-bold text-dose-dark text-[56px] tracking-[-1.12px] text-center">
             What our customers have to say.
           </p>
         </div>
@@ -48,13 +48,13 @@ export function TestimonialsSection() {
               className="bg-white rounded-[20px] shadow-[0px_10px_32px_0px_rgba(135,84,55,0.1)] p-[32px] flex flex-col gap-[24px]"
             >
               <div className="flex flex-col gap-[16px] h-[200px] justify-between">
-                <p className="font-['Inter:Medium',sans-serif] font-medium text-[#6c2517] text-[18px] leading-[1.5] opacity-80">
+                <p className="font-medium font-medium text-dose-dark text-[18px] leading-[1.5] opacity-80">
                   "{testimonial.text}"
                 </p>
                 <div className="flex gap-[12px] items-center">
                   <div className="w-[44px] h-[44px] rounded-[12px] bg-[rgba(255,255,255,0.1)]" />
                   <div>
-                    <p className="font-['Albert_Sans:Bold',sans-serif] font-bold text-[#6c2517] text-[16px]">
+                    <p className="font-bold font-bold text-dose-dark text-[16px]">
                       {testimonial.author}
                     </p>
                   </div>

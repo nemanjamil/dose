@@ -1,4 +1,4 @@
-const imgLogotype = "https://www.figma.com/api/mcp/asset/4560792d-019b-4e03-8956-2ffbec90770c";
+const imgLogotype = "/images/brand/logotype.svg";
 
 export function DesignPhilosophySection() {
   return (
@@ -11,21 +11,21 @@ export function DesignPhilosophySection() {
                 <img alt="Dose Logo" className="w-full h-full" src={imgLogotype} />
               </div>
             </div>
-            <p className="font-['Albert_Sans:Bold',sans-serif] font-bold text-white text-[56px] tracking-[-1.12px]">
+            <p className="font-bold font-bold text-white text-[56px] tracking-[-1.12px]">
               Dizajn koji govori sam za sebe.
             </p>
-            <p className="font-['Albert_Sans:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.36px] leading-[1.5]">
+            <p className="font-medium font-medium text-white text-[18px] tracking-[-0.36px] leading-[1.5]">
               Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni poklopac i boje koje izražavaju tvoj karakter.
             </p>
           </div>
           <div className="flex gap-[12px] items-start">
             <div className="bg-[rgba(255,255,255,0.2)] flex gap-[10px] h-[40px] items-center justify-center px-[24px] py-[12px] rounded-[99px]">
-              <p className="font-['Albert_Sans:Medium',sans-serif] font-medium text-white text-[16px] tracking-[-0.32px]">
+              <p className="font-medium font-medium text-white text-[16px] tracking-[-0.32px]">
                 NO PLASTIC
               </p>
             </div>
             <div className="bg-[rgba(255,255,255,0.2)] flex gap-[10px] h-[40px] items-center justify-center px-[24px] py-[12px] rounded-[99px]">
-              <p className="font-['Albert_Sans:Medium',sans-serif] font-medium text-white text-[16px] tracking-[-0.32px]">
+              <p className="font-medium font-medium text-white text-[16px] tracking-[-0.32px]">
                 STAINLESS STEEL
               </p>
             </div>

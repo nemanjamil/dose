@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const imgLogotype =
-  "https://www.figma.com/api/mcp/asset/4560792d-019b-4e03-8956-2ffbec90770c";
+  "/images/brand/logotype.svg";
 
 export default function Header() {
   const pathname = usePathname();
@@ -33,13 +33,13 @@ export default function Header() {
           <img alt="Dose Logo" className="w-full h-full" src={imgLogotype} />
         </Link>
 
-        <nav className="flex font-['Albert_Sans:Medium',sans-serif] font-medium gap-[32px] items-center text-[#9c5243] text-[12px] tracking-[-0.24px]">
+        <nav className="flex font-medium font-medium gap-[32px] items-center text-dose-mid text-[12px] tracking-[-0.24px]">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`transition-colors hover:text-[#6c2517] ${
-                isActive(item.href) ? "text-[#6c2517] font-bold" : ""
+              className={`transition-colors hover:text-dose-dark ${
+                isActive(item.href) ? "text-dose-dark font-bold" : ""
               }`}
             >
               {item.label}

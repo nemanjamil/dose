@@ -9,7 +9,11 @@
       "Bash(npm run build:*)",
       "mcp__figma__get_screenshot",
       "Bash(ls:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(dir \"C:\\Users\\neman\\PROJEKTI\\ZMIKA\\dose\\public\")",
+      "Bash(dir \"C:\\Users\\neman\\PROJEKTI\\ZMIKA\\dose\\public\\images\")",
+      "Bash(dir:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

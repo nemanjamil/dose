@@ -30,7 +30,7 @@ export default function ColorSwatch() {
           </div>
         ))}
       </div>
-      <p className="font-['Albert_Sans:Medium',sans-serif] font-medium text-[#a7253b] text-[18px] tracking-[-0.36px] whitespace-nowrap">
+      <p className="font-medium font-medium text-dose-accent text-[18px] tracking-[-0.36px] whitespace-nowrap">
         14+ colors available
       </p>
     </div>

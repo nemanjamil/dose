@@ -100,11 +100,116 @@ import { SliderText, SliderProduct } from '@/components/sections/Slider';
 
 ## 🎨 Design System
 
-- **Colors**: `#6c2517` (dark), `#9c5243` (mid), `#a7253b` (accent), `#fef8f4` (light)
-- **Typography**: Albert Sans (Bold, Medium)
-- **Spacing**: 8px and 16px base units
+- **Colors**: Defined in Tailwind theme (see below)
+- **Typography**: Albert Sans with 500 (Medium) and 700 (Bold) weights - set globally in `app/layout.tsx`
+- **Spacing**: 8px, 12px, 16px, 24px, 32px, 64px, 128px, 164px (defined in theme)
 - **Radius**: 14px, 20px, 32px, 99px
 - **Shadows**: Consistent with rgba values
+
+All theme values are defined in `app/globals.css` using Tailwind's `@theme inline` directive.
+
+### Color Palette (Tailwind Theme)
+
+All brand colors are defined in `app/globals.css` using Tailwind's `@theme` directive:
+
+| Color Name | Hex Value | Usage | Tailwind Class |
+|-----------|-----------|-------|-----------------|
+| Dark | `#6C2517` | Headings, primary text | `bg-dose-dark`, `text-dose-dark` |
+| Mid | `#9C5243` | Secondary text, descriptions | `bg-dose-mid`, `text-dose-mid` |
+| Accent | `#A7253B` | CTAs, highlights | `bg-dose-accent`, `text-dose-accent` |
+| Light | `#FEF8F4` | Page backgrounds | `bg-dose-light`, `text-dose-light` |
+| Peach | `#FFE3D3` | Buttons, accents | `bg-dose-peach`, `text-dose-peach` |
+| White | `#FFFFFF` | Component backgrounds | `bg-white`, `text-white` |
+
+**Also available as primary/secondary/tertiary aliases:**
+- `--color-primary` → Dark (#6C2517)
+- `--color-secondary` → Mid (#9C5243)
+- `--color-tertiary` → Accent (#A7253B)
+
+**Usage in components:**
+```tsx
+// ✅ GOOD - Use Tailwind color classes
+<div className="bg-dose-dark text-white">Heading</div>
+<button className="bg-dose-peach hover:bg-dose-mid">Button</button>
+
+// ❌ BAD - Hardcoded colors (avoid)
+<div className="bg-[#6c2517] text-white">Heading</div>
+```
+
+### Typography Implementation
+
+**Albert Sans is configured globally** in `app/layout.tsx`:
+```tsx
+import { Albert_Sans } from "next/font/google";
+
+const albertSans = Albert_Sans({
+  variable: "--font-albert-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
+```
+
+**Don't repeat font-family in components.** Use Tailwind font weight classes instead:
+- ❌ `className="font-['Albert_Sans:Bold',sans-serif]"` - WRONG, redundant
+- ✅ `className="font-bold"` - CORRECT, uses global font with bold weight
+
+### Font Weights
+
+| Weight | Value | Tailwind Class | Usage |
+|--------|-------|----------------|-------|
+| Medium | 500 | `font-medium` | Body text, descriptions, secondary elements |
+| Bold | 700 | `font-bold` | Headings, titles, important text |
+
+### Spacing Scale
+
+All spacing values are defined in the theme and can be used with any Tailwind spacing utility:
+
+| Value | Pixels | Tailwind CSS Examples |
+|-------|--------|----------------------|
+| spacing-8 | 8px | `p-[var(--spacing-8)]`, `gap-[var(--spacing-8)]` |
+| spacing-12 | 12px | `p-[var(--spacing-12)]`, `gap-[var(--spacing-12)]` |
+| spacing-16 | 16px | `p-[var(--spacing-16)]`, `gap-[var(--spacing-16)]` |
+| spacing-24 | 24px | `p-[var(--spacing-24)]`, `gap-[var(--spacing-24)]` |
+| spacing-32 | 32px | `p-[var(--spacing-32)]`, `gap-[var(--spacing-32)]` |
+| spacing-64 | 64px | `p-[var(--spacing-64)]`, `gap-[var(--spacing-64)]` |
+| spacing-128 | 128px | `p-[var(--spacing-128)]`, `gap-[var(--spacing-128)]` |
+| spacing-164 | 164px | `p-[var(--spacing-164)]`, `gap-[var(--spacing-164)]` |
+
+**Usage example:**
+```tsx
+// Padding
+<div className="p-[var(--spacing-32)]">Content with 32px padding</div>
+
+// Gap between flex items
+<div className="flex gap-[var(--spacing-16)]">Items</div>
+
+// Margin
+<div className="mb-[var(--spacing-24)]">Heading</div>
+```
+
+---
+
+## ⚠️ Code Quality Guidelines
+
+### Avoid Duplicate CSS Classes
+
+**Problem:** Duplicate classes waste space and confuse the codebase.
+
+**Examples:**
+```tsx
+// ❌ BAD - Duplicate classes
+<p className="font-bold font-bold text-[#a7253b]">Text</p>
+<div className="flex flex-col flex flex-col gap-4">Content</div>
+
+// ✅ GOOD - Single instance of each class
+<p className="font-bold text-[#a7253b]">Text</p>
+<div className="flex flex-col gap-4">Content</div>
+```
+
+**When editing components:**
+1. Check for duplicate utility classes
+2. Remove inline font-family declarations (use global Albert Sans)
+3. Keep class lists clean and readable
 
 ---
 
