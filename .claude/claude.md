@@ -497,6 +497,37 @@ Replace all Figma image URLs in:
 
 ---
 
+## 🔄 Component Reusability Rule
+
+**ALWAYS USE PREDEFINED COMPONENTS** - Never duplicate component functionality
+
+**Rule:**
+- ✅ Use existing components like `CTAButton`, `ColorSwatch`, `Badge`, etc.
+- ✅ Import and reuse components across sections
+- ❌ Don't create new components if a similar one already exists
+- ❌ Don't inline component logic multiple times
+
+**Examples:**
+```tsx
+// ✅ GOOD - Reuse CTAButton component
+import CTAButton from "../CTAButton";
+
+<CTAButton onClick={handleClick} label="Shop now" />
+<CTAButton onClick={onShopClick} />
+
+// ❌ BAD - Duplicating button logic
+<button onClick={handleClick} className="...">Shop now</button>
+<button onClick={onShopClick} className="...">Shop</button>
+```
+
+**Benefits:**
+- Single source of truth for components
+- Consistency across the project
+- Easier maintenance and updates
+- Reduced code duplication
+
+---
+
 ## 🚫 Documentation Rule
 
 **DO NOT CREATE** any additional markdown documentation files like:

@@ -1,26 +1,31 @@
 /**
  * ColorSwatch Component
- * Color swatches display with "14+ colors available" text
+ * Reusable color swatches display component
  */
 
+interface ColorSwatchProps {
+  showLabel?: boolean;
+  label?: string;
+}
+
 const colors = [
-  { name: 'Pink', hex: '#ff69a0' },
-  { name: 'Coral', hex: '#ff8c88' },
-  { name: 'Burgundy', hex: '#a7253b' },
-  { name: 'Navy', hex: '#2c5aa0' },
-  { name: 'Sage', hex: '#7a9d6f' },
+  { name: "Pink", hex: "#ff69a0" },
+  { name: "Coral", hex: "#ff8c88" },
+  { name: "Burgundy", hex: "#a7253b" },
+  { name: "Navy", hex: "#2c5aa0" },
+  { name: "Sage", hex: "#7a9d6f" },
 ];
 
-export default function ColorSwatch() {
+export default function ColorSwatch({ showLabel = true, label = "14+ colors available" }: ColorSwatchProps) {
   return (
-    <div className="absolute left-[32px] bottom-[32px] flex gap-[12px] items-center">
-      <div className="flex items-center" style={{ marginLeft: '0', gap: '-3px' }}>
-        {/* Using negative margin to overlap circles by 15% */}
+    <div className="flex gap-[12px] items-center">
+      <div className="flex items-center" style={{ gap: "-3px" }}>
+        {/* Using negative margin to overlap circles */}
         {colors.map((color) => (
           <div
             key={color.hex}
-            className="relative w-[26px] h-[26px] rounded-full hover:scale-110 transition-transform cursor-pointer"
-            style={{ backgroundColor: '#ffffff', marginLeft: '-4px' }}
+            className="relative w-[26px] h-[26px] rounded-full hover:scale-110 transition-transform cursor-pointer -ml-[4px]"
+            style={{ backgroundColor: "#ffffff" }}
             title={color.name}
           >
             <div
@@ -30,9 +35,11 @@ export default function ColorSwatch() {
           </div>
         ))}
       </div>
-      <p className="font-medium font-medium text-dose-accent text-[18px] tracking-[-0.36px] whitespace-nowrap">
-        14+ colors available
-      </p>
+      {showLabel && (
+        <p className="font-medium text-dose-accent text-[18px] tracking-[-0.36px] whitespace-nowrap">
+          {label}
+        </p>
+      )}
     </div>
   );
 }

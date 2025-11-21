@@ -34,7 +34,9 @@ export default function SliderProduct() {
       <FeatureBadge icon={icon24hCold} label="24h cold water" position="bottom-left" />
 
       {/* Color Swatches */}
-      <ColorSwatch />
+      <div className="absolute left-[32px] bottom-[32px]">
+        <ColorSwatch />
+      </div>
 
       {/* Slide Indicators */}
       <SlideIndicators />

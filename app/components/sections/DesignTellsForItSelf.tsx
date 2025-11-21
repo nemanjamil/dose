@@ -13,8 +13,8 @@ import Image from "next/image";
 
 export default function DesignTellsForItSelf() {
   return (
-    <section className="w-full py-[var(--spacing-64)] px-[16px] sm:px-[var(--spacing-32)]">
-      <div className="max-w-[1440px] mx-auto p-[var(--spacing-32)]  bg-cover bg-center">
+    <section className="w-full sm:px-[var(--spacing-32)]">
+      <div className="max-w-[1440px] mx-auto px-[var(--spacing-32)] pt-[var(--spacing-64)]  bg-cover bg-center">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 gap-[48px] items-center rounded-[32px] h-[650px]"
           style={{
@@ -22,7 +22,7 @@ export default function DesignTellsForItSelf() {
           }}
         >
           {/* Left Side - Text Content */}
-          <div className="relative flex flex-col gap-[32px] rounded-[16px] justify-left items-center h-full">
+          <div className="relative flex flex-col gap-[32px] rounded-[16px] justify-center items-center h-full w-full">
             <div className="left-[117px] top-[100px] max-w-[400px] flex flex-col items-center justify-center">
               {/* Dose Badge */}
               <div className="w-fit bg-white/20 backdrop-blur-sm rounded-[99px] px-[24px] py-[12px] self-start">

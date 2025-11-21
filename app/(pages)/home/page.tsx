@@ -2,6 +2,8 @@ import { SliderSection } from "../../components/sections/Slider";
 import DoseInRealLife from "../../components/sections/DoseInRealLife";
 import DesignTellsForItSelf from "../../components/sections/DesignTellsForItSelf";
 import HoldingDoseSlider from "../../components/sections/HoldingDoseSlider";
+import HidrateInStyle from "../../components/sections/HidrateInStyle";
+import DoseList from "../../components/sections/DoseList";
 
 /**
  * Home Page (/ route)
@@ -24,6 +26,10 @@ export default function HomePage() {
 
       {/* Section: Design Philosophy - Based on Figma node-id 95-33 */}
       <DesignTellsForItSelf />
+
+      <HidrateInStyle />
+
+      <DoseList />
     </div>
   );
 }
