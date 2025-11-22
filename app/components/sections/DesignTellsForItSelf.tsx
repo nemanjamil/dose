@@ -13,6 +13,7 @@ export default function DesignTellsForItSelf() {
   return (
     <HeroSection
       backgroundImage="/images/products/design.png"
+      backgroundColor="#1a1a1a"
       badge="DOSE"
       heading="Dizajn koji govori sam za sebe."
       description="Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni poklopac i boje koje izražavaju tvoj karakter. Savršen balans između lepote i praktičnosti. Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
@@ -24,6 +25,9 @@ export default function DesignTellsForItSelf() {
       productLabel="Mini 0,6 L Traveler Bottle"
       textColor="light"
       centerImage="/images/products/designCup.png"
+      showProductCard={true}
+      showFeatures={true}
+      textPosition="left"
     />
   );
 }

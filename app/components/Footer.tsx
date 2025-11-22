@@ -39,9 +39,9 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-dose-light rounded-t-[32px] overflow-hidden shadow-[0px_20px_48px_0px_rgba(135,84,55,0.1)]">
-      <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] lg:px-[64px] pt-[64px] relative lg:min-h-[470px]">
+      <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] lg:px-[64px] pt-[64px] relative lg:min-h-[570px] flex flex-col">
         {/* Row 1 - Navigation Links + Product Card */}
-        <div className="flex flex-col lg:flex-row gap-[48px] lg:gap-[64px] mb-[0px] items-center lg:items-start h-full">
+        <div className="flex flex-col lg:flex-row gap-[48px] lg:gap-[64px] mb-[0px] items-center lg:items-stretch flex-1">
           {/* Left Section - Navigation Links */}
           <div className="flex flex-col flex-1 w-full sm:w-auto">
             {/* Row 1 - Navigation Columns */}
@@ -52,7 +52,7 @@ export default function Footer() {
                 <nav className="flex flex-col gap-[24px]">
                   {quickLinks.map((link) => (
                     <Link
-                      key={link.href}
+                      key={link.label}
                       href={link.href}
                       className="font-normal text-dose-mid text-p-small hover:text-dose-dark transition-colors"
                     >
@@ -68,7 +68,7 @@ export default function Footer() {
                 <nav className="flex flex-col gap-[24px]">
                   {shopLinks.map((link) => (
                     <Link
-                      key={link.href}
+                      key={link.label}
                       href={link.href}
                       className="font-medium text-dose-mid text-p-small hover:text-dose-dark transition-colors"
                     >
@@ -84,7 +84,7 @@ export default function Footer() {
                 <nav className="flex flex-col gap-[24px]">
                   {legalLinks.map((link) => (
                     <Link
-                      key={link.href}
+                      key={link.label}
                       href={link.href}
                       className="font-medium text-dose-mid text-p-small hover:text-dose-dark transition-colors"
                     >
@@ -100,7 +100,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-[12px] items-center sm:items-start">
                   {socialLinks.map((link) => (
                     <a
-                      key={link.href}
+                      key={link.label}
                       href={link.href}
                       className="bg-white px-[16px] py-[6px] rounded-[8px] h-[44px] flex items-center gap-[10px] hover:shadow-[0px_10px_24px_0px_rgba(135,84,55,0.15)] transition-shadow"
                     >
@@ -127,8 +127,8 @@ export default function Footer() {
           </div>
 
           {/* Right Section - Product Card */}
-          <div className="flex-shrink-0 w-full sm:w-[304px]">
-            <div className="bg-dose-accent rounded-[16px] overflow-hidden p-[24px] flex flex-col gap-[24px] h-full">
+          <div className="sm:w-[304px]">
+            <div className="bg-dose-accent relative rounded-t-[16px] overflow-hidden p-[24px] flex flex-col gap-[24px] h-full">
               {/* Logo */}
               <Link
                 href="/"
@@ -148,11 +148,12 @@ export default function Footer() {
               </p>
 
               {/* Product Image */}
-              <div className="relative w-full h-[200px] -mb-[12px]">
+              <div className="w-full flex justify-center mt-auto absolute bottom-0">
                 <Image
                   src="/images/products/footerImage.png"
                   alt="Featured Product"
-                  fill
+                  width={200}
+                  height={200}
                   className="object-contain"
                 />
               </div>

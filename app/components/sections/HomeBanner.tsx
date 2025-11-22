@@ -11,6 +11,7 @@ export default function HomeBanner() {
   return (
     <HeroSection
       backgroundImage="/images/sections/TwoBottlesBackground.png"
+      backgroundColor="#FEF8F4"
       badge="DOSE"
       heading="Premium Hydration Bottles"
       description="Experience the perfect blend of style and functionality. DOSE bottles keep your beverages at the ideal temperature while making a statement about your personal style."
@@ -22,6 +23,9 @@ export default function HomeBanner() {
       productLabel="Mini 0,6 L Traveler Bottle"
       textColor="dark"
       centerImage="/images/products/designTwoCups.png"
+      showProductCard={true}
+      showFeatures={true}
+      textPosition="left"
     />
   );
 }

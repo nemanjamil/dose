@@ -29,6 +29,7 @@ export default function RoundedBanner() {
           textColor="dark"
           centerImage="/images/products/handHoldingDose.png"
           showProductCard={false}
+          textPosition="left"
         />
       </div>
     </section>

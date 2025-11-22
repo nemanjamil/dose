@@ -7,6 +7,8 @@
  * Displays product card with image, details, and close button
  */
 
+import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 interface HeroProductCardProps {
@@ -22,17 +24,23 @@ export default function HeroProductCard({
   productColorway,
   productPrice,
 }: HeroProductCardProps) {
+  const [isVisible, setIsVisible] = useState(true);
+
+  if (!isVisible) {
+    return null;
+  }
+
   return (
-    <div className="flex flex-col gap-6 items-center p-8 relative h-full justify-center">
+    <div className="absolute  top-[50%] left-[20%] flex flex-col gap-6 items-center  justify-center">
       <div
-        className="absolute w-[400px] h-[173px] p-3 flex flex-col items-start
-            top-[10px] left-[47px]
-            gap-2.5 flex-shrink-0 bg-white rounded-[16px] shadow-[0px_10px_24px_0px_rgba(140,76,102,0.3)]"
+        className="w-[400px] h-[173px] p-3 flex flex-col items-start
+           
+            gap-2.5 flex-shrink-0 bg-white rounded-[16px] shadow-[0px_10px_24px_0px_rgba(140,76,102,0.3)] relative"
       >
         {/* Product Card */}
         <div className="flex gap-[75px] items-start w-full">
           {/* Product Image and Info */}
-          <div className="flex gap-6 items-center">
+          <div className="flex gap-6 items-left justify-center w-full">
             {/* Product Image */}
             <div className="w-[123px] h-[149px] rounded-[8px] overflow-hidden flex-shrink-0">
               <Image
@@ -44,7 +52,7 @@ export default function HeroProductCard({
               />
             </div>
             {/* Product Details */}
-            <div className="flex flex-col gap-2 w-[118px] flex-shrink-0">
+            <div className="flex flex-col gap-2 w-full">
               <div className="font-bold text-[18px] text-dose-dark tracking-[-0.36px] leading-[1.5]">
                 <p className="mb-0">{productName}</p>
                 <p>{productColorway}</p>
@@ -52,16 +60,22 @@ export default function HeroProductCard({
               <p className="font-medium text-[14px] text-dose-dark tracking-[-0.28px] leading-[1.5]">
                 {productPrice}
               </p>
-              <button className="bg-dose-peach px-6 py-1.5 rounded-[8px] font-bold text-[14px] text-dose-accent tracking-[-0.28px] leading-[1.5] whitespace-nowrap">
+              <Link
+                href="/about-us"
+                className="bg-dose-peach px-6 py-1.5 rounded-[8px] font-bold text-[14px] text-dose-accent tracking-[-0.28px] leading-[1.5] whitespace-nowrap w-fit hover:opacity-90 transition-opacity"
+              >
                 Learn more
-              </button>
+              </Link>
             </div>
           </div>
-          {/* Close Button */}
-          <div className="w-[36px] h-[36px] flex items-center justify-center rounded-[8px] bg-[rgba(167,37,59,0.05)] flex-shrink-0">
-            <span className="text-dose-accent text-[24px] font-bold">×</span>
-          </div>
         </div>
+        {/* Close Button */}
+        <button
+          onClick={() => setIsVisible(false)}
+          className="absolute w-[36px] h-[36px] flex items-center justify-center rounded-[8px] bg-[rgba(167,37,59,0.05)] top-[5%] right-[5%] hover:bg-[rgba(167,37,59,0.1)] transition-colors cursor-pointer"
+        >
+          <span className="text-dose-accent text-[24px] font-bold">×</span>
+        </button>
       </div>
     </div>
   );

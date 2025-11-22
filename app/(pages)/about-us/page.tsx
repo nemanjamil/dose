@@ -5,6 +5,7 @@ import SliderSectionAboutUs from "../../components/sections/SliderSectionAboutUs
 import SectionForRightAndLeftImageAndText from "../../components/sections/SectionForRightAndLeftImageAndText";
 import RoundedBanner from "../../components/sections/RoundedBanner";
 import HoldingDoseSlider from "@/app/components/sections/HoldingDoseSlider";
+import GreenBanner from "../../components/sections/GreenBanner";
 
 export default function AboutUsPage() {
   const router = useRouter();

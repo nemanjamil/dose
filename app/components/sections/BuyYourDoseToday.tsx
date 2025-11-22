@@ -42,8 +42,8 @@ export default function BuyYourDoseToday() {
               </h2>
 
               <p className="text-dose-dark font-medium text-[14px] sm:text-[16px] lg:text-[18px] leading-[1.5]">
-                Poseti shop, istrazi ponudu i pronadji svoj Dose termos koji se
-                idealno uklopa uz tvoj stil zivota.
+                Istrazi ponudu i pronadji svoj Dose termos koji se idealno
+                uklopa uz tvoj stil zivota.
               </p>
             </div>
 

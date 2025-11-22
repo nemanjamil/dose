@@ -6,6 +6,24 @@
  * Reusable hero section for dark and light themed content
  * Features left side text content and right side product card
  * Configurable for different text colors, backgrounds, and content
+ *
+ * All 16 props available:
+ * 1. backgroundImage (optional) - Background image URL
+ * 2. backgroundColor (optional) - Fallback background color
+ * 3. badge (required) - Small badge text
+ * 4. heading (required) - Main heading text
+ * 5. description (required) - Description paragraph
+ * 6. features (required) - Array of feature strings
+ * 7. productImage (required) - Product image URL
+ * 8. productName (required) - Product name
+ * 9. productColorway (required) - Product color variant
+ * 10. productPrice (required) - Product price
+ * 11. productLabel (required) - Mobile product label
+ * 12. textColor (required) - "light" | "dark" for text styling
+ * 13. centerImage (optional) - Mobile center image URL
+ * 14. showProductCard (optional) - Show product card on desktop (default: true)
+ * 15. showFeatures (optional) - Show feature badges (default: true)
+ * 16. textPosition (optional) - "left" | "right" text position (default: "left")
  */
 
 import Image from "next/image";
@@ -28,6 +46,7 @@ interface HeroSectionProps {
   centerImage?: string;
   showProductCard?: boolean;
   showFeatures?: boolean;
+  textPosition?: "left" | "right";
 }
 
 export default function HeroSection({
@@ -46,8 +65,10 @@ export default function HeroSection({
   centerImage,
   showProductCard = true,
   showFeatures = true,
+  textPosition = "left",
 }: HeroSectionProps) {
   const isDarkText = textColor === "dark";
+  const isTextLeft = textPosition === "left";
   const badgeBgClass = isDarkText
     ? "bg-dose-light"
     : "bg-white/20 backdrop-blur-sm";
@@ -74,8 +95,12 @@ export default function HeroSection({
               : { backgroundColor: backgroundColor || "#FEF8F4" }
           }
         >
-          {/* Left Side - Text Content */}
-          <div className="relative flex flex-col gap-8 rounded-md justify-center items-center h-full w-full px-5">
+          {/* Text Content */}
+          <div
+            className={`relative flex flex-col gap-8 rounded-md justify-center items-center h-full w-full px-5 ${
+              !isTextLeft ? "lg:order-2" : ""
+            }`}
+          >
             <div className="left-[117px] top-[100px] max-w-[400px]  gap-8 flex flex-col items-center justify-center mt-5 lg:mt-0">
               {/* Badge */}
               <div
@@ -116,8 +141,8 @@ export default function HeroSection({
             </div>
           </div>
 
-          {/* Right Side - Product Card / Mobile Image */}
-          <div>
+          {/* Product Card / Mobile Image */}
+          <div className={isTextLeft ? "flex-1 h-full relative" : "lg:order-1"}>
             {/* Mobile View */}
             <div className="lg:hidden flex flex-col gap-6 items-center relative h-full justify-center">
               {/* Mobile View - Center Image Only */}
@@ -146,14 +171,12 @@ export default function HeroSection({
 
             {/* Desktop View - HeroProductCard */}
             {showProductCard && (
-              <div className="hidden lg:block">
-                <HeroProductCard
-                  productImage={productImage}
-                  productName={productName}
-                  productColorway={productColorway}
-                  productPrice={productPrice}
-                />
-              </div>
+              <HeroProductCard
+                productImage={productImage}
+                productName={productName}
+                productColorway={productColorway}
+                productPrice={productPrice}
+              />
             )}
           </div>
         </div>

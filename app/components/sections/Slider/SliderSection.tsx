@@ -20,12 +20,12 @@ export default function SliderSection() {
         {/* Flex container for text and product parts */}
         <div className="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center lg:items-stretch">
           {/* Text Content - Title, Description, Button - 50% on desktop */}
-          <div className="w-full lg:w-1/2 flex items-center lg:pl-[147px] mt-16">
+          <div className="w-full lg:w-1/2 flex items-center lg:pl-[147px] mt-8">
             <SliderText />
           </div>
 
           {/* Product Image - Placeholder with badges - 50% on desktop */}
-          <div className="w-full lg:w-1/2 flex items-center justify-center pt-16">
+          <div className="w-full lg:w-1/2 flex items-center justify-center lg:mt-8">
             <SliderProduct />
           </div>
         </div>

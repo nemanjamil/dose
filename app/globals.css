@@ -22,6 +22,9 @@
   --color-secondary: #9c5243;
   --color-tertiary: #a7253b;
 
+  /* Font Family */
+  --font-albert-sans: var(--font-albert-sans);
+
   /* Font Weights */
   --font-weight-medium: 500;
   --font-weight-bold: 700;

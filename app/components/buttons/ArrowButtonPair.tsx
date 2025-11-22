@@ -31,10 +31,7 @@ export default function ArrowButtonPair({
     ? "flex flex-col gap-6 items-center"
     : "flex gap-6 items-center";
 
-  const counterPadding =
-    variant === "compact"
-      ? "px-3 py-2"
-      : "px-4 py-2";
+  const counterPadding = variant === "compact" ? "px-3 py-2" : "px-4 py-2";
   const counterTextSize =
     variant === "compact" ? "text-[14px]" : "text-[16px] sm:text-[18px]";
   const counterTracking =
@@ -64,7 +61,7 @@ export default function ArrowButtonPair({
 
         {/* Slide Counter */}
         <div
-          className={`bg-dose-peach ${counterPadding} rounded-[99px] flex items-center justify-center ${
+          className={`${counterPadding} rounded-[99px] flex items-center justify-center ${
             isVertical ? "min-w-[80px] h-[49px]" : "min-w-[80px]"
           }`}
         >

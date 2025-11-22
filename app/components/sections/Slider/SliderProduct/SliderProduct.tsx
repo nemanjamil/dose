@@ -14,19 +14,21 @@
  */
 
 import { useState } from "react";
-import ProductImage from './ProductImage';
-import FeatureBadge from './FeatureBadge';
-import ColorSwatch from './ColorSwatch';
-import SlideIndicators from './SlideIndicators';
-import TopBar from './TopBar';
+import ProductImage from "./ProductImage";
+import FeatureBadge from "./FeatureBadge";
+import ColorSwatch from "./ColorSwatch";
+import SlideIndicators from "./SlideIndicators";
+import TopBar from "./TopBar";
 
 // Feature badge icons - local images
 const iconBPAFree = "/images/icons/bpa-free.svg";
 const iconLeakProof = "/images/icons/leak-proof.svg";
 const icon24hCold = "/images/icons/24h-cold.svg";
+const rubberBase = "/images/icons/rubberBase.svg";
+const cupHolderFrinedly = "/images/icons/cupHolderFriendly.svg";
 
 // Type for feature position
-type FeaturePosition = 'top-left' | 'top-right' | 'bottom-left';
+type FeaturePosition = "top-left" | "top-right" | "bottom-left";
 
 interface Feature {
   icon: string;
@@ -55,16 +57,23 @@ const slides: Slide[] = [
     id: 2,
     image: "/images/products/slider2.png",
     features: [
-      { icon: iconBPAFree, label: "Cup Holder Friendly", position: "top-left" },
-      { icon: iconLeakProof, label: "Rubber base", position: "top-right" },
-      { icon: icon24hCold, label: "24h cold water", position: "bottom-left" },
+      {
+        icon: cupHolderFrinedly,
+        label: "Cup Holder Friendly",
+        position: "top-left",
+      },
+      { icon: rubberBase, label: "Rubber base", position: "top-right" },
     ],
   },
   {
     id: 3,
-    image: "/images/products/slider2.png",
+    image: "/images/products/slider3.png",
     features: [
-      { icon: iconBPAFree, label: "Food Grade Stainless", position: "top-left" },
+      {
+        icon: iconBPAFree,
+        label: "Food Grade Stainless",
+        position: "top-left",
+      },
       { icon: icon24hCold, label: "24h cold water", position: "top-right" },
       { icon: iconLeakProof, label: "Durable Design", position: "bottom-left" },
     ],
@@ -96,7 +105,10 @@ export default function SliderProduct() {
       </div>
 
       {/* Slide Indicators */}
-      <SlideIndicators currentSlide={currentSlide} onSlideChange={setCurrentSlide} />
+      <SlideIndicators
+        currentSlide={currentSlide}
+        onSlideChange={setCurrentSlide}
+      />
 
       {/* Top Bar - Social Icons and Shop Button (Desktop only) */}
       <div className="hidden md:block">
