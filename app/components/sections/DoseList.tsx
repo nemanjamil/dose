@@ -43,10 +43,10 @@ export default function DoseList() {
   ];
 
   return (
-    <div className="py-[var(--spacing-64)] px-[16px] sm:px-[var(--spacing-32)]">
+    <div className="py-16 px-4 sm:px-8">
       <div className="max-w-[1440px] mx-auto">
         {/* Centered Text Content */}
-        <div className="flex flex-col gap-[16px] items-center text-center mb-[var(--spacing-64)] max-w-[675px] mx-auto">
+        <div className="flex flex-col gap-4 items-center text-center mb-16 max-w-[675px] mx-auto">
           <h2 className="font-bold text-dose-dark text-[40px] sm:text-[56px] tracking-[-0.64px] sm:tracking-[-1.12px] leading-[1.2]">
             DOSE Collection
           </h2>
@@ -56,9 +56,9 @@ export default function DoseList() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[24px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {doseProducts.map((product) => (
-            <div key={product.id} className="flex flex-col gap-[24px]">
+            <div key={product.id} className="flex flex-col gap-6">
               {/* Product Card with Image and Rating */}
               <div className="relative w-full h-[480px] rounded-[20px] overflow-hidden bg-dose-light">
                 <Image
@@ -70,7 +70,7 @@ export default function DoseList() {
                 />
 
                 {/* Rating Badge */}
-                <div className="absolute top-[16px] left-[16px] z-10 bg-white/20 backdrop-blur-sm flex gap-[7px] items-center justify-center px-[16px] py-[8px] rounded-[99px]">
+                <div className="absolute top-4 left-4 z-10 bg-white/20 backdrop-blur-sm flex gap-1.5 items-center justify-center px-4 py-2 rounded-[99px]">
                   <span className="text-white font-bold text-[16px] leading-[1.5]">
                     ⭐ {product.rating}
                   </span>
@@ -78,11 +78,11 @@ export default function DoseList() {
               </div>
 
               {/* Product Info */}
-              <div className="flex flex-col gap-[8px]">
+              <div className="flex flex-col gap-2">
                 <h3 className="font-bold text-dose-dark text-[24px] tracking-[-0.36px] leading-[1.5]">
                   {product.name}
                 </h3>
-                <div className="bg-dose-peach px-[12px] py-[10px] rounded-[14px] w-fit">
+                <div className="bg-dose-peach px-3 py-2.5 rounded-[14px] w-fit">
                   <p className="font-bold text-dose-dark text-[18px] tracking-[-0.36px] leading-[1.5]">
                     {product.price}
                   </p>

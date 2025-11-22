@@ -9,21 +9,7 @@
  * Figma design: https://www.figma.com/design/I7GYdab3FirpOg941b6wTL/Dose-Web-Project?node-id=95-15&m=dev
  */
 
-import { useState } from "react";
-import { ArrowButtonPair } from "../buttons";
-
 export default function DoseInRealLife() {
-  const [currentSlide, setCurrentSlide] = useState(1);
-  const totalSlides = 12;
-
-  const handlePrevious = () => {
-    setCurrentSlide((prev) => (prev === 1 ? totalSlides : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentSlide((prev) => (prev === totalSlides ? 1 : prev + 1));
-  };
-
   return (
     <div className="py-[48px] sm:py-[64px] px-[16px] sm:px-[32px] relative">
       <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] relative">

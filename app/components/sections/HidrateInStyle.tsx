@@ -15,14 +15,14 @@ export default function HidrateInStyle() {
   };
 
   return (
-    <section className="w-full py-[var(--spacing-64)] px-[16px] sm:px-[var(--spacing-32)]">
+    <section className="w-full py-16 px-4 sm:px-8">
       <div className="max-w-[1440px] mx-auto">
-        <div className="flex flex-col gap-[var(--spacing-64)]">
-          <div className="flex justify-center flex-col items-center gap-[4px]">
+        <div className="flex flex-col gap-16">
+          <div className="flex justify-center flex-col items-center gap-1">
             {/* Item 1 - ColorSwatch */}
             <ColorSwatch />
 
-            <div className="flex flex-col items-center gap-[12px]">
+            <div className="flex flex-col items-center gap-3">
               <h2 className="text-dose-dark font-bold text-[56px] tracking-[-0.48px] text-center">
                 Hydrate in Style. Choose. Your Dose Flask.
               </h2>

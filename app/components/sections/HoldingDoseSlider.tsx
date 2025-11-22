@@ -135,9 +135,9 @@ export default function HoldingDoseSlider() {
   );
 
   return (
-    <section className="py-[var(--spacing-8)] px-[16px] sm:px-[var(--spacing-32)] w-full bg-dose-light">
-      <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[var(--spacing-32)]">
-        <div className="flex justify-end mb-[12px]">
+    <section className="py-2 px-4 sm:px-8 w-full bg-dose-light">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+        <div className="flex justify-end mb-3">
           <ArrowButtonPair
             currentSlide={currentSlide}
             totalSlides={totalSlides}
@@ -148,11 +148,11 @@ export default function HoldingDoseSlider() {
         </div>
 
         {/* Carousel Container */}
-        <div className="flex flex-col items-center gap-[48px]">
+        <div className="flex flex-col items-center gap-12">
           {/* Testimonial Cards Grid */}
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px] justify-center">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
             {visibleCards.map((testimonial) => (
-              <div key={testimonial.id} className="flex flex-col gap-[16px]">
+              <div key={testimonial.id} className="flex flex-col gap-4">
                 {/* Image Container */}
                 <div className="relative h-[450px] w-full rounded-[20px] overflow-hidden shadow-[0px_10px_24px_0px_rgba(135,84,55,0.15)] group">
                   <Image
@@ -177,7 +177,7 @@ export default function HoldingDoseSlider() {
                 </div>
 
                 {/* Star Rating */}
-                <div className="flex gap-[4px]">
+                <div className="flex gap-1">
                   {[...Array(testimonial.stars)].map((_, i) => (
                     <span key={i} className="text-[18px]">
                       ⭐
@@ -186,7 +186,7 @@ export default function HoldingDoseSlider() {
                 </div>
 
                 {/* Headline */}
-                <div className="flex flex-col gap-[4px]">
+                <div className="flex flex-col gap-1">
                   <h3 className="font-bold text-dose-dark text-[16px] leading-[1.5]">
                     {testimonial.headline}
                   </h3>

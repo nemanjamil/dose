@@ -28,13 +28,13 @@ export default function ArrowButtonPair({
   const isVertical = layout === "vertical";
 
   const containerClass = isVertical
-    ? "flex flex-col gap-[var(--spacing-24)] items-center"
-    : "flex gap-[var(--spacing-24)] items-center";
+    ? "flex flex-col gap-6 items-center"
+    : "flex gap-6 items-center";
 
   const counterPadding =
     variant === "compact"
-      ? "px-[var(--spacing-12)] py-[var(--spacing-8)]"
-      : "px-[var(--spacing-16)] py-[var(--spacing-8)]";
+      ? "px-3 py-2"
+      : "px-4 py-2";
   const counterTextSize =
     variant === "compact" ? "text-[14px]" : "text-[16px] sm:text-[18px]";
   const counterTracking =
@@ -43,13 +43,13 @@ export default function ArrowButtonPair({
       : "tracking-[-0.32px] sm:tracking-[-0.36px]";
 
   return (
-    <div className="bg-white rounded-[99px] px-[var(--spacing-8)] py-[var(--spacing-8)] shadow-[0px_10px_24px_0px_rgba(135,84,55,0.3)]">
+    <div className="bg-white rounded-[99px] p-2 shadow-[0px_10px_24px_0px_rgba(135,84,55,0.3)]">
       <div className={containerClass}>
         {/* Left Arrow Button */}
         <button
           onClick={onPrevious}
           aria-label="Previous slide"
-          className="bg-dose-peach hover:bg-[#ffd4b8] transition-colors flex gap-[var(--spacing-8)] items-center justify-center px-[var(--spacing-12)] py-[var(--spacing-8)] rounded-[99px] size-[46px] flex-shrink-0"
+          className="bg-dose-peach hover:bg-[#ffd4b8] transition-colors flex gap-2 items-center justify-center px-3 py-2 rounded-[99px] size-[46px] flex-shrink-0"
         >
           <svg
             className="w-[24px] h-[24px] text-dose-dark"
@@ -71,7 +71,7 @@ export default function ArrowButtonPair({
           <p
             className={`font-bold text-dose-accent ${counterTextSize} ${counterTracking}`}
           >
-            {String(currentSlide).padStart(2, "0")} /{" "}
+            {String(currentSlide + 1).padStart(2, "0")} /{" "}
             {String(totalSlides).padStart(2, "0")}
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function ArrowButtonPair({
         <button
           onClick={onNext}
           aria-label="Next slide"
-          className="bg-dose-peach hover:bg-[#ffd4b8] transition-colors flex gap-[var(--spacing-8)] items-center justify-center px-[var(--spacing-12)] py-[var(--spacing-8)] rounded-[99px] size-[46px] flex-shrink-0"
+          className="bg-dose-peach hover:bg-[#ffd4b8] transition-colors flex gap-2 items-center justify-center px-3 py-2 rounded-[99px] size-[46px] flex-shrink-0"
         >
           <svg
             className="w-[24px] h-[24px] text-dose-dark"
