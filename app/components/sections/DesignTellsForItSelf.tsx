@@ -10,11 +10,12 @@
  */
 
 import Image from "next/image";
+import Container from "../Container";
 
 export default function DesignTellsForItSelf() {
   return (
     <section className="w-full sm:px-8">
-      <div className="max-w-[1440px] mx-auto px-8 pt-16 bg-cover bg-center">
+      <Container className="px-8 pt-16 bg-cover bg-center">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center rounded-[32px] h-[650px]"
           style={{
@@ -112,7 +113,7 @@ export default function DesignTellsForItSelf() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

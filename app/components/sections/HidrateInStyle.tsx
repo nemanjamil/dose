@@ -8,6 +8,7 @@
 
 import { ColorSwatch } from "../sections/Slider/SliderProduct";
 import CTAButton from "../CTAButton";
+import Container from "../Container";
 
 export default function HidrateInStyle() {
   const handleShopClick = () => {
@@ -16,7 +17,7 @@ export default function HidrateInStyle() {
 
   return (
     <section className="w-full py-16 px-4 sm:px-8">
-      <div className="max-w-[1440px] mx-auto">
+      <Container>
         <div className="flex flex-col gap-16">
           <div className="flex justify-center flex-col items-center gap-1">
             {/* Item 1 - ColorSwatch */}
@@ -31,7 +32,7 @@ export default function HidrateInStyle() {
             <CTAButton onClick={handleShopClick} />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

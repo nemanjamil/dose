@@ -12,6 +12,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowButtonPair } from "../buttons";
+import Container from "../Container";
 
 interface TestimonialCard {
   id: number;
@@ -136,7 +137,7 @@ export default function HoldingDoseSlider() {
 
   return (
     <section className="py-2 px-4 sm:px-8 w-full bg-dose-light">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+      <Container className="px-4 sm:px-8">
         <div className="flex justify-end mb-3">
           <ArrowButtonPair
             currentSlide={currentSlide}
@@ -200,7 +201,7 @@ export default function HoldingDoseSlider() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

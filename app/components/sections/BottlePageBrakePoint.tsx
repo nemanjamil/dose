@@ -8,11 +8,12 @@
  */
 
 import Image from "next/image";
+import Container from "../Container";
 
 export default function BottlePageBrakePoint() {
   return (
     <section className="w-full py-16 px-4 sm:px-8">
-      <div className="max-w-[1440px] mx-auto">
+      <Container>
         {/* Divider Line with Bottle Image */}
         <div className="relative flex items-center justify-center my-12">
           {/* Line with Gradient Shadow - Limited to container width */}
@@ -30,7 +31,7 @@ export default function BottlePageBrakePoint() {
             />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

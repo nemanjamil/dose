@@ -5,6 +5,8 @@ import HoldingDoseSlider from "../../components/sections/HoldingDoseSlider";
 import HidrateInStyle from "../../components/sections/HidrateInStyle";
 import DoseList from "../../components/sections/DoseList";
 import BottlePageBrakePoint from "../../components/sections/BottlePageBrakePoint";
+import CenteredText from "../../components/sections/CenteredText";
+import Testemonials from "../../components/sections/Testemonials";
 
 /**
  * Home Page (/ route)
@@ -33,6 +35,10 @@ export default function HomePage() {
       <DoseList />
 
       <BottlePageBrakePoint />
+
+      <CenteredText />
+
+      <Testemonials />
     </div>
   );
 }

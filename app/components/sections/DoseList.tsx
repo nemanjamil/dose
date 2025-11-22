@@ -9,6 +9,7 @@
  */
 
 import Image from "next/image";
+import Container from "../Container";
 
 export default function DoseList() {
   const doseProducts = [
@@ -44,7 +45,7 @@ export default function DoseList() {
 
   return (
     <div className="py-16 px-4 sm:px-8">
-      <div className="max-w-[1440px] mx-auto">
+      <Container>
         {/* Centered Text Content */}
         <div className="flex flex-col gap-4 items-center text-center mb-16 max-w-[675px] mx-auto">
           <h2 className="font-bold text-dose-dark text-[40px] sm:text-[56px] tracking-[-0.64px] sm:tracking-[-1.12px] leading-[1.2]">
@@ -91,7 +92,7 @@ export default function DoseList() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </div>
   );
 }
