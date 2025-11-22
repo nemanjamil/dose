@@ -97,7 +97,7 @@ export default function HeroSection({
         >
           {/* Text Content */}
           <div
-            className={`relative flex flex-col gap-8 rounded-md justify-center items-center h-full w-full px-5 ${
+            className={`relative flex flex-col gap-8 justify-center items-center h-full w-full px-5 ${
               !isTextLeft ? "lg:order-2" : ""
             }`}
           >
@@ -143,9 +143,8 @@ export default function HeroSection({
 
           {/* Product Card / Mobile Image */}
           <div className={isTextLeft ? "flex-1 h-full relative" : "lg:order-1"}>
-            {/* Mobile View */}
+            {/* Mobile View - Center Image Only */}
             <div className="lg:hidden flex flex-col gap-6 items-center relative h-full justify-center">
-              {/* Mobile View - Center Image Only */}
               {centerImage && (
                 <div className="relative w-[300px] h-auto">
                   <Image
@@ -170,14 +169,16 @@ export default function HeroSection({
             </div>
 
             {/* Desktop View - HeroProductCard */}
-            {showProductCard && (
-              <HeroProductCard
-                productImage={productImage}
-                productName={productName}
-                productColorway={productColorway}
-                productPrice={productPrice}
-              />
-            )}
+            <div className="hidden lg:block">
+              {showProductCard && (
+                <HeroProductCard
+                  productImage={productImage}
+                  productName={productName}
+                  productColorway={productColorway}
+                  productPrice={productPrice}
+                />
+              )}
+            </div>
           </div>
         </div>
       </Container>

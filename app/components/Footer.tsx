@@ -127,8 +127,8 @@ export default function Footer() {
           </div>
 
           {/* Right Section - Product Card */}
-          <div className="sm:w-[304px]">
-            <div className="bg-dose-accent relative rounded-t-[16px] overflow-hidden p-[24px] flex flex-col gap-[24px] h-full">
+          <div className="w-full sm:w-[304px]">
+            <div className="bg-dose-accent relative rounded-t-[16px] overflow-hidden p-[24px] flex flex-col gap-[24px] h-full min-h-[350px]">
               {/* Logo */}
               <Link
                 href="/"
@@ -148,13 +148,13 @@ export default function Footer() {
               </p>
 
               {/* Product Image */}
-              <div className="w-full flex justify-center mt-auto absolute bottom-0">
+              <div className="w-full flex justify-center mt-auto absolute bottom-[-20] left-0.5">
                 <Image
                   src="/images/products/footerImage.png"
                   alt="Featured Product"
                   width={200}
                   height={200}
-                  className="object-contain"
+                  className="object-contain sm:w-[300px] sm:h-[300px]"
                 />
               </div>
             </div>

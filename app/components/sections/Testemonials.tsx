@@ -131,7 +131,7 @@ export default function Testemonials() {
         >
           <div className="flex flex-col gap-4 p-8 bg-white rounded-[16px] shadow-[0px_10px_24px_0px_rgba(135,84,55,0.1)] lg:min-h-[400px]">
             {/* Testimonial Text */}
-            <p className="font-medium text-dose-mid text-[16px] leading-[1.5] opacity-80">
+            <p className="font-medium text-dose-mid text-p-small leading-[1.5] opacity-80">
               {currentTestimonial.text}
             </p>
 
@@ -156,7 +156,7 @@ export default function Testemonials() {
               {/* Rating Stars */}
               <div className="flex gap-1 flex-shrink-0">
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-[18px]">
+                  <span key={i} className="text-[14px]">
                     ⭐
                   </span>
                 ))}
@@ -187,7 +187,7 @@ export default function Testemonials() {
               className="flex flex-col gap-4 p-8 bg-white rounded-[16px] shadow-[0px_10px_24px_0px_rgba(135,84,55,0.1)]"
             >
               {/* Testimonial Text */}
-              <p className="font-medium text-dose-mid text-[16px] sm:text-[18px] leading-[1.5] opacity-80">
+              <p className="font-medium text-dose-mid text-p-small leading-[1.5] opacity-80">
                 {testimonial.text}
               </p>
 
@@ -208,15 +208,14 @@ export default function Testemonials() {
                 <h4 className="font-bold text-dose-dark text-[16px] leading-[1.5] flex-1">
                   {testimonial.name} {testimonial.surname}
                 </h4>
-
-                {/* Rating Stars */}
-                <div className="flex gap-1 flex-shrink-0">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-[18px]">
-                      ⭐
-                    </span>
-                  ))}
-                </div>
+              </div>
+              {/* Rating Stars */}
+              <div className="flex gap-1 flex-shrink-0">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <span key={i} className="text-[18px]">
+                    ⭐
+                  </span>
+                ))}
               </div>
             </div>
           ))}

@@ -15,7 +15,7 @@ export default function DesignTellsForItSelf() {
       backgroundImage="/images/products/design.png"
       backgroundColor="#1a1a1a"
       badge="DOSE"
-      heading="Dizajn koji govori sam za sebe."
+      heading="2 Dizajn koji govori sam za sebe."
       description="Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni poklopac i boje koje izražavaju tvoj karakter. Savršen balans između lepote i praktičnosti. Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
       features={["NO PLASTIC", "STAINLESS STEEL"]}
       productImage="/images/products/malaSlikaHeader.png"

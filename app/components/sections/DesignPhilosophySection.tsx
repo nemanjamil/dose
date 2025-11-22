@@ -8,14 +8,20 @@ export function DesignPhilosophySection() {
           <div className="flex flex-col gap-[16px] items-start">
             <div className="bg-[rgba(255,255,255,0.2)] flex gap-[10px] h-[48px] items-center justify-center px-[24px] py-[12px] rounded-[99px]">
               <div className="h-[24px] w-[73.482px]">
-                <img alt="Dose Logo" className="w-full h-full" src={imgLogotype} />
+                <img
+                  alt="Dose Logo"
+                  className="w-full h-full"
+                  src={imgLogotype}
+                />
               </div>
             </div>
             <p className="font-bold font-bold text-white text-[56px] tracking-[-1.12px]">
-              Dizajn koji govori sam za sebe.
+              1 Dizajn koji govori sam za sebe.
             </p>
             <p className="font-medium font-medium text-white text-[18px] tracking-[-0.36px] leading-[1.5]">
-              Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni poklopac i boje koje izražavaju tvoj karakter.
+              Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje
+              estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni
+              poklopac i boje koje izražavaju tvoj karakter.
             </p>
           </div>
           <div className="flex gap-[12px] items-start">
