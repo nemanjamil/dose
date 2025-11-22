@@ -112,7 +112,11 @@ export default function Footer() {
                       href={link.href}
                       className="bg-white px-[16px] py-[6px] rounded-[8px] h-[44px] flex items-center gap-[10px] hover:shadow-[0px_10px_24px_0px_rgba(135,84,55,0.15)] transition-shadow"
                     >
-                      <img alt={link.label} className="w-[18px] h-[18px]" src={link.icon} />
+                      <img
+                        alt={link.label}
+                        className="w-[18px] h-[18px]"
+                        src={link.icon}
+                      />
                       <span className="font-medium text-dose-mid text-[14px]">
                         {link.label}
                       </span>
@@ -150,13 +154,6 @@ export default function Footer() {
                 Poseti shop, istrazi ponudu i pronadji svoj Dose termos koji se
                 idealno uklopa uz tvoj stil zivota.
               </p>
-
-              {/* CTA Button */}
-              <CTAButton
-                onClick={() => (window.location.href = "/shop")}
-                label="Shop Now"
-                className="w-full"
-              />
 
               {/* Product Image */}
               <div className="relative w-full h-[200px] -mb-[12px]">

@@ -21,7 +21,7 @@ export default function HomeBanner() {
       productPrice="price $35"
       productLabel="Mini 0,6 L Traveler Bottle"
       textColor="dark"
-      centerImage="/images/products/designCup.png"
+      centerImage="/images/products/designTwoCups.png"
     />
   );
 }
