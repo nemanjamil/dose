@@ -39,9 +39,9 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-dose-light rounded-t-[32px] overflow-hidden shadow-[0px_20px_48px_0px_rgba(135,84,55,0.1)]">
-      <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] lg:px-[64px] pt-[64px] relative min-h-[550px]">
+      <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] lg:px-[64px] pt-[64px] relative lg:min-h-[470px]">
         {/* Row 1 - Navigation Links + Product Card */}
-        <div className="flex flex-col lg:flex-row gap-[48px] lg:gap-[64px] mb-[0px] items-center lg:items-start">
+        <div className="flex flex-col lg:flex-row gap-[48px] lg:gap-[64px] mb-[0px] items-center lg:items-start h-full">
           {/* Left Section - Navigation Links */}
           <div className="flex flex-col flex-1 w-full sm:w-auto">
             {/* Row 1 - Navigation Columns */}
