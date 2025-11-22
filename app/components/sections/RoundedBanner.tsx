@@ -12,7 +12,7 @@ import HeroSection from "./HeroSection";
 export default function RoundedBanner() {
   return (
     <section className="w-full lg:px-4 sm:px-8 my-16">
-      <div className="rounded-[32px] overflow-hidden">
+      <div className="rounded-md overflow-hidden">
         <HeroSection
           backgroundImage="/images/sections/TwoBottlesBackground.png"
           backgroundColor="#E6E6E8"

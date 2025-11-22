@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import SliderSectionAboutUs from "../../components/sections/SliderSectionAboutUs";
 import SectionForRightAndLeftImageAndText from "../../components/sections/SectionForRightAndLeftImageAndText";
 import RoundedBanner from "../../components/sections/RoundedBanner";
+import HoldingDoseSlider from "@/app/components/sections/HoldingDoseSlider";
 
 export default function AboutUsPage() {
   const router = useRouter();
@@ -52,6 +53,10 @@ export default function AboutUsPage() {
       />
 
       <RoundedBanner />
+
+      <HoldingDoseSlider />
+
+      <GreenBanner />
     </div>
   );
 }

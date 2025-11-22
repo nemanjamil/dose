@@ -67,7 +67,7 @@ export default function HeroSection({
     <section className="w-full sm:px-8">
       <Container className="lg:px-8 px-4 pt-16 bg-cover bg-center">
         <div
-          className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-[32px] min-h-[500px] lg:h-[650px] bg-cover bg-left bg-no-repeat"
+          className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-md min-h-[500px] lg:h-[650px] bg-cover bg-left bg-no-repeat"
           style={
             backgroundImage
               ? { backgroundImage: `url(${backgroundImage})` }
@@ -75,7 +75,7 @@ export default function HeroSection({
           }
         >
           {/* Left Side - Text Content */}
-          <div className="relative flex flex-col gap-8 rounded-[16px] justify-center items-center h-full w-full px-5">
+          <div className="relative flex flex-col gap-8 rounded-md justify-center items-center h-full w-full px-5">
             <div className="left-[117px] top-[100px] max-w-[400px]  gap-8 flex flex-col items-center justify-center mt-5 lg:mt-0">
               {/* Badge */}
               <div

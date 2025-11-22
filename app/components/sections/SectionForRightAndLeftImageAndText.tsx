@@ -42,7 +42,7 @@ export default function SectionForRightAndLeftImageAndText({
         src={image}
         alt={imageAlt}
         fill
-        className="object-cover rounded-[20px]"
+        className="object-cover rounded-lg"
       />
     </div>
   );
@@ -67,7 +67,7 @@ export default function SectionForRightAndLeftImageAndText({
             <button
               key={index}
               onClick={button.onClick}
-              className="w-fit bg-dose-accent/20 text-dose-accent font-bold py-3 px-8 rounded-[20px] hover:bg-dose-accent/30 transition-colors flex items-center gap-2 uppercase"
+              className="w-fit bg-dose-accent/20 text-dose-accent font-bold py-3 px-8 rounded-lg hover:bg-dose-accent/30 transition-colors flex items-center gap-2 uppercase"
             >
               {button.icon && (
                 <img alt="" className="w-[20px] h-[20px]" src={button.icon} />

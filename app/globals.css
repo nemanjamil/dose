@@ -38,6 +38,12 @@
   --font-size-p-small: 1.125rem; /* 18px */
   --font-size-p-regular: 1.25rem; /* 20px */
   --font-size-p-large: 1.375rem; /* 20px */
+
+  /* Border Radius */
+  --radius-sm: 0.875rem; /* 14px */
+  --radius-md: 1rem; /* 16px */
+  --radius-lg: 1.25rem; /* 20px */
+  --radius-xl: 2rem; /* 32px */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -137,4 +143,21 @@ p {
     font-size: var(--font-size-p-large);
     letter-spacing: -0.36px;
   }
+}
+
+/* Border Radius Utilities */
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--radius-xl);
 }
