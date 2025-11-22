@@ -4,6 +4,7 @@ import DesignTellsForItSelf from "../../components/sections/DesignTellsForItSelf
 import HoldingDoseSlider from "../../components/sections/HoldingDoseSlider";
 import HidrateInStyle from "../../components/sections/HidrateInStyle";
 import DoseList from "../../components/sections/DoseList";
+import BottlePageBrakePoint from "../../components/sections/BottlePageBrakePoint";
 
 /**
  * Home Page (/ route)
@@ -30,6 +31,8 @@ export default function HomePage() {
       <HidrateInStyle />
 
       <DoseList />
+
+      <BottlePageBrakePoint />
     </div>
   );
 }
