@@ -8,6 +8,7 @@ import BottlePageBrakePoint from "../../components/sections/BottlePageBrakePoint
 import CenteredText from "../../components/sections/CenteredText";
 import Testemonials from "../../components/sections/Testemonials";
 import HomeBanner from "../../components/sections/HomeBanner";
+import BuyYourDoseToday from "../../components/sections/BuyYourDoseToday";
 
 /**
  * Home Page (/ route)
@@ -42,6 +43,8 @@ export default function HomePage() {
       <Testemonials />
 
       <HomeBanner />
+
+      <BuyYourDoseToday />
     </div>
   );
 }
