@@ -88,27 +88,58 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Overlay - Click to Close */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-dose-dark/95 backdrop-blur-sm border-t border-white/10">
-          <div className="flex flex-col gap-4 px-4 py-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`transition-colors text-[14px] font-medium ${
-                  isActive(item.href)
-                    ? "text-dose-peach font-bold"
-                    : "text-white hover:text-dose-peach"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </nav>
+        <div
+          className="fixed inset-0 bg-black/20 md:hidden z-30"
+          onClick={() => setIsMenuOpen(false)}
+        ></div>
       )}
+
+      {/* Mobile Menu Dropdown - Slide from Right */}
+      <div
+        className={`fixed top-0 right-0 h-screen w-3/4 md:hidden bg-white z-40 transform transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Menu Header with Logo and Close Button */}
+        <div className="flex items-center justify-between px-4 py-5 border-b border-dose-mid/30">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="h-[32px] w-[97.976px] hover:opacity-80 transition-opacity"
+          >
+            <img alt="Dose Logo" className="w-full h-full" src={imgLogotype} />
+          </Link>
+
+          {/* Close Button */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity"
+            aria-label="Close menu"
+          >
+            <span className="text-dose-dark text-[24px] font-bold">×</span>
+          </button>
+        </div>
+
+        {/* Menu Items */}
+        <div className="flex flex-col gap-4 px-4 py-6">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsMenuOpen(false)}
+              className={`transition-colors text-[18px] font-medium ${
+                isActive(item.href)
+                  ? "text-dose-accent font-bold"
+                  : "text-dose-dark hover:text-dose-accent"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>
     </header>
   );
 }
