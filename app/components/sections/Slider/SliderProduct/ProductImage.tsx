@@ -5,14 +5,16 @@
 
 import Image from "next/image";
 
-const imgSubtract = "/images/products/subtract.png";
+interface ProductImageProps {
+  src?: string;
+}
 
-export default function ProductImage() {
+export default function ProductImage({ src = "/images/products/subtract.png" }: ProductImageProps) {
   return (
     <div className="absolute inset-0 h-full w-full">
       <Image
         alt="Dose Thermos Product"
-        src={imgSubtract}
+        src={src}
         fill
         priority
         className="object-cover"

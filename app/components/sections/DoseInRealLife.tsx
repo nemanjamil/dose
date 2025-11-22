@@ -1,20 +1,20 @@
-"use client";
-
 /**
  * DoseInRealLife Component
  *
- * Carousel section showcasing real-life moments with DOSE products
- * Features title, description, carousel navigation controls, and vertical carousel controls in bottom-right corner
+ * Section showcasing real-life moments with DOSE products
+ * Features title and description content
  *
  * Figma design: https://www.figma.com/design/I7GYdab3FirpOg941b6wTL/Dose-Web-Project?node-id=95-15&m=dev
  */
 
+import Container from "../Container";
+
 export default function DoseInRealLife() {
   return (
-    <div className="py-[48px] sm:py-[64px] px-[16px] sm:px-[32px] relative">
-      <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] relative">
+    <section className="w-full py-16 px-4 sm:px-8">
+      <Container>
         {/* Centered Text Content */}
-        <div className="flex flex-col gap-[16px] items-center text-center mb-[32px] sm:mb-[48px] max-w-[675px] mx-auto">
+        <div className="flex flex-col gap-6 items-center text-center mb-8 max-w-[675px] mx-auto">
           <h2 className="font-bold text-dose-dark text-[32px] sm:text-[48px] lg:text-[56px] tracking-[-0.64px] sm:tracking-[-0.96px] lg:tracking-[-1.12px] leading-[1.2]">
             DOSE u stvarnom životu
           </h2>
@@ -24,7 +24,7 @@ export default function DoseInRealLife() {
             stvarno.
           </p>
         </div>
-      </div>
-    </div>
+      </Container>
+    </section>
   );
 }

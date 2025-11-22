@@ -90,9 +90,9 @@ const testimonials: TestimonialCard[] = [
 export default function Testemonials() {
   return (
     <section className="w-full py-16 px-4 sm:px-8">
-      <Container className="overflow-hidden">
+      <Container>
         {/* Grid with 4 columns - automatically creates rows for 8 elements */}
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}

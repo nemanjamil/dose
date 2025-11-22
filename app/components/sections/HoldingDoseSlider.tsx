@@ -22,6 +22,8 @@ interface TestimonialCard {
   summary: string;
 }
 
+const SHADOW_VALUE = "0px_10px_24px_0px_rgba(135,84,55,0.15)";
+
 const testimonials: TestimonialCard[] = [
   {
     id: 1,
@@ -152,34 +154,33 @@ export default function HoldingDoseSlider() {
         <div className="flex flex-col items-center gap-12">
           {/* Testimonial Cards Grid */}
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
-            {visibleCards.map((testimonial) => (
+            {visibleCards.map((testimonial, index) => (
               <div key={testimonial.id} className="flex flex-col gap-4">
                 {/* Image Container */}
-                <div className="relative h-[450px] w-full rounded-[20px] overflow-hidden shadow-[0px_10px_24px_0px_rgba(135,84,55,0.15)] group">
+                <div className={`relative h-[450px] w-full rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group`}>
                   <Image
                     src={testimonial.image}
                     alt="User holding DOSE thermos"
                     fill
                     className="object-cover"
-                    priority
+                    priority={index === 0}
                   />
                   {/* Play Button */}
                   <button
                     className="absolute inset-0 flex items-center justify-center group-hover:bg-black/20 transition-all duration-300 cursor-pointer"
-                    onClick={() => {
-                      // Handle video play - can be extended for actual video playback
-                      console.log(`Playing video for testimonial ${testimonial.id}`);
-                    }}
+                    aria-label="Play video"
                   >
-                    <div className="w-[56px] h-[56px] rounded-full bg-dose-peach hover:bg-[#FFD9C3] flex items-center justify-center transition-all duration-300 shadow-lg cursor-pointer">
-                      <div className="w-0 h-0 border-l-[16px] border-l-white border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ml-1"></div>
+                    <div className="w-[56px] h-[56px] rounded-full bg-dose-peach hover:bg-[#FFD9C3] flex items-center justify-center transition-all duration-300 shadow-lg">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 2L5 18L16 10L5 2Z" fill="white" />
+                      </svg>
                     </div>
                   </button>
                 </div>
 
                 {/* Star Rating */}
                 <div className="flex gap-1">
-                  {[...Array(testimonial.stars)].map((_, i) => (
+                  {Array.from({ length: testimonial.stars }).map((_, i) => (
                     <span key={i} className="text-[18px]">
                       ⭐
                     </span>

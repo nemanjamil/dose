@@ -58,7 +58,7 @@ export default function DoseList() {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {doseProducts.map((product) => (
+          {doseProducts.map((product, index) => (
             <div key={product.id} className="flex flex-col gap-6">
               {/* Product Card with Image and Rating */}
               <div className="relative w-full h-[480px] rounded-[20px] overflow-hidden bg-dose-light">
@@ -67,7 +67,7 @@ export default function DoseList() {
                   alt={product.name}
                   fill
                   className="object-cover"
-                  priority
+                  priority={index === 0}
                 />
 
                 {/* Rating Badge */}

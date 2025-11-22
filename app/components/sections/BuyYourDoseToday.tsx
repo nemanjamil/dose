@@ -22,7 +22,7 @@ export default function BuyYourDoseToday() {
       <Container>
         <div className="flex flex-col gap-8 items-center">
           {/* First Row - Background Image */}
-          <div className="relative w-[80%] h-[400px] rounded-[32px] overflow-hidden">
+          <div className="relative w-full sm:w-[90%] lg:w-[80%] h-[250px] sm:h-[350px] lg:h-[400px] rounded-[32px] overflow-hidden">
             <Image
               src="/images/sections/grupnaSlika.png"
               alt="Group image"
@@ -37,11 +37,11 @@ export default function BuyYourDoseToday() {
             <ColorSwatch />
 
             <div className="flex flex-col items-center gap-3">
-              <h2 className="text-dose-dark font-bold text-[56px] tracking-[-0.48px] text-center">
+              <h2 className="text-dose-dark font-bold text-[32px] sm:text-[40px] lg:text-[56px] tracking-[-0.48px] text-center leading-[1.2]">
                 Kupi svoj Dose danas!
               </h2>
 
-              <p className="text-dose-dark">
+              <p className="text-dose-dark font-medium text-[14px] sm:text-[16px] lg:text-[18px] leading-[1.5]">
                 Poseti shop, istrazi ponudu i pronadji svoj Dose termos koji se
                 idealno uklopa uz tvoj stil zivota.
               </p>
