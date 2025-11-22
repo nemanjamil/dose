@@ -9,7 +9,7 @@
  * Figma design: https://www.figma.com/design/I7GYdab3FirpOg941b6wTL/Dose-Web-Project?node-id=95-7&m=dev
  */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowButtonPair } from "../buttons";
 import Container from "../Container";
@@ -114,9 +114,26 @@ const testimonials: TestimonialCard[] = [
 
 export default function HoldingDoseSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(1);
 
   const totalSlides = testimonials.length;
-  const cardsPerView = 4;
+
+  // Detect screen size and set cardsPerView
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setCardsPerView(1); // Mobile
+      } else if (window.innerWidth < 1024) {
+        setCardsPerView(2); // Tablet
+      } else {
+        setCardsPerView(4); // Desktop
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handlePrevious = () => {
     setCurrentSlide((prev) =>
@@ -153,11 +170,17 @@ export default function HoldingDoseSlider() {
         {/* Carousel Container */}
         <div className="flex flex-col items-center gap-12">
           {/* Testimonial Cards Grid */}
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+          <div className={`w-full grid gap-8 justify-center ${
+            cardsPerView === 1 ? 'grid-cols-1' :
+            cardsPerView === 2 ? 'sm:grid-cols-2' :
+            'lg:grid-cols-4'
+          }`}>
             {visibleCards.map((testimonial, index) => (
               <div key={testimonial.id} className="flex flex-col gap-4">
                 {/* Image Container */}
-                <div className={`relative h-[450px] w-full rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group`}>
+                <div className={`relative w-full rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group ${
+                  cardsPerView === 1 ? 'h-[500px]' : 'h-[450px]'
+                }`}>
                   <Image
                     src={testimonial.image}
                     alt="User holding DOSE thermos"

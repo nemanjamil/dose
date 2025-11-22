@@ -98,8 +98,10 @@ export default function SliderProduct() {
       {/* Slide Indicators */}
       <SlideIndicators currentSlide={currentSlide} onSlideChange={setCurrentSlide} />
 
-      {/* Top Bar - Social Icons and Shop Button */}
-      <TopBar />
+      {/* Top Bar - Social Icons and Shop Button (Desktop only) */}
+      <div className="hidden md:block">
+        <TopBar />
+      </div>
     </div>
   );
 }

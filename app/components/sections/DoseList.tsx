@@ -44,7 +44,7 @@ export default function DoseList() {
   ];
 
   return (
-    <div className="py-16 px-4 sm:px-8">
+    <div className="lg:py-16 py-4 px-4 sm:px-8">
       <Container>
         {/* Centered Text Content */}
         <div className="flex flex-col gap-4 items-center text-center mb-16 max-w-[675px] mx-auto">
@@ -57,9 +57,14 @@ export default function DoseList() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {doseProducts.map((product, index) => (
-            <div key={product.id} className="flex flex-col gap-6">
+            <div
+              key={product.id}
+              className={`flex flex-col gap-6 ${
+                index >= 2 ? "hidden lg:flex" : ""
+              }`}
+            >
               {/* Product Card with Image and Rating */}
               <div className="relative w-full h-[480px] rounded-[20px] overflow-hidden bg-dose-light">
                 <Image

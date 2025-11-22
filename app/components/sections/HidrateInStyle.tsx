@@ -27,9 +27,10 @@ export default function HidrateInStyle() {
               <h2 className="text-dose-dark font-bold text-[56px] tracking-[-0.48px] text-center">
                 Hydrate in Style. Choose. Your Dose Flask.
               </h2>
+              <div className="w-fit">
+                <CTAButton onClick={handleShopClick} />
+              </div>
             </div>
-
-            <CTAButton onClick={handleShopClick} />
           </div>
         </div>
       </Container>

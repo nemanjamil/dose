@@ -396,6 +396,32 @@ npm run lint     # Lint check
 
 ---
 
+## 🏗️ Build Process Rule
+
+**DO NOT run `npm run build` automatically after every code fix.**
+
+**Rule:**
+- ✅ Ask the user first before running a build
+- ✅ Run builds only when explicitly requested
+- ✅ Run builds at the end of a multi-step task if user hasn't mentioned it
+- ✅ Run builds if the user says "build" or "verify"
+- ❌ Don't run builds after each individual fix
+- ❌ Don't assume a build is needed
+
+**When to Build:**
+1. When user explicitly requests: "build the project", "verify", "run build"
+2. When committing changes to git
+3. At the end of a complete feature implementation
+4. When troubleshooting build-related issues
+
+**Why?**
+- Faster iteration during development
+- Reduced unnecessary build times
+- Cleaner terminal output
+- Builds happen when meaningful changes are complete
+
+---
+
 ## ✅ Before Committing
 
 - [ ] Responsive design (test mobile, tablet, desktop)

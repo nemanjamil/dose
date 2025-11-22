@@ -4,10 +4,13 @@
  * Testemonials Component
  *
  * Section displaying customer testimonials
+ * Mobile: Single card with swipe navigation
+ * Desktop: 4-column grid with all testimonials
  * Features testimonial cards with ratings, text, customer photo, and name
  * Based on Figma design: https://www.figma.com/design/I7GYdab3FirpOg941b6wTL/Dose-Web-Project?node-id=100-514
  */
 
+import { useState, useRef } from "react";
 import Container from "../Container";
 import Image from "next/image";
 
@@ -88,11 +91,96 @@ const testimonials: TestimonialCard[] = [
 ];
 
 export default function Testemonials() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+    } else if (isRightSwipe) {
+      setCurrentSlide(
+        (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      );
+    }
+  };
+
+  const currentTestimonial = testimonials[currentSlide];
+
   return (
-    <section className="w-full py-16 px-4 sm:px-8">
+    <section className="w-full lg:py-12 py-4 px-4 sm:px-8">
       <Container>
-        {/* Grid with 4 columns - automatically creates rows for 8 elements */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {/* Mobile View - Single Card with Swipe */}
+        <div
+          className="lg:hidden"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className="flex flex-col gap-4 p-8 bg-white rounded-[16px] shadow-[0px_10px_24px_0px_rgba(135,84,55,0.1)] lg:min-h-[400px]">
+            {/* Testimonial Text */}
+            <p className="font-medium text-dose-mid text-[16px] leading-[1.5] opacity-80">
+              {currentTestimonial.text}
+            </p>
+
+            {/* Customer Info and Rating */}
+            <div className="flex lg:gap-4 items-center lg:mt-auto">
+              {/* Avatar */}
+              <div className="w-11 h-11 rounded-[12px] overflow-hidden bg-white/10 flex-shrink-0 mr-5">
+                <Image
+                  src={currentTestimonial.image}
+                  alt={`${currentTestimonial.name} ${currentTestimonial.surname}`}
+                  width={44}
+                  height={44}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+
+              {/* Name */}
+              <h4 className="font-bold text-dose-dark text-[12px] leading-[1.5] flex-1">
+                {currentTestimonial.name} {currentTestimonial.surname}
+              </h4>
+
+              {/* Rating Stars */}
+              <div className="flex gap-1 flex-shrink-0">
+                {[...Array(currentTestimonial.rating)].map((_, i) => (
+                  <span key={i} className="text-[18px]">
+                    ⭐
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Slide Indicator */}
+            <div className="flex gap-2 justify-center mt-4">
+              {testimonials.map((_, index) => (
+                <div
+                  key={index}
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentSlide
+                      ? "w-8 bg-dose-accent"
+                      : "w-2 bg-dose-light"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop View - Grid with 4 columns */}
+        <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}

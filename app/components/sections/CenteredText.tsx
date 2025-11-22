@@ -9,7 +9,7 @@ import Container from "../Container";
 
 export default function CenteredText() {
   return (
-    <section className="w-full py-16 px-4 sm:px-8">
+    <section className="w-full lg:py-12 py-4 px-4 sm:px-8">
       <Container>
         <div className="flex justify-center">
           <div className="w-full sm:w-[80%] lg:w-[60%] max-w-[600px] flex items-center justify-center">

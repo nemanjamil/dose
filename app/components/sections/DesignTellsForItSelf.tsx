@@ -23,6 +23,7 @@ export default function DesignTellsForItSelf() {
       productPrice="price $35"
       productLabel="Mini 0,6 L Traveler Bottle"
       textColor="light"
+      centerImage="/images/products/designCup.png"
     />
   );
 }
