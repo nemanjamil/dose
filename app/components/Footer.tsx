@@ -33,21 +33,21 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { label: "Facebook", href: "#" },
-    { label: "Instagram", href: "#" },
+    { label: "Facebook", href: "#", icon: "/images/brand/facebookIcon.svg" },
+    { label: "Instagram", href: "#", icon: "/images/brand/InstagramIcon.svg" },
   ];
 
   return (
     <footer className="w-full bg-dose-light rounded-t-[32px] overflow-hidden shadow-[0px_20px_48px_0px_rgba(135,84,55,0.1)]">
       <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] lg:px-[64px] pt-[64px] relative min-h-[550px]">
         {/* Row 1 - Navigation Links + Product Card */}
-        <div className="flex flex-col lg:flex-row gap-[48px] lg:gap-[64px] mb-[0px]">
+        <div className="flex flex-col lg:flex-row gap-[48px] lg:gap-[64px] mb-[0px] items-center lg:items-start">
           {/* Left Section - Navigation Links */}
-          <div className="flex flex-col flex-1">
+          <div className="flex flex-col flex-1 w-full sm:w-auto">
             {/* Row 1 - Navigation Columns */}
-            <div className="flex flex-col sm:flex-row gap-[48px] sm:gap-[112px]">
+            <div className="flex flex-col sm:flex-row gap-[48px] sm:gap-[112px] text-center sm:text-left justify-center sm:justify-start">
               {/* Quick Links */}
-              <div className="flex flex-col gap-[24px]">
+              <div className="flex flex-col gap-[24px] items-center sm:items-start">
                 <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
                   Brzi Linkovi
                 </h3>
@@ -65,7 +65,7 @@ export default function Footer() {
               </div>
 
               {/* Shop Links */}
-              <div className="flex flex-col gap-[24px]">
+              <div className="flex flex-col gap-[24px] items-center sm:items-start">
                 <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
                   Shop
                 </h3>
@@ -83,7 +83,7 @@ export default function Footer() {
               </div>
 
               {/* Legal Links */}
-              <div className="flex flex-col gap-[24px]">
+              <div className="flex flex-col gap-[24px] items-center sm:items-start">
                 <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
                   Legal
                 </h3>
@@ -101,20 +101,18 @@ export default function Footer() {
               </div>
 
               {/* Social Links */}
-              <div className="flex flex-col gap-[24px]">
+              <div className="flex flex-col gap-[24px] items-center sm:items-start">
                 <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
                   Zaprati Nas
                 </h3>
-                <div className="flex flex-col gap-[12px]">
+                <div className="flex flex-col gap-[12px] items-center sm:items-start">
                   {socialLinks.map((link) => (
                     <a
                       key={link.href}
                       href={link.href}
                       className="bg-white px-[16px] py-[6px] rounded-[8px] h-[44px] flex items-center gap-[10px] hover:shadow-[0px_10px_24px_0px_rgba(135,84,55,0.15)] transition-shadow"
                     >
-                      <span className="text-[14px]">
-                        {link.label === "Facebook" ? "f" : "📷"}
-                      </span>
+                      <img alt={link.label} className="w-[18px] h-[18px]" src={link.icon} />
                       <span className="font-medium text-dose-mid text-[14px]">
                         {link.label}
                       </span>
@@ -125,7 +123,7 @@ export default function Footer() {
             </div>
 
             {/* Row 2 - Additional Content */}
-            <div className="flex justify-left mt-8">
+            <div className="flex justify-center sm:justify-left mt-8">
               <p className="font-medium text-dose-mid/60 text-[12px] tracking-[-0.24px]">
                 @ Dose 2025. All rights reserved. Design by Growww.
               </p>
