@@ -111,7 +111,7 @@ export default function SliderProduct() {
       />
 
       {/* Top Bar - Social Icons and Shop Button (Desktop only) */}
-      <div className="hidden md:block">
+      <div className="absolute hidden md:flex right-[0] top-[0px] gap-[16px] items-center">
         <TopBar />
       </div>
     </div>

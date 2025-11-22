@@ -3,16 +3,13 @@
  * Top bar with social icons and Shop Now button
  */
 
-const imgFacebook =
-  "/images/icons/social-1.svg";
-const imgInstagram =
-  "/images/icons/social-2.svg";
-const imgShopIcon =
-  "/images/icons/social-3.svg";
+const imgFacebook = "/images/icons/social-1.svg";
+const imgInstagram = "/images/icons/social-2.svg";
+const imgShopIcon = "/images/icons/social-3.svg";
 
 export default function TopBar() {
   return (
-    <div className="absolute right-[0] top-[0px] flex gap-[16px] items-center">
+    <>
       {/* Facebook Icon */}
       <div className="relative size-[40px]">
         <img alt="Facebook" className="w-full h-full" src={imgFacebook} />
@@ -35,11 +32,11 @@ export default function TopBar() {
               />
             </div>
           </div>
-          <p className="font-bold font-bold text-dose-accent text-[16px] tracking-[-0.32px] uppercase">
+          <p className="font-bold text-dose-accent text-[16px] tracking-[-0.32px] uppercase">
             Shop now
           </p>
         </div>
       </button>
-    </div>
+    </>
   );
 }

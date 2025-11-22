@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import TopBar from "./sections/Slider/SliderProduct/TopBar";
 
 const imgLogotype = "/images/brand/logotype.svg";
 
@@ -17,6 +18,7 @@ export default function Header() {
     { label: "ABOUT US", href: "/about-us" },
     { label: "BLOG", href: "/blog" },
     { label: "CONTACT US", href: "/contact-us" },
+    { label: "SHOP", href: "/shop" },
   ];
 
   const isActive = (href: string) => {
@@ -51,6 +53,13 @@ export default function Header() {
             </Link>
           ))}
         </nav>
+
+        {/* TopBar - Show on Shop Page (Right Side) */}
+        {pathname === "/shop" && (
+          <div className="hidden md:flex gap-[16px] items-center">
+            <TopBar />
+          </div>
+        )}
 
         {/* Mobile Menu - Basket and Hamburger */}
         <div className="md:hidden flex gap-4 items-center">
