@@ -18,7 +18,7 @@ export default function SliderSectionAboutUs() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
-          <div className="flex flex-col gap-8 justify-center items-center h-full pt-16">
+          <div className="flex flex-col gap-8 justify-center items-center h-full pt-24">
             <SliderTextForAboutUs />
           </div>
 

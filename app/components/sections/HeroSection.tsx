@@ -13,7 +13,8 @@ import Container from "../Container";
 import HeroProductCard from "./HeroProductCard";
 
 interface HeroSectionProps {
-  backgroundImage: string;
+  backgroundImage?: string;
+  backgroundColor?: string;
   badge: string;
   heading: string;
   description: string;
@@ -25,10 +26,13 @@ interface HeroSectionProps {
   productLabel: string;
   textColor: "light" | "dark";
   centerImage?: string;
+  showProductCard?: boolean;
+  showFeatures?: boolean;
 }
 
 export default function HeroSection({
   backgroundImage,
+  backgroundColor,
   badge,
   heading,
   description,
@@ -40,6 +44,8 @@ export default function HeroSection({
   productLabel,
   textColor,
   centerImage,
+  showProductCard = true,
+  showFeatures = true,
 }: HeroSectionProps) {
   const isDarkText = textColor === "dark";
   const badgeBgClass = isDarkText
@@ -62,9 +68,11 @@ export default function HeroSection({
       <Container className="lg:px-8 px-4 pt-16 bg-cover bg-center">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-[32px] lg:h-[650px] bg-cover bg-left bg-no-repeat"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-          }}
+          style={
+            backgroundImage
+              ? { backgroundImage: `url(${backgroundImage})` }
+              : { backgroundColor: backgroundColor || "#FEF8F4" }
+          }
         >
           {/* Left Side - Text Content */}
           <div className="relative flex flex-col gap-8 rounded-[16px] justify-center items-center h-full w-full px-5">
@@ -95,20 +103,22 @@ export default function HeroSection({
               </div>
 
               {/* Feature Badges */}
-              <div className="flex gap-3 flex-wrap lg:justify-left justify-center mt-8 self-start">
-                {features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className={`${featureBgClass} rounded-[99px] px-6 py-3`}
-                  >
-                    <span
-                      className={`${featureTextClass} font-medium text-[16px]`}
+              {showFeatures && (
+                <div className="flex gap-3 flex-wrap lg:justify-left justify-center mt-8 self-start">
+                  {features.map((feature, index) => (
+                    <div
+                      key={index}
+                      className={`${featureBgClass} rounded-[99px] px-6 py-3`}
                     >
-                      {feature}
-                    </span>
-                  </div>
-                ))}
-              </div>
+                      <span
+                        className={`${featureTextClass} font-medium text-[16px]`}
+                      >
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -140,14 +150,16 @@ export default function HeroSection({
             </div>
 
             {/* Desktop View - HeroProductCard */}
-            <div className="hidden lg:block">
-              <HeroProductCard
-                productImage={productImage}
-                productName={productName}
-                productColorway={productColorway}
-                productPrice={productPrice}
-              />
-            </div>
+            {showProductCard && (
+              <div className="hidden lg:block">
+                <HeroProductCard
+                  productImage={productImage}
+                  productName={productName}
+                  productColorway={productColorway}
+                  productPrice={productPrice}
+                />
+              </div>
+            )}
           </div>
         </div>
       </Container>
