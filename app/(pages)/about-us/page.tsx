@@ -6,6 +6,7 @@ import SectionForRightAndLeftImageAndText from "../../components/sections/Sectio
 import RoundedBanner from "../../components/sections/RoundedBanner";
 import HoldingDoseSlider from "@/app/components/sections/HoldingDoseSlider";
 import GreenBanner from "../../components/sections/GreenBanner";
+import BuyYourDoseToday from "@/app/components/sections/BuyYourDoseToday";
 
 export default function AboutUsPage() {
   const router = useRouter();
@@ -58,6 +59,8 @@ export default function AboutUsPage() {
       <HoldingDoseSlider />
 
       <GreenBanner />
+
+      <BuyYourDoseToday />
     </div>
   );
 }

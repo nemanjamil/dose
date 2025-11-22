@@ -120,7 +120,7 @@ export default function Footer() {
 
             {/* Row 2 - Additional Content */}
             <div className="flex justify-center sm:justify-left mt-8">
-              <p className="font-medium text-dose-mid/60 text-[12px] tracking-[-0.24px]">
+              <p className="font-medium text-dose-mid/60 text-[12px] tracking-[-0.24px] text-center lg:text-left">
                 @ Dose 2025. All rights reserved. Design by Growww.
               </p>
             </div>

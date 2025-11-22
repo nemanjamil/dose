@@ -21,13 +21,13 @@ export default function GreenBanner() {
           description="Svaki Dose termos je kreat sa svešću o životnoj sredini. Koristi se trajni materijal, minimalan packaging, i maksimalnu brigu o planeti."
           features={["Eco-Friendly", "Sustainable", "Premium Quality"]}
           showFeatures={false}
-          productImage="/images/products/handHoldingDose.png"
+          productImage="/images/products/handHoldingDose1.png"
           productName="Dose Max"
           productColorway="Forest Green"
           productPrice="$89.99"
           productLabel="Eco Edition"
           textColor="light"
-          centerImage="/images/products/handHoldingDose.png"
+          centerImage=""
           showProductCard={false}
           textPosition="right"
         />
