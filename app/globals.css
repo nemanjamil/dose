@@ -25,6 +25,19 @@
   /* Font Weights */
   --font-weight-medium: 500;
   --font-weight-bold: 700;
+
+  /* Heading Font Sizes */
+  --font-size-h1: 3rem; /* 48px */
+  --font-size-h2: 2.25rem; /* 36px */
+  --font-size-h3: 1.875rem; /* 30px */
+  --font-size-h4: 1.5rem; /* 24px */
+  --font-size-h5: 1.25rem; /* 20px */
+  --font-size-h6: 1rem; /* 16px */
+
+  /* Paragraph Font Sizes */
+  --font-size-p-small: 1.125rem; /* 18px */
+  --font-size-p-regular: 1.25rem; /* 20px */
+  --font-size-p-large: 1.375rem; /* 20px */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,4 +51,90 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Heading Styles */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  letter-spacing: -0.48px;
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+h6 {
+  font-size: var(--font-size-h6);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+/* Paragraph Styles */
+p {
+  font-size: var(--font-size-p-regular);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+}
+
+.text-p-small {
+  font-size: var(--font-size-p-small);
+  letter-spacing: -0.28px;
+}
+
+.text-p-regular {
+  font-size: var(--font-size-p-regular);
+  letter-spacing: -0.32px;
+}
+
+.text-p-large {
+  font-size: var(--font-size-p-large);
+  letter-spacing: -0.36px;
+}
+
+/* Responsive Paragraph Sizes */
+.text-p-responsive {
+  font-size: var(--font-size-p-small);
+  letter-spacing: -0.28px;
+}
+
+@media (min-width: 640px) {
+  .text-p-responsive {
+    font-size: var(--font-size-p-regular);
+    letter-spacing: -0.32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-p-responsive {
+    font-size: var(--font-size-p-large);
+    letter-spacing: -0.36px;
+  }
 }

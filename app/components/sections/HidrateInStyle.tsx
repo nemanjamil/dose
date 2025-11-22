@@ -24,9 +24,9 @@ export default function HidrateInStyle() {
             <ColorSwatch />
 
             <div className="flex flex-col items-center gap-3">
-              <h2 className="text-dose-dark font-bold text-[56px] tracking-[-0.48px] text-center">
+              <h1 className="text-dose-dark text-center">
                 Hydrate in Style. Choose. Your Dose Flask.
-              </h2>
+              </h1>
               <div className="w-fit">
                 <CTAButton onClick={handleShopClick} />
               </div>

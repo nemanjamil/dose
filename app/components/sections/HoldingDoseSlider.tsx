@@ -131,8 +131,8 @@ export default function HoldingDoseSlider() {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handlePrevious = () => {
@@ -156,7 +156,7 @@ export default function HoldingDoseSlider() {
 
   return (
     <section className="py-2 px-4 sm:px-8 w-full bg-dose-light">
-      <Container className="px-4 sm:px-8">
+      <Container className="lg:px-4 sm:px-8">
         <div className="flex justify-end mb-3">
           <ArrowButtonPair
             currentSlide={currentSlide}
@@ -170,17 +170,23 @@ export default function HoldingDoseSlider() {
         {/* Carousel Container */}
         <div className="flex flex-col items-center gap-12">
           {/* Testimonial Cards Grid */}
-          <div className={`w-full grid gap-8 justify-center ${
-            cardsPerView === 1 ? 'grid-cols-1' :
-            cardsPerView === 2 ? 'sm:grid-cols-2' :
-            'lg:grid-cols-4'
-          }`}>
+          <div
+            className={`w-full grid gap-8 justify-center ${
+              cardsPerView === 1
+                ? "grid-cols-1"
+                : cardsPerView === 2
+                ? "sm:grid-cols-2"
+                : "lg:grid-cols-4"
+            }`}
+          >
             {visibleCards.map((testimonial, index) => (
               <div key={testimonial.id} className="flex flex-col gap-4">
                 {/* Image Container */}
-                <div className={`relative w-full rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group ${
-                  cardsPerView === 1 ? 'h-[500px]' : 'h-[450px]'
-                }`}>
+                <div
+                  className={`relative w-full rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group ${
+                    cardsPerView === 1 ? "h-[500px]" : "h-[450px]"
+                  }`}
+                >
                   <Image
                     src={testimonial.image}
                     alt="User holding DOSE thermos"
@@ -194,7 +200,13 @@ export default function HoldingDoseSlider() {
                     aria-label="Play video"
                   >
                     <div className="w-[56px] h-[56px] rounded-full bg-dose-peach hover:bg-[#FFD9C3] flex items-center justify-center transition-all duration-300 shadow-lg">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <path d="M5 2L5 18L16 10L5 2Z" fill="white" />
                       </svg>
                     </div>

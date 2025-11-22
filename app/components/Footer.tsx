@@ -48,15 +48,13 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row gap-[48px] sm:gap-[112px] text-center sm:text-left justify-center sm:justify-start">
               {/* Quick Links */}
               <div className="flex flex-col gap-[24px] items-center sm:items-start">
-                <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
-                  Brzi Linkovi
-                </h3>
+                <h6 className="text-dose-dark uppercase">Brzi Linkovi</h6>
                 <nav className="flex flex-col gap-[24px]">
                   {quickLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="font-medium text-dose-mid text-[14px] hover:text-dose-dark transition-colors"
+                      className="font-normal text-dose-mid text-p-small hover:text-dose-dark transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -66,15 +64,13 @@ export default function Footer() {
 
               {/* Shop Links */}
               <div className="flex flex-col gap-[24px] items-center sm:items-start">
-                <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
-                  Shop
-                </h3>
+                <h6 className="text-dose-dark uppercase">Shop</h6>
                 <nav className="flex flex-col gap-[24px]">
                   {shopLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="font-medium text-dose-mid text-[14px] hover:text-dose-dark transition-colors"
+                      className="font-medium text-dose-mid text-p-small hover:text-dose-dark transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -84,15 +80,13 @@ export default function Footer() {
 
               {/* Legal Links */}
               <div className="flex flex-col gap-[24px] items-center sm:items-start">
-                <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
-                  Legal
-                </h3>
+                <h6 className="text-dose-dark uppercase">Legal</h6>
                 <nav className="flex flex-col gap-[24px]">
                   {legalLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="font-medium text-dose-mid text-[14px] hover:text-dose-dark transition-colors"
+                      className="font-medium text-dose-mid text-p-small hover:text-dose-dark transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -102,9 +96,7 @@ export default function Footer() {
 
               {/* Social Links */}
               <div className="flex flex-col gap-[24px] items-center sm:items-start">
-                <h3 className="font-bold text-dose-dark text-[16px] tracking-[-0.32px] uppercase">
-                  Zaprati Nas
-                </h3>
+                <h6 className="text-dose-dark uppercase">Zaprati Nas</h6>
                 <div className="flex flex-col gap-[12px] items-center sm:items-start">
                   {socialLinks.map((link) => (
                     <a
@@ -117,7 +109,7 @@ export default function Footer() {
                         className="w-[18px] h-[18px]"
                         src={link.icon}
                       />
-                      <span className="font-medium text-dose-mid text-[14px]">
+                      <span className="font-medium text-dose-mid text-p-small">
                         {link.label}
                       </span>
                     </a>

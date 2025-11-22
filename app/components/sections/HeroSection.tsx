@@ -67,7 +67,7 @@ export default function HeroSection({
     <section className="w-full sm:px-8">
       <Container className="lg:px-8 px-4 pt-16 bg-cover bg-center">
         <div
-          className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-[32px] lg:h-[650px] bg-cover bg-left bg-no-repeat"
+          className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-[32px] min-h-[500px] lg:h-[650px] bg-cover bg-left bg-no-repeat"
           style={
             backgroundImage
               ? { backgroundImage: `url(${backgroundImage})` }
@@ -76,10 +76,10 @@ export default function HeroSection({
         >
           {/* Left Side - Text Content */}
           <div className="relative flex flex-col gap-8 rounded-[16px] justify-center items-center h-full w-full px-5">
-            <div className="left-[117px] top-[100px] max-w-[400px] flex flex-col items-center justify-center mt-5 lg:mt-0">
+            <div className="left-[117px] top-[100px] max-w-[400px]  gap-8 flex flex-col items-center justify-center mt-5 lg:mt-0">
               {/* Badge */}
               <div
-                className={`w-fit ${badgeBgClass} rounded-[99px] px-6 py-3 self-start`}
+                className={`w-fit ${badgeBgClass} rounded-[99px] px-6 py-3 self-center lg:self-start`}
               >
                 <span className={`${badgeTextClass} font-medium text-[14px]`}>
                   {badge}
@@ -88,16 +88,10 @@ export default function HeroSection({
 
               {/* Heading */}
               <div className="flex flex-col gap-4 text-center lg:text-left">
-                <h2
-                  className={`${headingTextClass} font-bold text-[40px] sm:text-[56px] leading-[1.2] tracking-[-1.12px]`}
-                >
-                  {heading}
-                </h2>
+                <h2 className={`${headingTextClass}`}>{heading}</h2>
 
                 {/* Description */}
-                <p
-                  className={`${descriptionTextClass} font-medium text-[16px] sm:text-[18px] leading-[1.5] tracking-[-0.36px]`}
-                >
+                <p className={`${descriptionTextClass} text-p-responsive`}>
                   {description}
                 </p>
               </div>
@@ -128,18 +122,19 @@ export default function HeroSection({
             <div className="lg:hidden flex flex-col gap-6 items-center relative h-full justify-center">
               {/* Mobile View - Center Image Only */}
               {centerImage && (
-                <div className="relative w-[300px] h-[400px]">
+                <div className="relative w-[300px] h-auto">
                   <Image
                     src={centerImage}
                     alt="Featured product"
-                    fill
+                    width={300}
+                    height={400}
                     className="object-contain"
                   />
                 </div>
               )}
               {/* Mobile Product Label */}
               <div
-                className={`${productLabelBgClass} rounded-[99px] px-4 py-2 absolute bottom-[20%]`}
+                className={`${productLabelBgClass} rounded-[99px] px-4 py-2 absolute bottom-[5%]`}
               >
                 <span
                   className={`${productLabelTextClass} font-medium text-[14px] `}

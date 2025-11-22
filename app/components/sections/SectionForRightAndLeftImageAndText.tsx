@@ -49,27 +49,25 @@ export default function SectionForRightAndLeftImageAndText({
 
   const textContent = (
     <div
-      className={`flex flex-col gap-6 ${
-        isImageLeft ? "text-right" : "text-left"
+      className={`flex flex-col gap-6 text-center ${
+        isImageLeft ? "lg:text-right" : "lg:text-left"
       }`}
     >
-      <h2 className="font-bold text-dose-dark text-[32px] sm:text-[40px] lg:text-[48px] tracking-[-0.64px] sm:tracking-[-0.8px] lg:tracking-[-0.96px] leading-[1.2]">
+      <h2 className="text-dose-dark">
         {heading}
       </h2>
-      <p className="font-medium text-dose-mid text-[14px] sm:text-[16px] lg:text-[18px] tracking-[-0.28px] sm:tracking-[-0.32px] lg:tracking-[-0.36px] leading-[1.5]">
-        {description}
-      </p>
+      <p className="text-p-responsive text-dose-mid">{description}</p>
       {buttons && buttons.length > 0 && (
         <div
-          className={`flex flex-col sm:flex-row gap-4 pt-4 ${
-            isImageLeft ? "justify-end" : "justify-start"
+          className={`flex flex-col sm:flex-row gap-4 pt-4 items-center sm:items-start ${
+            isImageLeft ? "sm:justify-end" : "sm:justify-start"
           }`}
         >
           {buttons.map((button, index) => (
             <button
               key={index}
               onClick={button.onClick}
-              className="bg-dose-accent/20 text-dose-accent font-bold py-3 px-8 rounded-[20px] hover:bg-dose-accent/30 transition-colors flex items-center gap-2 uppercase"
+              className="w-fit bg-dose-accent/20 text-dose-accent font-bold py-3 px-8 rounded-[20px] hover:bg-dose-accent/30 transition-colors flex items-center gap-2 uppercase"
             >
               {button.icon && (
                 <img alt="" className="w-[20px] h-[20px]" src={button.icon} />

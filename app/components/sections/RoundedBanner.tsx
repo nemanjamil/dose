@@ -11,10 +11,10 @@ import HeroSection from "./HeroSection";
 
 export default function RoundedBanner() {
   return (
-    <section className="w-full px-4 sm:px-8 my-16">
+    <section className="w-full lg:px-4 sm:px-8 my-16">
       <div className="rounded-[32px] overflow-hidden">
         <HeroSection
-          backgroundImage=""
+          backgroundImage="/images/sections/TwoBottlesBackground.png"
           backgroundColor="#E6E6E8"
           badge="Dostupno sada"
           heading="Manje žurbe. Više svesti."
@@ -27,6 +27,7 @@ export default function RoundedBanner() {
           productPrice="$89.99"
           productLabel="Limited Edition"
           textColor="dark"
+          centerImage="/images/products/handHoldingDose.png"
           showProductCard={false}
         />
       </div>
