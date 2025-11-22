@@ -27,7 +27,7 @@ export default function Header() {
   };
 
   return (
-    <header className="absolute top-0 left-0 right-0 w-full bg-transparent z-50 border-b border-white/20">
+    <header className="absolute top-0 left-0 right-0 w-full bg-transparent z-50">
       <div className="flex gap-[64px] items-center justify-between px-4 sm:px-8 py-5 max-w-[1440px] mx-auto">
         {/* Logo */}
         <Link

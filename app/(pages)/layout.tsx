@@ -30,7 +30,7 @@ export default function PagesLayout({
       <Header />
 
       {/* Main content - Grows to fill available space */}
-      <main className="flex-grow pt-[32px] w-full">{children}</main>
+      <main className="flex-grow w-full">{children}</main>
 
       {/* Footer - Sticky at bottom */}
       <Footer />

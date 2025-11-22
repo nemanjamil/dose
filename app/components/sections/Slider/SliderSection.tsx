@@ -25,7 +25,7 @@ export default function SliderSection() {
           </div>
 
           {/* Product Image - Placeholder with badges - 50% on desktop */}
-          <div className="w-full lg:w-1/2 flex items-center justify-center">
+          <div className="w-full lg:w-1/2 flex items-center justify-center pt-16">
             <SliderProduct />
           </div>
         </div>
