@@ -11,7 +11,7 @@ import Link from "next/link";
 import Image from "next/image";
 import CTAButton from "./CTAButton";
 
-const imgLogotype = "/images/brand/logotype.svg";
+const imgLogotype = "/images/brand/Logotype_white.svg";
 
 export default function Footer() {
   const quickLinks = [

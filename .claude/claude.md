@@ -497,6 +497,46 @@ Replace all Figma image URLs in:
 
 ---
 
+## 📏 Spacing Rule - Use Native Tailwind Only
+
+**ALWAYS USE NATIVE TAILWIND SPACING** - No custom CSS variables for padding/margin
+
+**Rule:**
+- ✅ Use Tailwind's native spacing scale: `p-4`, `p-6`, `p-8`, `m-4`, `gap-4`, etc.
+- ✅ Common sizes: `4`, `6`, `8`, `12`, `16`, `24`, `32`, `48`, `64` (all in 4px increments)
+- ❌ Don't use custom CSS variables like `var(--spacing-32)`
+- ❌ Don't create custom spacing values
+
+**Examples:**
+```tsx
+// ✅ GOOD - Use native Tailwind spacing
+<div className="p-8 gap-4 mb-6">Content</div>
+<div className="px-6 py-4 rounded-lg">Card</div>
+<div className="flex gap-8 items-center">Items</div>
+
+// ❌ BAD - Using custom CSS variables
+<div className="p-[var(--spacing-32)]">Content</div>
+<div className="gap-[var(--spacing-24)]">Items</div>
+```
+
+**Tailwind Spacing Reference:**
+- `1` = 4px
+- `2` = 8px
+- `3` = 12px
+- `4` = 16px
+- `6` = 24px
+- `8` = 32px
+- `12` = 48px
+- `16` = 64px
+
+**Benefits:**
+- Consistent spacing across the project
+- Better performance (no custom CSS)
+- Easier to maintain and scale
+- Works seamlessly with Tailwind's responsive utilities
+
+---
+
 ## 🔄 Component Reusability Rule
 
 **ALWAYS USE PREDEFINED COMPONENTS** - Never duplicate component functionality

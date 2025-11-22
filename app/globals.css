@@ -22,17 +22,6 @@
   --color-secondary: #9c5243;
   --color-tertiary: #a7253b;
 
-  /* Spacing Scale */
-  --spacing-4: 4px;
-  --spacing-8: 8px;
-  --spacing-12: 12px;
-  --spacing-16: 16px;
-  --spacing-24: 24px;
-  --spacing-32: 32px;
-  --spacing-64: 64px;
-  --spacing-128: 128px;
-  --spacing-164: 164px;
-
   /* Font Weights */
   --font-weight-medium: 500;
   --font-weight-bold: 700;
