@@ -8,7 +8,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-interface ShopItem {
+export interface ShopItem {
   id: number;
   name: string;
   color: string;
@@ -18,87 +18,16 @@ interface ShopItem {
   image: string;
 }
 
-const shopItems: ShopItem[] = [
-  {
-    id: 1,
-    name: "Dose Traveler Max",
-    color: "Kelly Green",
-    price: "5.997 RSD",
-    rating: "4.9/5.0",
-    volume: "0,6 L",
-    image: "/images/products/malaSlikaHeader.png",
-  },
-  {
-    id: 2,
-    name: "Dose Regular",
-    color: "Midnight Black",
-    price: "4.997 RSD",
-    rating: "4.8/5.0",
-    volume: "0,88 L",
-    image: "/images/products/malaSlikaHeader.png",
-  },
-  {
-    id: 3,
-    name: "Dose Mini",
-    color: "Sunset Orange",
-    price: "3.997 RSD",
-    rating: "4.7/5.0",
-    volume: "0,35 L",
-    image: "/images/products/malaSlikaHeader.png",
-  },
-  {
-    id: 4,
-    name: "Dose Pro Max",
-    color: "Pearl White",
-    price: "6.997 RSD",
-    rating: "5.0/5.0",
-    volume: "1,2 L",
-    image: "/images/products/malaSlikaHeader.png",
-  },
-  {
-    id: 5,
-    name: "Dose Classic",
-    color: "Rose Pink",
-    price: "4.497 RSD",
-    rating: "4.9/5.0",
-    volume: "0,75 L",
-    image: "/images/products/malaSlikaHeader.png",
-  },
-  {
-    id: 6,
-    name: "Dose Lite",
-    color: "Sky Blue",
-    price: "3.497 RSD",
-    rating: "4.6/5.0",
-    volume: "0,5 L",
-    image: "/images/products/malaSlikaHeader.png",
-  },
-  {
-    id: 7,
-    name: "Dose Premium",
-    color: "Midnight Blue",
-    price: "7.497 RSD",
-    rating: "5.0/5.0",
-    volume: "1,5 L",
-    image: "/images/products/malaSlikaHeader.png",
-  },
-  {
-    id: 8,
-    name: "Dose Compact",
-    color: "Forest Green",
-    price: "2.997 RSD",
-    rating: "4.5/5.0",
-    volume: "0,3 L",
-    image: "/images/products/malaSlikaHeader.png",
-  },
-];
+interface ShopItemsListProps {
+  items: ShopItem[];
+}
 
-export default function ShopItemsList() {
+export default function ShopItemsList({ items }: ShopItemsListProps) {
   return (
     <section className="w-full lg:px-8 py-[64px]">
       <div className="max-w-[1440px] mx-auto lg:px-8 px-4">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {shopItems.map((item) => (
+          {items.map((item) => (
             <Link
               key={item.id}
               href={`/shop/${item.id}`}
