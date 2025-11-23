@@ -9,6 +9,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import ProductHeader from "./ProductHeader";
+import { sendContactEmail } from "@/app/lib/actions/sendContactEmail";
 
 const sendMessageIcon = "/images/icons/sendMessage.svg";
 
@@ -44,18 +45,11 @@ export default function ContactFormSection({
     setIsSubmitting(true);
     setSubmitMessage("");
 
-    //console.log("JSON.stringify(formData)", JSON.stringify(formData));
     try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const result = await sendContactEmail(formData);
 
-      if (!response.ok) {
-        throw new Error("Failed to send email");
+      if (!result.success) {
+        throw new Error(result.error || "Failed to send email");
       }
 
       setSubmitMessage("Poruka je uspešno poslata! Hvala na kontaktu.");

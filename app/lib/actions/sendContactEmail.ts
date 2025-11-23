@@ -1,29 +1,28 @@
+"use server";
+
 import nodemailer from "nodemailer";
-import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: NextRequest) {
+interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export async function sendContactEmail(formData: ContactFormData) {
   try {
-    const { name, email, message } = await request.json();
+    const { name, email, message } = formData;
 
-    console.log("📧 Email API called");
+    console.log("📧 Server Action: sendContactEmail called");
     console.log("Form data:", { name, email, message });
 
     // Validate input
     if (!name || !email || !message) {
       console.error("❌ Missing required fields");
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
-      );
+      return {
+        success: false,
+        error: "Missing required fields",
+      };
     }
-
-    // Log environment variables (without exposing password)
-    console.log("🔐 SMTP Configuration:");
-    console.log("   Host:", process.env.NEXT_EMAIL_SERVER);
-    console.log("   Email:", process.env.NEXT_EMAIL);
-    console.log("   Password exists:", !!process.env.NEXT_PASSWORD);
-    console.log("   Password length:", process.env.NEXT_PASSWORD?.length);
-    console.log("   Password starts with:", process.env.NEXT_PASSWORD?.substring(0, 3));
 
     // Create transporter
     console.log("📡 Creating nodemailer transporter...");
@@ -72,20 +71,21 @@ export async function POST(request: NextRequest) {
     console.log("✅ User confirmation email sent:", userEmailResult.messageId);
 
     console.log("✨ All emails sent successfully!");
-    return NextResponse.json(
-      { message: "Email sent successfully" },
-      { status: 200 }
-    );
+    return {
+      success: true,
+      message: "Email sent successfully",
+    };
   } catch (error) {
     console.error("❌ Email error:", error);
     if (error instanceof Error) {
       console.error("Error message:", error.message);
-      console.error("Error code:", (error as any).code);
-      console.error("Error response:", (error as any).response);
+      const errorWithCode = error as Error & { code?: string; response?: string };
+      console.error("Error code:", errorWithCode.code);
+      console.error("Error response:", errorWithCode.response);
     }
-    return NextResponse.json(
-      { error: "Failed to send email", details: error instanceof Error ? error.message : "Unknown error" },
-      { status: 500 }
-    );
+    return {
+      success: false,
+      error: "Failed to send email",
+    };
   }
 }
