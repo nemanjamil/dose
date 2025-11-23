@@ -23,7 +23,7 @@ export default function SliderSectionAboutUs() {
           </div>
 
           {/* Right Side - Image */}
-          <div className="relative w-full h-[400px] sm:h-[500px]">
+          <div className="relative w-full h-full">
             <Image
               src="/images/products/aboutUsFistSliderImage.png"
               alt="About Us"

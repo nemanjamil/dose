@@ -7,7 +7,9 @@ export default function ContactUsPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] py-[64px] sm:py-[96px]">
-        <ContactFormSection />
+        <div className="py-10">
+          <ContactFormSection />
+        </div>
         <CenteredText />
         <Testemonials />
         <BuyYourDoseToday />
