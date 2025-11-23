@@ -109,11 +109,6 @@ export default function SliderProduct() {
         currentSlide={currentSlide}
         onSlideChange={setCurrentSlide}
       />
-
-      {/* Top Bar - Social Icons and Shop Button (Desktop only) */}
-      <div className="absolute hidden md:flex right-[0] top-[0px] gap-[16px] items-center">
-        <TopBar />
-      </div>
     </div>
   );
 }

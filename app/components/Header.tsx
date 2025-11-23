@@ -53,12 +53,10 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* TopBar - Show on Shop Pages (Right Side) */}
-        {pathname.startsWith("/shop") && (
-          <div className="hidden md:flex gap-[16px] items-center">
-            <TopBar />
-          </div>
-        )}
+        {/* TopBar - Show on Home and Shop Pages (Right Side) */}
+        <div className="hidden md:flex gap-[16px] items-center">
+          <TopBar />
+        </div>
 
         {/* Mobile Menu - Basket and Hamburger */}
         <div className="md:hidden flex gap-4 items-center">
