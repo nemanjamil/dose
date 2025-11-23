@@ -139,7 +139,7 @@ export default function ContactFormSection({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="relative bg-dose-accent text-white py-[16px] px-[24px] rounded-[14px] font-bold w-full hover:opacity-90 transition-opacity flex items-center justify-center uppercase cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            className="relative bg-dose-accent text-white py-[16px] px-[24px] rounded-[14px] font-bold w-full flex items-center justify-center uppercase btn-interactive disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ fontSize: "var(--font-size-p-regular)" }}
           >
             <div className="absolute left-[8px] bg-dose-peach rounded-[12px] w-[48px] h-[48px] flex items-center justify-center">

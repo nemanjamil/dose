@@ -209,3 +209,14 @@ p {
     height: var(--icon-size-regular);
   }
 }
+
+/* Button Utilities */
+@layer components {
+  .btn-interactive {
+    @apply cursor-pointer hover:opacity-90 transition-opacity active:scale-95;
+  }
+
+  .btn-disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+}

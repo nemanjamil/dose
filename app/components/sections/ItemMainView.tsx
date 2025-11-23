@@ -81,7 +81,12 @@ export default function ItemMainView() {
         <ProductBundleOffer />
 
         {/* Add to Cart Button */}
-        <AddToCartButton price="4.580.00 RSD" />
+        <AddToCartButton
+          productId="product-summer-peach-1"
+          productName="Summer Peach Traveler Max 1.2 L"
+          price={5997}
+          quantity={1}
+        />
       </div>
     </div>
   );

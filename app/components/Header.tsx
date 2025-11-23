@@ -3,15 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import TopBar from "./sections/Slider/SliderProduct/TopBar";
+import CartSidebar from "./CartSidebar";
 
 const imgLogotype = "/images/brand/logotype.svg";
 
 export default function Header() {
   const pathname = usePathname();
-  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const navItems = [
     { label: "HOMEPAGE", href: "/" },
@@ -55,14 +55,14 @@ export default function Header() {
 
         {/* TopBar - Show on Home and Shop Pages (Right Side) */}
         <div className="hidden md:flex gap-[16px] items-center">
-          <TopBar />
+          <TopBar onShopNowClick={() => setIsCartOpen(true)} />
         </div>
 
         {/* Mobile Menu - Basket and Hamburger */}
         <div className="md:hidden flex gap-4 items-center">
           {/* Basket Icon */}
           <button
-            onClick={() => router.push("/cart")}
+            onClick={() => setIsCartOpen(true)}
             className="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity"
             aria-label="Shopping cart"
           >
@@ -146,6 +146,9 @@ export default function Header() {
           ))}
         </div>
       </div>
+
+      {/* Cart Sidebar */}
+      <CartSidebar isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </header>
   );
 }
