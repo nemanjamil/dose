@@ -7,14 +7,17 @@
  * Both rows are centered
  */
 
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Container from "../Container";
 import { ColorSwatch } from "./Slider";
 import CTAButton from "../CTAButton";
 
 export default function BuyYourDoseToday() {
+  const router = useRouter();
+
   const handleShopClick = () => {
-    window.location.href = "/shop";
+    router.push("/shop");
   };
 
   return (

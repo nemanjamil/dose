@@ -44,12 +44,19 @@ export default function ContactFormSection({
     setIsSubmitting(true);
     setSubmitMessage("");
 
+    //console.log("JSON.stringify(formData)", JSON.stringify(formData));
     try {
-      // You can replace this with your actual API endpoint
-      console.log("Form data submitted:", formData);
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (!response.ok) {
+        throw new Error("Failed to send email");
+      }
 
       setSubmitMessage("Poruka je uspešno poslata! Hvala na kontaktu.");
       setFormData({ name: "", email: "", message: "" });

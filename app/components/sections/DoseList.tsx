@@ -8,6 +8,7 @@
  * Based on Figma design: https://www.figma.com/design/I7GYdab3FirpOg941b6wTL/Dose-Web-Project?node-id=95-186
  */
 
+import Link from "next/link";
 import Image from "next/image";
 import Container from "../Container";
 
@@ -59,9 +60,10 @@ export default function DoseList() {
         {/* Products Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {doseProducts.map((product, index) => (
-            <div
+            <Link
               key={product.id}
-              className={`flex flex-col gap-6 ${
+              href={`/shop/${product.id}`}
+              className={`flex flex-col gap-6 cursor-pointer hover:opacity-90 transition-opacity ${
                 index >= 2 ? "hidden lg:flex" : ""
               }`}
             >
@@ -94,7 +96,7 @@ export default function DoseList() {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </Container>

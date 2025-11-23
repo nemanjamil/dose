@@ -25,7 +25,9 @@
       "Bash(taskkill:*)",
       "Bash(powershell -Command \"Stop-Process -Id 32552 -Force\")",
       "Bash(powershell -Command \"Stop-Process -Id 36028 -Force\")",
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "Bash(node:*)",
+      "Bash(del:*)"
     ],
     "deny": [],
     "ask": []
