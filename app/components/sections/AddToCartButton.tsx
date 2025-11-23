@@ -18,6 +18,7 @@ interface AddToCartButtonProps {
   productId: string;
   productName: string;
   price: number;
+  productImage?: string;
   currency?: string;
   quantity?: number;
   label?: string;
@@ -28,6 +29,7 @@ export default function AddToCartButton({
   productId,
   productName,
   price,
+  productImage,
   quantity = 1,
   label = "DODAJ U KORPU",
   onClick,
@@ -40,6 +42,7 @@ export default function AddToCartButton({
       name: productName,
       price, // Already numeric
       quantity,
+      image: productImage,
     });
 
     if (onClick) {

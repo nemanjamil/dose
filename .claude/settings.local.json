@@ -16,7 +16,8 @@
       "Bash(grep:*)",
       "mcp__ide__getDiagnostics",
       "Bash(git add:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git diff:*)"
     ],
     "deny": [],
     "ask": []

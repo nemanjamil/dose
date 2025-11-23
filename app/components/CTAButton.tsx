@@ -5,6 +5,8 @@
  * Supports responsive sizing and customizable icon/label
  */
 
+import Image from "next/image";
+
 interface CTAButtonProps {
   label?: string;
   onClick?: () => void;
@@ -27,7 +29,12 @@ export default function CTAButton({
     >
       <div className="bg-dose-peach flex gap-[10px] items-center justify-center px-[8px] sm:px-[11px] py-[8px] sm:py-[10px] rounded-[14px] size-[40px] sm:size-[46px] flex-shrink-0">
         <div className="relative size-[20px] sm:size-[24px]">
-          <img alt={iconAlt} className="w-full h-full" src={iconSrc} />
+          <Image
+            alt={iconAlt}
+            src={iconSrc}
+            fill
+            className="object-contain"
+          />
         </div>
       </div>
       <p className="font-bold text-dose-light text-[14px] sm:text-[16px] tracking-[-0.28px] sm:tracking-[-0.32px] uppercase whitespace-nowrap">

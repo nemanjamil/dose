@@ -422,6 +422,25 @@ npm run lint     # Lint check
 
 ---
 
+## 🔄 Git Commit Rule
+
+**DO NOT commit automatically.** User will commit manually.
+
+**Rule:**
+- ✅ Stage files with `git add`
+- ✅ Prepare commit messages when asked
+- ❌ Do NOT run `git commit` automatically
+- ❌ User handles all commits manually
+- ❌ Wait for explicit user confirmation before committing
+
+**Benefits:**
+- User maintains control over commit history
+- Allows for grouping related changes
+- Cleaner commits with user oversight
+- User decides commit timing and messages
+
+---
+
 ## ✅ Before Committing
 
 - [ ] Responsive design (test mobile, tablet, desktop)

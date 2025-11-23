@@ -39,11 +39,14 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
     textOptIn: false,
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value, type } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
   };
 
@@ -55,7 +58,7 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
   };
 
   return (
-    <div className="w-full bg-white rounded-[20px] p-[32px]">
+    <div className="w-full]">
       <h2 className="font-bold text-dose-dark text-[20px] tracking-[-0.4px] mb-[16px]">
         Delivery
       </h2>
@@ -174,20 +177,6 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
           className="w-full h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
           style={{ backgroundColor: "#ffffff" }}
         />
-
-        {/* Text Opt-in Checkbox */}
-        <label className="flex items-center gap-[10px] cursor-pointer">
-          <input
-            type="checkbox"
-            name="textOptIn"
-            checked={formData.textOptIn}
-            onChange={handleInputChange}
-            className="w-[18px] h-[18px] border border-dose-accent/20 rounded cursor-pointer"
-          />
-          <span className="text-dose-mid font-medium text-[14px] tracking-[-0.28px]">
-            Text me with news and offers
-          </span>
-        </label>
       </form>
     </div>
   );

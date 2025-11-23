@@ -12,8 +12,7 @@
  */
 
 import { useRouter } from "next/navigation";
-
-const imgFrame = "/images/products/frame.svg";
+import CTAButton from "@/app/components/CTAButton";
 
 const title = "Termos koji ti treba. Svaki dan.";
 const description =
@@ -40,19 +39,12 @@ export default function SliderText() {
       </div>
 
       {/* CTA Button */}
-      <button
+      <CTAButton
+        label="Shop now"
+        iconSrc="/images/products/frame.svg"
+        iconAlt="Shop icon"
         onClick={handleShopClick}
-        className="bg-dose-accent flex gap-[16px] sm:gap-[24px] items-center pl-[8px] pr-[16px] sm:pr-[24px] py-[8px] rounded-[20px] shadow-[0px_10px_24px_0px_rgba(135,84,55,0.3)] hover:opacity-90 transition-opacity active:scale-95 w-auto"
-      >
-        <div className="bg-dose-peach flex gap-[10px] items-center justify-center px-[8px] sm:px-[11px] py-[8px] sm:py-[10px] rounded-[14px] size-[40px] sm:size-[46px] flex-shrink-0">
-          <div className="relative size-[20px] sm:size-[24px]">
-            <img alt="Shop icon" className="w-full h-full" src={imgFrame} />
-          </div>
-        </div>
-        <p className="font-bold text-dose-light text-[14px] sm:text-[16px] tracking-[-0.28px] sm:tracking-[-0.32px] uppercase whitespace-nowrap">
-          Shop now
-        </p>
-      </button>
+      />
     </div>
   );
 }

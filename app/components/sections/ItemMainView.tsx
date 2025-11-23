@@ -85,6 +85,7 @@ export default function ItemMainView() {
           productId="product-summer-peach-1"
           productName="Summer Peach Traveler Max 1.2 L"
           price={5997}
+          productImage={mainImage}
           quantity={1}
         />
       </div>

@@ -54,6 +54,7 @@ export default function IconButton({
         href={href}
         className={finalClassName}
         style={{ fontSize: "var(--font-size-p-regular)" }}
+        onClick={onClick}
       >
         {content}
       </Link>
