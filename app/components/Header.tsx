@@ -54,8 +54,8 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* TopBar - Show on Shop Page (Right Side) */}
-        {pathname === "/shop" && (
+        {/* TopBar - Show on Shop Pages (Right Side) */}
+        {pathname.startsWith("/shop") && (
           <div className="hidden md:flex gap-[16px] items-center">
             <TopBar />
           </div>

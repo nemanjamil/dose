@@ -14,13 +14,13 @@ import ProductHeader from "./ProductHeader";
 import ProductRatingBadge from "./ProductRatingBadge";
 import ProductPrice from "./ProductPrice";
 import ProductFeaturesBox from "./ProductFeaturesBox";
+import ProductBundleOffer from "./ProductBundleOffer";
+import AddToCartButton from "./AddToCartButton";
+import ExpandableSections from "./ExpandableSections";
+import ProductImageThumbnails from "./ProductImageThumbnails";
 
 export default function ItemMainView() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
-  const [selectedSize, setSelectedSize] = useState("0.6 L");
-  const [selectedColor, setSelectedColor] = useState("#2D5016");
-  const [quantity, setQuantity] = useState(1);
 
   // Sample product images
   const productImages = [
@@ -49,53 +49,14 @@ export default function ItemMainView() {
         </div>
 
         {/* Thumbnails */}
-        <div className="flex gap-2 justify-between">
-          {thumbnails.map((image, index) => (
-            <button
-              key={index}
-              onClick={() => setSelectedImageIndex(index)}
-              className={`relative w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] rounded-[12px] overflow-hidden border-2 transition-all ${
-                selectedImageIndex === index
-                  ? "border-dose-accent"
-                  : "border-transparent hover:border-dose-mid"
-              }`}
-            >
-              <Image
-                src={image}
-                alt={`Product thumbnail ${index + 1}`}
-                fill
-                className="object-cover"
-              />
-            </button>
-          ))}
-        </div>
+        <ProductImageThumbnails
+          thumbnails={thumbnails}
+          selectedIndex={selectedImageIndex}
+          onSelectImage={setSelectedImageIndex}
+        />
 
-        {/* Image Description - Expandable */}
-        <div className="w-full border border-dose-accent/20 rounded-[12px] overflow-hidden">
-          <button
-            onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
-            className="w-full flex items-center justify-between px-4 py-4 bg-dose-light hover:bg-dose-light/80 transition-colors"
-          >
-            <span className="text-dose-dark font-bold text-[16px]">
-              Image Description
-            </span>
-            <span className="text-dose-dark text-[20px] font-bold">
-              {isDescriptionOpen ? "−" : "+"}
-            </span>
-          </button>
-
-          {/* Expandable Content */}
-          {isDescriptionOpen && (
-            <div className="px-4 py-4 bg-white border-t border-dose-light">
-              <p className="text-dose-mid font-medium text-[14px] sm:text-[16px] leading-[1.6]">
-                This is a high-quality product image showing the thermos from
-                multiple angles. The image demonstrates the premium design,
-                color options, and functional features of our DOSE thermos
-                collection. Perfect for viewing product details before purchase.
-              </p>
-            </div>
-          )}
-        </div>
+        {/* Expandable Sections */}
+        <ExpandableSections />
       </div>
 
       {/* Right Side - Product Details (50%) */}
@@ -115,6 +76,12 @@ export default function ItemMainView() {
 
         {/* Product Features Box */}
         <ProductFeaturesBox />
+
+        {/* Product Bundle Offer */}
+        <ProductBundleOffer />
+
+        {/* Add to Cart Button */}
+        <AddToCartButton price="4.580.00 RSD" />
       </div>
     </div>
   );
