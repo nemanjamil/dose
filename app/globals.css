@@ -51,8 +51,9 @@
   --icon-size-regular: 2.5rem; /* 40px */
 
   /* Border Radius */
-  --radius-sm: 0.875rem; /* 14px */
-  --radius-md: 1rem; /* 16px */
+  --radius-xs: 0.25rem; /* 4px */
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 0.875rem; /* 14px */
   --radius-lg: 1.25rem; /* 20px */
   --radius-xl: 2rem; /* 32px */
 }
@@ -157,6 +158,10 @@ p {
 }
 
 /* Border Radius Utilities */
+.rounded-xs {
+  border-radius: var(--radius-xs);
+}
+
 .rounded-sm {
   border-radius: var(--radius-sm);
 }

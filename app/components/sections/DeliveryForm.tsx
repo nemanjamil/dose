@@ -58,12 +58,12 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
   };
 
   return (
-    <div className="w-full]">
-      <h2 className="font-bold text-dose-dark text-[20px] tracking-[-0.4px] mb-[16px]">
+    <div className="w-full">
+      <h5 className="font-bold text-dose-dark mb-4">
         Delivery
-      </h2>
+      </h5>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-[16px]">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         {/* Email Input */}
         <input
           type="email"
@@ -71,12 +71,12 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
           placeholder="Email"
           value={formData.email}
           onChange={handleInputChange}
-          className="w-full h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
+          className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
           style={{ backgroundColor: "#ffffff" }}
         />
 
         {/* Email Opt-in Checkbox */}
-        <label className="flex items-center gap-[10px] cursor-pointer">
+        <label className="flex items-center gap-2 cursor-pointer">
           <input
             type="checkbox"
             name="emailOptIn"
@@ -84,21 +84,21 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
             onChange={handleInputChange}
             className="w-[18px] h-[18px] border border-dose-accent/20 rounded cursor-pointer"
           />
-          <span className="text-dose-mid font-medium text-[14px] tracking-[-0.28px]">
+          <span className="text-dose-mid font-medium text-small">
             Email me with news and offers
           </span>
         </label>
 
         {/* Country Dropdown */}
-        <div className="flex flex-col gap-[2px]">
-          <label className="text-dose-mid/60 text-[12px] tracking-[-0.24px] font-medium">
+        <div className="flex flex-col gap-1">
+          <label className="text-dose-mid/60 text-extra-small font-medium">
             Country
           </label>
           <select
             name="country"
             value={formData.country}
             onChange={handleInputChange}
-            className="w-full h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid font-medium text-[14px] tracking-[-0.28px] focus:outline-none focus:border-dose-accent transition-colors"
+            className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid font-medium text-small focus:outline-none focus:border-dose-accent transition-colors"
             style={{ backgroundColor: "#ffffff" }}
           >
             <option value="Serbia">Serbia</option>
@@ -108,8 +108,8 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
         </div>
 
         {/* Full Name Input */}
-        <div className="flex flex-col gap-[2px]">
-          <label className="text-dose-mid/60 text-[12px] tracking-[-0.24px] font-medium">
+        <div className="flex flex-col gap-1">
+          <label className="text-dose-mid/60 text-extra-small font-medium">
             Full name
           </label>
           <input
@@ -118,7 +118,7 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
             placeholder="Nemanja Stojanovic"
             value={formData.fullName}
             onChange={handleInputChange}
-            className="w-full h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
+            className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
             style={{ backgroundColor: "#ffffff" }}
           />
         </div>
@@ -130,7 +130,7 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
           placeholder="Address"
           value={formData.address}
           onChange={handleInputChange}
-          className="w-full h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
+          className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
           style={{ backgroundColor: "#ffffff" }}
         />
 
@@ -141,19 +141,19 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
           placeholder="Apartment, suite, etc"
           value={formData.apartment}
           onChange={handleInputChange}
-          className="w-full h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
+          className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
           style={{ backgroundColor: "#ffffff" }}
         />
 
         {/* Postal Code and City - Side by Side */}
-        <div className="flex gap-[16px]">
+        <div className="flex gap-4">
           <input
             type="text"
             name="postalCode"
             placeholder="Postal code"
             value={formData.postalCode}
             onChange={handleInputChange}
-            className="flex-1 h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
+            className="flex-1 h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
             style={{ backgroundColor: "#ffffff" }}
           />
           <input
@@ -162,7 +162,7 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
             placeholder="City"
             value={formData.city}
             onChange={handleInputChange}
-            className="flex-1 h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
+            className="flex-1 h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
             style={{ backgroundColor: "#ffffff" }}
           />
         </div>
@@ -174,7 +174,7 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
           placeholder="Phone"
           value={formData.phone}
           onChange={handleInputChange}
-          className="w-full h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
+          className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
           style={{ backgroundColor: "#ffffff" }}
         />
       </form>

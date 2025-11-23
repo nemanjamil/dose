@@ -54,10 +54,10 @@ export default function PaymentForm({ onSubmit }: PaymentFormProps) {
     <div className="w-full">
       {/* Header */}
       <div className="flex flex-col gap-[6px] mb-[16px]">
-        <h2 className="font-bold text-dose-dark text-[20px] tracking-[-0.4px]">
+        <h5 className="font-bold text-dose-dark mb-0">
           Payment
-        </h2>
-        <p className="font-medium text-dose-mid text-[12px] tracking-[-0.24px]">
+        </h5>
+        <p className="font-medium text-dose-mid text-extra-small">
           All transactions are secure and encrypted.
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function PaymentForm({ onSubmit }: PaymentFormProps) {
               className="object-contain"
             />
           </div>
-          <span className="font-medium text-dose-accent text-[14px] tracking-[-0.28px]">
+          <span className="font-medium text-dose-accent text-small">
             Credit or debit card
           </span>
         </div>
@@ -93,7 +93,7 @@ export default function PaymentForm({ onSubmit }: PaymentFormProps) {
             placeholder="Card number"
             value={formData.cardNumber}
             onChange={handleInputChange}
-            className="flex-1 bg-transparent text-dose-mid placeholder:text-dose-mid/60 focus:outline-none text-[14px]"
+            className="flex-1 bg-transparent text-dose-mid placeholder:text-dose-mid/60 focus:outline-none text-small"
           />
           <div className="w-[20px] h-[20px] flex-shrink-0">
             <svg
@@ -127,7 +127,7 @@ export default function PaymentForm({ onSubmit }: PaymentFormProps) {
             placeholder="Expiration date (MM/YY)"
             value={formData.expirationDate}
             onChange={handleInputChange}
-            className="flex-1 h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors text-[14px]"
+            className="flex-1 h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors text-small"
             style={{ backgroundColor: "#ffffff" }}
           />
           <div className="flex-1 flex items-center border border-dose-accent/20 rounded-[8px] h-[50px] px-[10px] py-[16px] bg-white">
@@ -137,7 +137,7 @@ export default function PaymentForm({ onSubmit }: PaymentFormProps) {
               placeholder="Security code"
               value={formData.securityCode}
               onChange={handleInputChange}
-              className="flex-1 bg-transparent text-dose-mid placeholder:text-dose-mid/60 focus:outline-none text-[14px]"
+              className="flex-1 bg-transparent text-dose-mid placeholder:text-dose-mid/60 focus:outline-none text-small"
             />
             <div className="w-[20px] h-[20px] flex-shrink-0 flex items-center justify-center">
               <svg
@@ -174,7 +174,7 @@ export default function PaymentForm({ onSubmit }: PaymentFormProps) {
           placeholder="Name on card"
           value={formData.nameOnCard}
           onChange={handleInputChange}
-          className="w-full h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors text-[14px]"
+          className="w-full h-[50px] px-[10px] py-[16px] border border-dose-accent/20 rounded-[8px] text-dose-mid placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors text-small"
           style={{ backgroundColor: "#ffffff" }}
         />
 
@@ -212,7 +212,7 @@ export default function PaymentForm({ onSubmit }: PaymentFormProps) {
               )}
             </div>
           </div>
-          <span className="font-medium text-dose-mid text-[14px] tracking-[-0.28px]">
+          <span className="font-medium text-dose-mid text-small">
             Use shipping address as billing address
           </span>
         </label>

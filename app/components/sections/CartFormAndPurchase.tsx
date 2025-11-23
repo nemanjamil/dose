@@ -158,7 +158,7 @@ export default function CartFormAndPurchase() {
               )}
             </div>
           </div>
-          <span className="font-medium text-dose-mid text-[14px] tracking-[-0.28px]">
+          <span className="font-medium text-dose-mid text-small">
             Plaćanje pouzećem
           </span>
         </label>
@@ -169,14 +169,14 @@ export default function CartFormAndPurchase() {
         {/* Error Messages */}
         {errors.length > 0 && (
           <div className="bg-dose-accent/10 border border-dose-accent/30 rounded-[8px] p-[16px]">
-            <h3 className="font-bold text-dose-accent text-[14px] mb-[12px] tracking-[-0.28px]">
+            <h3 className="font-bold text-dose-accent text-small mb-[12px]">
               Please fix the following errors:
             </h3>
             <ul className="flex flex-col gap-[8px]">
               {errors.map((error, index) => (
                 <li
                   key={index}
-                  className="text-dose-accent text-[13px] tracking-[-0.26px]"
+                  className="text-dose-accent text-extra-small"
                 >
                   • {error}
                 </li>
@@ -195,10 +195,10 @@ export default function CartFormAndPurchase() {
 
       {/* Right Side - Order Summary (50%) */}
       <div className="w-full lg:w-1/2">
-        <div className="bg-white rounded-[20px] p-[32px] sticky top-[100px]">
+        <div className="rounded-[20px] p-[32px] sticky top-[100px]">
           {/* Cart Items List */}
           {items.length === 0 ? (
-            <p className="text-dose-mid text-[16px] mb-[24px]">
+            <p className="text-dose-mid text-h6 mb-[24px]">
               Your cart is empty
             </p>
           ) : (
@@ -224,16 +224,16 @@ export default function CartFormAndPurchase() {
                     {/* Product Info */}
                     <div className="flex-1 flex flex-col gap-2">
                       <div>
-                        <h3 className="font-bold text-dose-dark text-[14px] mb-1">
+                        <h3 className="font-bold text-dose-dark text-small mb-1">
                           {item.name}
                         </h3>
-                        <p className="text-dose-accent font-bold text-[14px]">
+                        <p className="text-dose-accent font-bold text-small">
                           {formatPrice(item.price)}
                         </p>
                       </div>
 
                       {/* Quantity and Total */}
-                      <div className="flex items-center justify-between text-[13px]">
+                      <div className="flex items-center justify-between text-extra-small">
                         <span className="text-dose-mid">
                           Qty:{" "}
                           <span className="font-bold text-dose-dark">
@@ -256,11 +256,11 @@ export default function CartFormAndPurchase() {
             <div className="flex flex-col gap-4 py-[24px] border-dose-mid/20">
               {/* Subtotal */}
               <div className="flex items-center justify-between">
-                <p className="font-medium text-dose-accent text-[16px] tracking-[-0.32px]">
+                <p className="font-medium text-dose-accent text-h6">
                   TOTAL
                 </p>
                 <div className="bg-dose-accent/10 rounded-[8px] px-[12px] py-[6px]">
-                  <p className="font-bold text-dose-accent text-[16px] tracking-[-0.32px]">
+                  <p className="font-bold text-dose-accent text-h6">
                     {formatPrice(total)}
                   </p>
                 </div>

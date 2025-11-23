@@ -235,6 +235,41 @@ All spacing values are defined in the theme and can be used with any Tailwind sp
 
 **Exception:** Background colors can be applied to inner containers (divs) for specific components like feature boxes, cards, or badges.
 
+### HTML Heading Elements - Don't Override Font Sizes
+
+**Rule:** Use the correct semantic HTML heading tag (`<h1>` through `<h6>`) and let the design system styles apply automatically. Do NOT add text-sizing classes like `text-h5`, `text-small`, etc. to heading elements.
+
+**Why?**
+- Each heading tag (`<h1>`, `<h2>`, etc.) has predefined styles in `globals.css`
+- Adding font size classes creates visual/semantic mismatches
+- Breaks document outline and accessibility
+- Results in redundant/conflicting CSS
+
+**Examples:**
+
+```tsx
+// ❌ BAD - Adding text size class to heading
+<h2 className="font-bold text-dose-dark text-h5">Delivery</h2>
+// Problem: Says h2 semantically, but looks like h5 visually
+
+// ✅ GOOD - Use correct heading level
+<h5 className="font-bold text-dose-dark">Delivery</h5>
+// The h5 styles from globals.css apply automatically
+
+// ✅ ALSO GOOD - Use div if not a real heading
+<div className="font-bold text-dose-dark text-h5">Label</div>
+```
+
+**Heading Styles in globals.css:**
+- `<h1>` → 48px (--font-size-h1)
+- `<h2>` → 36px (--font-size-h2)
+- `<h3>` → 30px (--font-size-h3)
+- `<h4>` → 24px (--font-size-h4)
+- `<h5>` → 20px (--font-size-h5)
+- `<h6>` → 16px (--font-size-h6)
+
+All include: font-weight-bold, line-height, and letter-spacing. Never override with text size classes.
+
 ---
 
 ## 🛣️ Routes
