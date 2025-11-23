@@ -100,7 +100,7 @@ export default function ProductBundleOffer({
               className="object-contain"
             />
           </div>
-          <p className="font-bold text-dose-dark text-[16px] leading-[1.5]">
+          <p className="font-bold text-dose-dark lg:text-p-regular text-p-small  leading-[1.5]">
             PORUCI DANAS I OCEKUJ DOSTAVU U NAREDNIH 48 SATI
           </p>
         </div>

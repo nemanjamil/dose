@@ -34,9 +34,9 @@ export default function ItemMainView() {
   const thumbnails = productImages.slice(0, 4);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-[64px] items-start">
+    <div className="flex flex-col lg:flex-row lg:gap-[64px] items-start">
       {/* Left Side - Product Image Gallery (50%) */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-[24px] p-5">
+      <div className="w-full lg:w-1/2 flex flex-col gap-[24px]">
         {/* Main Image */}
         <div className="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-[20px] overflow-hidden bg-gray-100">
           <Image

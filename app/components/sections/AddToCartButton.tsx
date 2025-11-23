@@ -33,7 +33,7 @@ export default function AddToCartButton({
       </div>
 
       {/* Text and Price */}
-      <p className="font-bold text-dose-light text-[20px] tracking-[-0.4px] leading-[1.5] uppercase">
+      <p className="font-bold text-dose-light lg:text-p-regular text-p-small tracking-[-0.4px] leading-[1.5] uppercase">
         {label} {price}
       </p>
     </button>

@@ -42,6 +42,14 @@
   --font-size-p-regular: 1.25rem; /* 20px */
   --font-size-p-large: 1.375rem; /* 20px */
 
+  /* Small Font Sizes */
+  --font-size-small: 0.875rem; /* 14px */
+  --font-size-extra-small: 0.75rem; /* 12px */
+
+  /* Icon Sizes */
+  --icon-size-small: 2rem; /* 32px */
+  --icon-size-regular: 2.5rem; /* 40px */
+
   /* Border Radius */
   --radius-sm: 0.875rem; /* 14px */
   --radius-md: 1rem; /* 16px */
@@ -163,4 +171,41 @@ p {
 
 .rounded-xl {
   border-radius: var(--radius-xl);
+}
+
+/* Font Size Utilities */
+.text-small {
+  font-size: var(--font-size-small);
+  letter-spacing: -0.28px;
+}
+
+.text-extra-small {
+  font-size: var(--font-size-extra-small);
+  letter-spacing: -0.24px;
+}
+
+/* Responsive Text Utilities */
+.text-small-responsive {
+  font-size: var(--font-size-extra-small);
+  letter-spacing: -0.24px;
+}
+
+@media (min-width: 640px) {
+  .text-small-responsive {
+    font-size: var(--font-size-small);
+    letter-spacing: -0.28px;
+  }
+}
+
+/* Responsive Icon Size Utilities */
+.icon-small-responsive {
+  width: var(--icon-size-small);
+  height: var(--icon-size-small);
+}
+
+@media (min-width: 640px) {
+  .icon-small-responsive {
+    width: var(--icon-size-regular);
+    height: var(--icon-size-regular);
+  }
 }

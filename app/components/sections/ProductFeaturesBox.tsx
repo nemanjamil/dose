@@ -33,7 +33,7 @@ export default function ProductFeaturesBox({
       <div className="grid grid-cols-3 gap-[24px]">
         {features.map((feature, index) => (
           <div key={index} className="flex flex-row items-center gap-[12px]">
-            <div className="relative w-[40px] h-[40px] shrink-0">
+            <div className="relative shrink-0 icon-small-responsive">
               <Image
                 src={feature.icon}
                 alt={feature.label}
@@ -41,7 +41,7 @@ export default function ProductFeaturesBox({
                 className="object-contain"
               />
             </div>
-            <p className="font-medium text-dose-dark text-[14px] leading-[1.4]">
+            <p className="font-medium text-dose-dark leading-[1.4] text-small-responsive">
               {feature.label}
             </p>
           </div>
