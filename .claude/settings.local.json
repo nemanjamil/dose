@@ -19,7 +19,13 @@
       "Bash(cat:*)",
       "Bash(git diff:*)",
       "Bash(npm install:*)",
-      "Bash(yarn dev)"
+      "Bash(yarn dev)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(powershell -Command \"Stop-Process -Id 32552 -Force\")",
+      "Bash(powershell -Command \"Stop-Process -Id 36028 -Force\")",
+      "Bash(powershell -Command:*)"
     ],
     "deny": [],
     "ask": []

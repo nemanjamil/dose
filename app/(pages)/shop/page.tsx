@@ -9,7 +9,7 @@ interface SupabaseProduct {
   price: number | null;
   rating: string | null;
   volume: string | null;
-  image: string | null;
+  folder: string | null;
   created_at: string;
 }
 
@@ -54,16 +54,18 @@ export default async function ShopPage() {
 
   // Transform Supabase data to ShopItem format
   const shopItems: ShopItem[] = (products as SupabaseProduct[] || [])
-    .filter(product => product.name && product.color && product.price && product.rating && product.volume && product.image)
-    .map((product) => ({
-      id: product.id,
-      name: product.name || "",
-      color: product.color || "",
-      price: `${product.price} RSD`,
-      rating: product.rating || "0/5.0",
-      volume: product.volume || "",
-      image: product.image || "",
-    }));
+    .filter(product => product.name && product.color && product.price && product.rating && product.volume)
+    .map((product) => {
+      return {
+        id: product.id,
+        name: product.name || "",
+        color: product.color || "",
+        price: `${product.price} RSD`,
+        rating: product.rating || "0/5.0",
+        volume: product.volume || "",
+        folder: product.folder || "",
+      };
+    });
 
   console.log("✨ Transformed items:", shopItems.length);
 
