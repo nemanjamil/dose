@@ -68,7 +68,7 @@ export default function DoseList() {
               }`}
             >
               {/* Product Card with Image and Rating */}
-              <div className="relative w-full h-[480px] rounded-[20px] overflow-hidden bg-dose-light">
+              <div className="relative w-full h-[480px] rounded-[20px] overflow-hidden bg-dose-light group">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -78,11 +78,30 @@ export default function DoseList() {
                 />
 
                 {/* Rating Badge */}
-                <div className="absolute top-4 left-4 z-10 bg-white/20 backdrop-blur-sm flex gap-1.5 items-center justify-center px-4 py-2 rounded-[99px]">
+                <div
+                  className="absolute top-4 left-4 z-10 bg-white/20 backdrop-blur-sm 
+                flex gap-1.5 items-center justify-center px-4 py-2 rounded-[99px]"
+                >
                   <span className="text-white font-bold text-[16px] leading-[1.5]">
                     ⭐ {product.rating}
                   </span>
                 </div>
+
+                {/* Add to Basket Button */}
+                <button
+                  onClick={(e) => e.preventDefault()}
+                  className="absolute bottom-[10px] left-[10px] right-[10px] w-[calc(100%-20px)] bg-white
+                   text-dose-dark font-bold py-3 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 
+                   transition-opacity duration-300 rounded-[12px] cursor-pointer hover:bg-gray-100"
+                >
+                  <Image
+                    src="/images/icons/shop-frame.svg"
+                    alt="Shop"
+                    width={24}
+                    height={24}
+                  />
+                  <span className="text-[18px]">Add to Basket</span>
+                </button>
               </div>
 
               {/* Product Info */}
