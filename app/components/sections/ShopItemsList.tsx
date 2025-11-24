@@ -26,7 +26,8 @@ interface ShopItemsListProps {
 }
 
 const PLACEHOLDER_IMAGE = "/images/placeholder.png";
-const SUPABASE_STORAGE_URL = "https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public";
+const SUPABASE_STORAGE_URL =
+  "https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public";
 
 export default function ShopItemsList({ items }: ShopItemsListProps) {
   const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
@@ -36,7 +37,7 @@ export default function ShopItemsList({ items }: ShopItemsListProps) {
   };
 
   return (
-    <section className="w-full lg:px-8 py-[64px]">
+    <section className="w-full lg:px-8">
       <div className="max-w-[1440px] mx-auto lg:px-8 px-4">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {items.map((item) => {

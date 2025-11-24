@@ -11,7 +11,9 @@ export default function ContactUsPage() {
           <ContactFormSection />
         </div>
         <CenteredText />
+
         <Testemonials />
+        <div className="lg:mt-0 mt-24"></div>
         <BuyYourDoseToday />
       </div>
     </div>

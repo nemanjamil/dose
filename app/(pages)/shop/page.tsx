@@ -1,5 +1,7 @@
 import ShopMainBanner from "../../components/sections/ShopMainBanner";
-import ShopItemsList, { ShopItem } from "../../components/sections/ShopItemsList";
+import ShopItemsList, {
+  ShopItem,
+} from "../../components/sections/ShopItemsList";
 import { createClient } from "@/utils/supabase/server";
 
 interface SupabaseProduct {
@@ -53,8 +55,15 @@ export default async function ShopPage() {
   }
 
   // Transform Supabase data to ShopItem format
-  const shopItems: ShopItem[] = (products as SupabaseProduct[] || [])
-    .filter(product => product.name && product.color && product.price && product.rating && product.volume)
+  const shopItems: ShopItem[] = ((products as SupabaseProduct[]) || [])
+    .filter(
+      (product) =>
+        product.name &&
+        product.color &&
+        product.price &&
+        product.rating &&
+        product.volume
+    )
     .map((product) => {
       return {
         id: product.id,
@@ -75,10 +84,11 @@ export default async function ShopPage() {
 
   return (
     <div className="relative w-full" data-name="Shop Desktop">
-      <div className="mt-10">
+      <div className="lg:mt-24">
         <ShopMainBanner />
       </div>
       <ShopItemsList items={shopItems} />
+      <div className="lg:mt-24"></div>
     </div>
   );
 }
