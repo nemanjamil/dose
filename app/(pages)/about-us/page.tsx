@@ -14,6 +14,8 @@ export default function AboutUsPage() {
     <div className="relative w-full" data-name="About US Desktop">
       <SliderSectionAboutUs />
 
+      <div className="lg:mt-[104px] mt-12"></div>
+
       <SectionForRightAndLeftImageAndText
         image="/images/products/aboutUSimage_1.png"
         imageAlt="About Us Section"
@@ -33,7 +35,7 @@ export default function AboutUsPage() {
           },
         ]}
       />
-
+      <div className="lg:mt-[82px] mt-12"></div>
       <SectionForRightAndLeftImageAndText
         image="/images/sections/AboutUsFourImages.png"
         imageAlt="About Us Section"

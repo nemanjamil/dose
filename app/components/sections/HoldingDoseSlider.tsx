@@ -29,7 +29,7 @@ const testimonials: TestimonialCard[] = [
     id: 1,
     image: "/images/testimonials/test.png",
     stars: 5,
-    headline: "Perfect for my lifestyle",
+    headline: "Perfect for me",
     summary: "Keep my drinks hot and cold all day. The quality is exceptional!",
   },
   {
