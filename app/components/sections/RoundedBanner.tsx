@@ -15,7 +15,7 @@ export default function RoundedBanner() {
     <>
       {/* Mobile View */}
       <HeroSectionMobile
-        backgroundImageMobile="/images/products/twoCupsMobile.png"
+        backgroundImageMobile="/images/products/twoHandsRoseCupMob.jpg"
         backgroundColor="#E6E6E8"
         heading="Manje žurbe. Više svesti."
         description="Naš pristup nije sezonski trend – već dosledan izbor kvaliteta i pažnje. Verujemo da pravi luksuz danas znači birati promišljeno."
@@ -29,7 +29,7 @@ export default function RoundedBanner() {
       <section className="w-full lg:px-4 sm:px-8 lg:my-0 my-16 hidden lg:block">
         <div className="rounded-md overflow-hidden">
           <HeroSection
-            backgroundImage="/images/products/TwoBottlesBackground.png"
+            backgroundImage="/images/products/twoHandsRoseCup.jpg"
             backgroundColor="#E6E6E8"
             badge="Dostupno sada"
             heading="Manje žurbe. Više svesti."
