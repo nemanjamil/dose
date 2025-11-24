@@ -23,7 +23,7 @@ export default function BuyYourDoseToday() {
   return (
     <section className="w-full lg:px-0 sm:px-8">
       <Container className="lg:my-[80px] lg:mb-24 mb-24">
-        <div className="flex flex-col gap-8 items-center">
+        <div className="flex flex-col items-center">
           {/* First Row - Background Image */}
           <div className="relative w-[100%]  lg:h-[575px] h-[275px]  rounded-[32px] overflow-hidden mx-auto">
             <Image

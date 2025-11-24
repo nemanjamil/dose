@@ -17,7 +17,7 @@ export default function AboutUsPage() {
       <div className="lg:mt-[104px] mt-12"></div>
 
       <SectionForRightAndLeftImageAndText
-        image="/images/products/aboutUSimage_1.png"
+        image="/images/products/aboutUSimage.png"
         imageAlt="About Us Section"
         heading="Više od proizvoda. Način života"
         description="Verujemo da kvalitetan dizajn ne mora da bude komplikovan. Naši proizvodi spajaju čistu liniju, praktične detalje i dugotrajne materijale – za one koji cene jednostavnost i izdržljivost."

@@ -18,12 +18,12 @@ export default function HidrateInStyle() {
   return (
     <section className="w-full px-4 sm:px-8">
       <Container>
-        <div className="flex flex-col gap-16 lg:mt-0 mt-24">
-          <div className="flex justify-center flex-col items-center gap-1">
+        <div className="flex flex-col items-center gap-16 lg:mt-0 mt-24">
+          <div className="flex justify-center w-[50%] flex-col items-center gap-4">
             {/* Item 1 - ColorSwatch */}
             <ColorSwatch />
 
-            <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-4">
               <h1 className="text-dose-dark text-center">
                 Hydrate in Style. Choose. Your Dose Flask.
               </h1>

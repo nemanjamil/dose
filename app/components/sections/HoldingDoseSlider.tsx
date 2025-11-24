@@ -185,7 +185,7 @@ export default function HoldingDoseSlider() {
               <div key={testimonial.id} className="flex flex-col gap-3 mx-5">
                 {/* Image Container */}
                 <div
-                  className={`relative w-full h-[650px] lg:h-full rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group`}
+                  className={`relative w-full aspect-[2/3] rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group`}
                 >
                   <Image
                     src={testimonial.image}

@@ -28,8 +28,8 @@ export default async function HomeBanner() {
       backgroundImage="/images/sections/TwoBottlesBackground.png"
       backgroundColor="#FEF8F4"
       badge="DOSE"
-      heading="Premium Hydration Bottles"
-      description="Experience the perfect blend of style and functionality. DOSE bottles keep your beverages at the ideal temperature while making a statement about your personal style."
+      heading="Dva formata. Jedan ritam."
+      description="Za duže dane bez prekida ili za svaki korak u danu. Obe verzije dolaze sa čvrstom ručkom, preklopnim poklopcem sa slamkom, ne propuštaju, bezbedne su za upotrebu i staju u držače u kolima."
       features={["NO PLASTIC", "STAINLESS STEEL"]}
       productImage={productImage}
       productName={product.name}

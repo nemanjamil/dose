@@ -47,6 +47,7 @@ interface HeroSectionProps {
   showProductCard?: boolean;
   showFeatures?: boolean;
   textPosition?: "left" | "right";
+  containerHeight?: number; // Height in pixels (default: 650)
 }
 
 export default function HeroSection({
@@ -66,6 +67,7 @@ export default function HeroSection({
   showProductCard = true,
   showFeatures = true,
   textPosition = "left",
+  containerHeight = 650,
 }: HeroSectionProps) {
   const isDarkText = textColor === "dark";
   const isTextLeft = textPosition === "left";
@@ -86,14 +88,18 @@ export default function HeroSection({
 
   return (
     <section className="w-full">
-      <Container className="lg:px-8 px-4 bg-cover bg-center lg:h-[650px] lg:mb-[164px] lg:mt-0 flex flex-col lg:justify-center">
+      <Container className="lg:px-8 px-4 bg-cover bg-center lg:mb-[164px] lg:mt-0 flex flex-col lg:justify-center">
         <div
-          className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-md min-h-[500px] lg:h-full bg-cover bg-left bg-no-repeat"
-          style={
-            backgroundImage
-              ? { backgroundImage: `url(${backgroundImage})` }
-              : { backgroundColor: backgroundColor || "#FEF8F4" }
-          }
+          className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-md min-h-[300px] bg-cover bg-left bg-no-repeat"
+          style={{
+            height: `${containerHeight}px`,
+            backgroundImage: backgroundImage
+              ? `url(${backgroundImage})`
+              : undefined,
+            backgroundColor: !backgroundImage
+              ? backgroundColor || "#FEF8F4"
+              : undefined,
+          }}
         >
           {/* Text Content */}
           <div
@@ -101,7 +107,7 @@ export default function HeroSection({
               !isTextLeft ? "lg:order-2" : ""
             }`}
           >
-            <div className="left-[117px] top-[100px] max-w-[400px]  gap-8 flex flex-col items-center justify-center mt-5 lg:mt-0">
+            <div className="left-[117px] top-[100px] max-w-[400px]  gap-4 flex flex-col items-center justify-center mt-5 lg:mt-0">
               {/* Badge */}
               <div
                 className={`w-fit ${badgeBgClass} rounded-[99px] px-6 py-3 self-center lg:self-start`}

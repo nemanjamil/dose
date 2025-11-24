@@ -10,12 +10,12 @@ import HeroSection from "./HeroSection";
 export default function ShopMainBanner() {
   return (
     <HeroSection
-      backgroundImage="/images/sections/shopBanner.png"
+      backgroundImage="/images/products/ShopMainImageBanner.jpg"
       backgroundColor="#FEF8F4"
       badge="DOSE SHOP"
       heading="Shop now"
       description="Explore our collections and products and choose the one that fits the best with your lifestyle"
-      features={["Premium Quality", "Free Shipping", "Easy Returns"]}
+      features={[]}
       productImage="/images/products/malaSlikaHeader.png"
       productName="Featured Product"
       productColorway="All Colors"
@@ -26,6 +26,7 @@ export default function ShopMainBanner() {
       showProductCard={false}
       showFeatures={true}
       textPosition="right"
+      containerHeight={450}
     />
   );
 }

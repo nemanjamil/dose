@@ -49,7 +49,7 @@ export function TestimonialsSection() {
             >
               <div className="flex flex-col gap-[16px] h-[200px] justify-between">
                 <p className="font-medium font-medium text-dose-dark text-[18px] leading-[1.5] opacity-80">
-                  "{testimonial.text}"
+                  {testimonial.text}
                 </p>
                 <div className="flex gap-[12px] items-center">
                   <div className="w-[44px] h-[44px] rounded-[12px] bg-[rgba(255,255,255,0.1)]" />
@@ -62,7 +62,9 @@ export function TestimonialsSection() {
               </div>
               <div className="flex gap-[4px]">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <span key={i} className="text-yellow-400">★</span>
+                  <span key={i} className="text-yellow-400">
+                    ★
+                  </span>
                 ))}
               </div>
             </div>
