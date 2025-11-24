@@ -86,7 +86,7 @@ export default function HeroSection({
 
   return (
     <section className="w-full">
-      <Container className="lg:px-8 px-4 bg-cover bg-center lg:h-[650px] lg:mb-[164px] flex flex-col lg:justify-center">
+      <Container className="lg:px-8 px-4 bg-cover bg-center lg:h-[650px] lg:mb-[164px] lg:mt-0 flex flex-col lg:justify-center">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-md min-h-[500px] lg:h-full bg-cover bg-left bg-no-repeat"
           style={

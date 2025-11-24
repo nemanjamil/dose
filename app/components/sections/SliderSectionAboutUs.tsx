@@ -14,21 +14,21 @@ import SliderTextForAboutUs from "./SliderTextForAboutUs";
 
 export default function SliderSectionAboutUs() {
   return (
-    <section className="w-full px-4 sm:px-8">
+    <section className="w-full px-4 sm:px-8 lg:mt-0 mt-24">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Side - Text Content */}
-          <div className="flex flex-col gap-8 justify-center items-center h-full pt-24">
+          <div className="flex flex-col justify-center items-center">
             <SliderTextForAboutUs />
           </div>
 
           {/* Right Side - Image */}
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-[620px] sm:h-[620px] lg:h-[820px] lg:mt-0 mt-12">
             <Image
               src="/images/products/aboutUsFistSliderImage.png"
               alt="About Us"
               fill
-              className="object-cover rounded-[20px]"
+              className="object-cover"
             />
           </div>
         </div>

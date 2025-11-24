@@ -168,7 +168,7 @@ export default function HoldingDoseSlider() {
         </div>
       </div>
 
-      <Container className="lg:px-4 sm:px-8 lg:h-[650px] lg:pb-[164px] flex flex-col">
+      <Container className="lg:px-4 sm:px-8 lg:h-[650px] h-full lg:pb-[164px] flex flex-col">
         {/* Carousel Container */}
         <div className="flex flex-col items-center gap-12 lg:gap-6 flex-1">
           {/* Testimonial Cards Grid */}
@@ -182,10 +182,10 @@ export default function HoldingDoseSlider() {
             }`}
           >
             {visibleCards.map((testimonial, index) => (
-              <div key={testimonial.id} className="flex flex-col gap-3 h-full">
+              <div key={testimonial.id} className="flex flex-col gap-3 mx-5">
                 {/* Image Container */}
                 <div
-                  className={`relative w-full flex-1 rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group`}
+                  className={`relative w-full h-[650px] lg:h-full rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group`}
                 >
                   <Image
                     src={testimonial.image}
@@ -195,7 +195,7 @@ export default function HoldingDoseSlider() {
                     priority={index === 0}
                   />
                   {/* Play Button */}
-                  <button
+                  {/* <button
                     className="absolute inset-0 flex items-center justify-center group-hover:bg-black/20 transition-all duration-300 cursor-pointer"
                     aria-label="Play video"
                   >
@@ -210,7 +210,7 @@ export default function HoldingDoseSlider() {
                         <path d="M5 2L5 18L16 10L5 2Z" fill="white" />
                       </svg>
                     </div>
-                  </button>
+                  </button> */}
                 </div>
 
                 {/* Star Rating */}

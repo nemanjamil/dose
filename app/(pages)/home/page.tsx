@@ -30,7 +30,7 @@ export default function HomePage() {
       <HoldingDoseSlider />
 
       {/* Section: Design Philosophy - Based on Figma node-id 95-33 */}
-
+      <div className="lg:mt-0 mt-24"></div>
       <DesignTellsForItSelf />
 
       <HidrateInStyle />
@@ -42,9 +42,10 @@ export default function HomePage() {
       <CenteredText />
 
       <Testemonials />
+      <div className="lg:mt-0 mt-24"></div>
 
       <HomeBanner />
-
+      <div className="lg:mt-0 mt-24"></div>
       <BuyYourDoseToday />
     </div>
   );

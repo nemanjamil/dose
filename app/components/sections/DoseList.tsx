@@ -46,7 +46,7 @@ export default function DoseList() {
 
   return (
     <section className="w-full">
-      <Container className="lg:h-[650px] lg:mt-[164px]">
+      <Container className="lg:h-[650px] lg:mt-[164px] mt-24 lg:mb-0 mb-12">
         {/* Centered Text Content
         <div className="flex flex-col gap-4 items-center text-center mb-16 max-w-[675px] mx-auto">
           <h2 className="font-bold text-dose-dark text-[40px] sm:text-[56px] tracking-[-0.64px] sm:tracking-[-1.12px] leading-[1.2]">
@@ -58,7 +58,7 @@ export default function DoseList() {
         </div> */}
 
         {/* Products Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:mx-0 mx-5">
           {doseProducts.map((product, index) => (
             <Link
               key={product.id}

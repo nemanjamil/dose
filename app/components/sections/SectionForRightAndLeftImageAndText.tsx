@@ -37,12 +37,13 @@ export default function SectionForRightAndLeftImageAndText({
   const isImageLeft = imagePosition === "left";
 
   const imageContent = (
-    <div className="relative w-full h-[400px] sm:h-[500px]">
+    <div className="relative w-full lg:px-0 px-3">
       <Image
         src={image}
         alt={imageAlt}
-        fill
-        className="object-cover rounded-lg"
+        width={600}
+        height={500}
+        className="object-cover rounded-lg w-full h-auto"
       />
     </div>
   );
@@ -53,10 +54,10 @@ export default function SectionForRightAndLeftImageAndText({
         isImageLeft ? "lg:text-right" : "lg:text-left"
       }`}
     >
-      <h2 className="text-dose-dark">
-        {heading}
-      </h2>
-      <p className="text-p-responsive text-dose-mid">{description}</p>
+      <h2 className="text-dose-dark">{heading}</h2>
+      <p className="text-p-responsive text-dose-mid lg:mx-0 mx-5">
+        {description}
+      </p>
       {buttons && buttons.length > 0 && (
         <div
           className={`flex flex-col sm:flex-row gap-4 pt-4 items-center sm:items-start ${
@@ -81,13 +82,13 @@ export default function SectionForRightAndLeftImageAndText({
   );
 
   return (
-    <section className="w-full px-4 sm:px-8 my-16">
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:px-16">
+    <section className="w-full lg:px-0 sm:px-8">
+      <Container className="lg:h-[650px] lg:mt-[164px] mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch min-h-[400px] sm:min-h-[500px] lg:min-h-[650px] lg:px-16">
           {isImageLeft ? (
             <>
-              {imageContent}
-              <div className="flex flex-col justify-center items-center h-full">
+              <div className="order-2 lg:order-1">{imageContent}</div>
+              <div className="order-1 lg:order-2 flex flex-col justify-center items-center h-full px-3 lg:px-0">
                 {textContent}
               </div>
             </>

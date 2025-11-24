@@ -16,12 +16,12 @@ Naša misija je da spojimo funkcionalnost, estetiku i svesnost u proizvodima koj
   return (
     <div className="flex flex-col gap-6 items-center md:items-start w-full lg:w-[70%]">
       {/* Title */}
-      <h1 className="text-dose-dark text-center md:text-left max-w-[400px] sm:max-w-[500px]">
+      <h1 className="text-dose-dark text-center md:text-left lg:max-w-[400px] lg:px-0 px-7">
         {title}
       </h1>
 
       {/* Description */}
-      <p className="text-p-responsive lg:px-0 px-10 text-dose-mid text-center md:text-left max-w-[400px] sm:max-w-[500px] whitespace-pre-line">
+      <p className="text-p-responsive lg:px-0 px-5 text-dose-mid text-center md:text-left max-w-[400px] sm:max-w-[500px] whitespace-pre-line">
         {description}
       </p>
     </div>

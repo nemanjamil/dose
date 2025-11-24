@@ -85,7 +85,7 @@ export default function SliderProduct() {
   const slide = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] shadow-[0px_20px_48px_0px_rgba(135,84,55,0.15)] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-gray-100">
+    <div className="relative w-full h-[500px] sm:h-[500px] md:h-[600px] lg:h-[700px] shadow-[0px_20px_48px_0px_rgba(135,84,55,0.15)] rounded-[12px] sm:rounded-[16px] overflow-hidden bg-gray-100">
       {/* Product Image */}
       <ProductImage src={slide.image} />
 

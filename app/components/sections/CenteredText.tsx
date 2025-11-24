@@ -9,7 +9,7 @@ import Container from "../Container";
 
 export default function CenteredText() {
   return (
-    <section className="w-full lg:pt-20 lg:pb-8 py-4 px-4 sm:px-8">
+    <section className="w-full lg:pt-20 lg:pb-8  lg:py-4 py-12 px-4 sm:px-8">
       <Container>
         <div className="flex flex-col items-center gap-[24px]">
           {/* Rating Badge */}
