@@ -19,7 +19,7 @@ export default function HidrateInStyle() {
     <section className="w-full px-4 sm:px-8">
       <Container>
         <div className="flex flex-col items-center gap-16 lg:mt-0 mt-24">
-          <div className="flex justify-center w-[50%] flex-col items-center gap-4">
+          <div className="flex justify-center lg:w-[50%]  flex-col items-center gap-4">
             {/* Item 1 - ColorSwatch */}
             <ColorSwatch />
 

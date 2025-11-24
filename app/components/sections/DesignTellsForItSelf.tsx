@@ -11,6 +11,7 @@
 import { getProductById } from "@/utils/supabase/server";
 import { getProductImageUrl } from "@/utils/supabase/storage";
 import HeroSection from "./HeroSection";
+import HeroSectionMobile from "./HeroSectionMobile";
 
 interface DesignTellsForItselfProps {
   productId?: string;
@@ -34,23 +35,43 @@ export default async function DesignTellsForItSelf({
   const productImage = getProductImageUrl(product.folder);
 
   return (
-    <HeroSection
-      backgroundImage="/images/products/design.png"
-      backgroundColor="#1a1a1a"
-      badge="DOSE"
-      heading="Dizajn koji govori sam za sebe."
-      description="Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni poklopac i boje koje izražavaju tvoj karakter. Savršen balans između lepote i praktičnosti. Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
-      features={["NO PLASTIC", "STAINLESS STEEL"]}
-      productImage={productImage}
-      productName={product.name}
-      productColorway={""}
-      productPrice={`$${product.price}`}
-      productLabel={product.name}
-      textColor="light"
-      centerImage="/images/products/designCup.png"
-      showProductCard={true}
-      showFeatures={true}
-      textPosition="left"
-    />
+    <>
+      {/* Mobile View */}
+      <HeroSectionMobile
+        backgroundImageMobile="/images/products/designMob.png"
+        backgroundColor="#1a1a1a"
+        heading="Dizajn koji govori sam za sebe."
+        description="Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni poklopac i boje koje izražavaju tvoj karakter. Savršen balans između lepote i praktičnosti.
+Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
+        features={["NO PLASTIC", "STAINLESS STEEL"]}
+        centerImage=""
+        productLabel={product.name}
+        textColor="light"
+      />
+
+      {/* Desktop View */}
+      <section className="w-full lg:px-4 sm:px-8 hidden lg:block my-16">
+        <div className="rounded-md overflow-hidden">
+          <HeroSection
+            backgroundImage="/images/products/design.png"
+            backgroundColor="#1a1a1a"
+            badge="DOSE"
+            heading="Dizajn koji govori sam za sebe."
+            description="Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni poklopac i boje koje izražavaju tvoj karakter. Savršen balans između lepote i praktičnosti. Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
+            features={["NO PLASTIC", "STAINLESS STEEL"]}
+            productImage={productImage}
+            productName={product.name}
+            productColorway={""}
+            productPrice={`$${product.price}`}
+            productLabel={product.name}
+            textColor="light"
+            centerImage="/images/products/designCup.png"
+            showProductCard={true}
+            showFeatures={true}
+            textPosition="left"
+          />
+        </div>
+      </section>
+    </>
   );
 }

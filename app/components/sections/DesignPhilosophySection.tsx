@@ -16,7 +16,7 @@ export function DesignPhilosophySection() {
               </div>
             </div>
             <p className="font-bold font-bold text-white text-[56px] tracking-[-1.12px]">
-              1 Dizajn koji govori sam za sebe.
+              Dizajn koji govori sam za sebe.
             </p>
             <p className="font-medium font-medium text-white text-[18px] tracking-[-0.36px] leading-[1.5]">
               Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje

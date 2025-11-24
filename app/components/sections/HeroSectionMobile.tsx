@@ -62,7 +62,7 @@ export default function HeroSectionMobile({
           }
         >
           {/* Text Content */}
-          <div className="flex flex-col mt-12 gap-6 text-center max-w-[300px]">
+          <div className="flex flex-col mt-12 gap-6 text-center w-3/4">
             {/* Badge */}
             {badge && (
               <div
