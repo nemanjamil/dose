@@ -42,7 +42,7 @@ export default async function HomeBanner() {
       <section className="w-full lg:px-4 sm:px-8 hidden lg:block my-16">
         <div className="rounded-md overflow-hidden">
           <HeroSection
-            backgroundImage="/images/sections/TwoBottlesBackground.png"
+            backgroundImage="/images/products/TwoBottlesBackground.png"
             backgroundColor="#FEF8F4"
             badge="DOSE"
             heading="Dva formata. Jedan ritam."
