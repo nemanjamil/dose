@@ -155,9 +155,9 @@ export default function HoldingDoseSlider() {
   );
 
   return (
-    <section className="py-2 px-4 sm:px-8 w-full bg-dose-light">
-      <Container className="lg:px-4 sm:px-8">
-        <div className="flex justify-end mb-3">
+    <section className="w-full">
+      <div className={`max-w-[1440px] mx-auto`}>
+        <div className="flex justify-end mb-3 lg:mb-6">
           <ArrowButtonPair
             currentSlide={currentSlide}
             totalSlides={totalSlides}
@@ -166,12 +166,14 @@ export default function HoldingDoseSlider() {
             layout="horizontal"
           />
         </div>
+      </div>
 
+      <Container className="lg:px-4 sm:px-8 lg:h-[650px] lg:pb-[164px] flex flex-col">
         {/* Carousel Container */}
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-12 lg:gap-6 flex-1">
           {/* Testimonial Cards Grid */}
           <div
-            className={`w-full grid gap-8 justify-center ${
+            className={`w-full grid gap-6 justify-center flex-1 ${
               cardsPerView === 1
                 ? "grid-cols-1"
                 : cardsPerView === 2
@@ -180,12 +182,10 @@ export default function HoldingDoseSlider() {
             }`}
           >
             {visibleCards.map((testimonial, index) => (
-              <div key={testimonial.id} className="flex flex-col gap-4">
+              <div key={testimonial.id} className="flex flex-col gap-3 h-full">
                 {/* Image Container */}
                 <div
-                  className={`relative w-full rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group ${
-                    cardsPerView === 1 ? "h-[500px]" : "h-[450px]"
-                  }`}
+                  className={`relative w-full flex-1 rounded-[20px] overflow-hidden shadow-[${SHADOW_VALUE}] group`}
                 >
                   <Image
                     src={testimonial.image}

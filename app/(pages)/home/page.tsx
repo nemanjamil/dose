@@ -30,6 +30,7 @@ export default function HomePage() {
       <HoldingDoseSlider />
 
       {/* Section: Design Philosophy - Based on Figma node-id 95-33 */}
+
       <DesignTellsForItSelf />
 
       <HidrateInStyle />

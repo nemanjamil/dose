@@ -68,6 +68,7 @@ app/
 When a section component has multiple subcomponents (e.g., SliderSection with SliderText and SliderProduct), group them in a subfolder:
 
 **Structure:**
+
 ```
 app/components/sections/
 ├── Slider/
@@ -79,15 +80,17 @@ app/components/sections/
 ```
 
 **Import Usage:**
+
 ```tsx
 // ✅ GOOD - Use barrel export for clean imports
-import { SliderSection } from '@/components/sections/Slider';
+import { SliderSection } from "@/components/sections/Slider";
 
 // Also available:
-import { SliderText, SliderProduct } from '@/components/sections/Slider';
+import { SliderText, SliderProduct } from "@/components/sections/Slider";
 ```
 
 **Benefits:**
+
 - ✅ Logical grouping of related components
 - ✅ Prevents `/sections` folder from becoming cluttered
 - ✅ Clear parent-child relationships
@@ -112,21 +115,23 @@ All theme values are defined in `app/globals.css` using Tailwind's `@theme inlin
 
 All brand colors are defined in `app/globals.css` using Tailwind's `@theme` directive:
 
-| Color Name | Hex Value | Usage | Tailwind Class |
-|-----------|-----------|-------|-----------------|
-| Dark | `#6C2517` | Headings, primary text | `bg-dose-dark`, `text-dose-dark` |
-| Mid | `#9C5243` | Secondary text, descriptions | `bg-dose-mid`, `text-dose-mid` |
-| Accent | `#A7253B` | CTAs, highlights | `bg-dose-accent`, `text-dose-accent` |
-| Light | `#FEF8F4` | Page backgrounds | `bg-dose-light`, `text-dose-light` |
-| Peach | `#FFE3D3` | Buttons, accents | `bg-dose-peach`, `text-dose-peach` |
-| White | `#FFFFFF` | Component backgrounds | `bg-white`, `text-white` |
+| Color Name | Hex Value | Usage                        | Tailwind Class                       |
+| ---------- | --------- | ---------------------------- | ------------------------------------ |
+| Dark       | `#6C2517` | Headings, primary text       | `bg-dose-dark`, `text-dose-dark`     |
+| Mid        | `#9C5243` | Secondary text, descriptions | `bg-dose-mid`, `text-dose-mid`       |
+| Accent     | `#A7253B` | CTAs, highlights             | `bg-dose-accent`, `text-dose-accent` |
+| Light      | `#FEF8F4` | Page backgrounds             | `bg-dose-light`, `text-dose-light`   |
+| Peach      | `#FFE3D3` | Buttons, accents             | `bg-dose-peach`, `text-dose-peach`   |
+| White      | `#FFFFFF` | Component backgrounds        | `bg-white`, `text-white`             |
 
 **Also available as primary/secondary/tertiary aliases:**
+
 - `--color-primary` → Dark (#6C2517)
 - `--color-secondary` → Mid (#9C5243)
 - `--color-tertiary` → Accent (#A7253B)
 
 **Usage in components:**
+
 ```tsx
 // ✅ GOOD - Use Tailwind color classes
 <div className="bg-dose-dark text-white">Heading</div>
@@ -139,6 +144,7 @@ All brand colors are defined in `app/globals.css` using Tailwind's `@theme` dire
 ### Typography Implementation
 
 **Albert Sans is configured globally** in `app/layout.tsx`:
+
 ```tsx
 import { Albert_Sans } from "next/font/google";
 
@@ -150,32 +156,34 @@ const albertSans = Albert_Sans({
 ```
 
 **Don't repeat font-family in components.** Use Tailwind font weight classes instead:
+
 - ❌ `className="font-['Albert_Sans:Bold',sans-serif]"` - WRONG, redundant
 - ✅ `className="font-bold"` - CORRECT, uses global font with bold weight
 
 ### Font Weights
 
-| Weight | Value | Tailwind Class | Usage |
-|--------|-------|----------------|-------|
-| Medium | 500 | `font-medium` | Body text, descriptions, secondary elements |
-| Bold | 700 | `font-bold` | Headings, titles, important text |
+| Weight | Value | Tailwind Class | Usage                                       |
+| ------ | ----- | -------------- | ------------------------------------------- |
+| Medium | 500   | `font-medium`  | Body text, descriptions, secondary elements |
+| Bold   | 700   | `font-bold`    | Headings, titles, important text            |
 
 ### Spacing Scale
 
 All spacing values are defined in the theme and can be used with any Tailwind spacing utility:
 
-| Value | Pixels | Tailwind CSS Examples |
-|-------|--------|----------------------|
-| spacing-8 | 8px | `p-[var(--spacing-8)]`, `gap-[var(--spacing-8)]` |
-| spacing-12 | 12px | `p-[var(--spacing-12)]`, `gap-[var(--spacing-12)]` |
-| spacing-16 | 16px | `p-[var(--spacing-16)]`, `gap-[var(--spacing-16)]` |
-| spacing-24 | 24px | `p-[var(--spacing-24)]`, `gap-[var(--spacing-24)]` |
-| spacing-32 | 32px | `p-[var(--spacing-32)]`, `gap-[var(--spacing-32)]` |
-| spacing-64 | 64px | `p-[var(--spacing-64)]`, `gap-[var(--spacing-64)]` |
-| spacing-128 | 128px | `p-[var(--spacing-128)]`, `gap-[var(--spacing-128)]` |
-| spacing-164 | 164px | `p-[var(--spacing-164)]`, `gap-[var(--spacing-164)]` |
+| Value       | Pixels | Tailwind CSS Examples                                |
+| ----------- | ------ | ---------------------------------------------------- |
+| spacing-8   | 8px    | `p-[var(--spacing-8)]`, `gap-[var(--spacing-8)]`     |
+| spacing-12  | 12px   | `p-[var(--spacing-12)]`, `gap-[var(--spacing-12)]`   |
+| spacing-16  | 16px   | `p-[var(--spacing-16)]`, `gap-[var(--spacing-16)]`   |
+| spacing-24  | 24px   | `p-[var(--spacing-24)]`, `gap-[var(--spacing-24)]`   |
+| spacing-32  | 32px   | `p-[var(--spacing-32)]`, `gap-[var(--spacing-32)]`   |
+| spacing-64  | 64px   | `p-[var(--spacing-64)]`, `gap-[var(--spacing-64)]`   |
+| spacing-128 | 128px  | `p-[var(--spacing-128)]`, `gap-[var(--spacing-128)]` |
+| spacing-164 | 164px  | `p-[var(--spacing-164)]`, `gap-[var(--spacing-164)]` |
 
 **Usage example:**
+
 ```tsx
 // Padding
 <div className="p-[var(--spacing-32)]">Content with 32px padding</div>
@@ -196,6 +204,7 @@ All spacing values are defined in the theme and can be used with any Tailwind sp
 **Problem:** Duplicate classes waste space and confuse the codebase.
 
 **Examples:**
+
 ```tsx
 // ❌ BAD - Duplicate classes
 <p className="font-bold font-bold text-[#a7253b]">Text</p>
@@ -207,6 +216,7 @@ All spacing values are defined in the theme and can be used with any Tailwind sp
 ```
 
 **When editing components:**
+
 1. Check for duplicate utility classes
 2. Remove inline font-family declarations (use global Albert Sans)
 3. Keep class lists clean and readable
@@ -216,11 +226,13 @@ All spacing values are defined in the theme and can be used with any Tailwind sp
 **Rule:** Section components (`app/components/sections/*`) should NOT have background colors applied to the `<section>` element.
 
 **Why?**
+
 - Allows for flexible page layouts
 - Enables background colors/images to be applied at the page level if needed
 - Keeps sections reusable and composable
 
 **Example:**
+
 ```tsx
 // ❌ BAD - Section with background color
 <section className="py-[var(--spacing-64)] px-[16px] w-full bg-dose-light">
@@ -240,6 +252,7 @@ All spacing values are defined in the theme and can be used with any Tailwind sp
 **Rule:** Use the correct semantic HTML heading tag (`<h1>` through `<h6>`) and let the design system styles apply automatically. Do NOT add text-sizing classes like `text-h5`, `text-small`, etc. to heading elements.
 
 **Why?**
+
 - Each heading tag (`<h1>`, `<h2>`, etc.) has predefined styles in `globals.css`
 - Adding font size classes creates visual/semantic mismatches
 - Breaks document outline and accessibility
@@ -261,6 +274,7 @@ All spacing values are defined in the theme and can be used with any Tailwind sp
 ```
 
 **Heading Styles in globals.css:**
+
 - `<h1>` → 48px (--font-size-h1)
 - `<h2>` → 36px (--font-size-h2)
 - `<h3>` → 30px (--font-size-h3)
@@ -274,16 +288,16 @@ All include: font-weight-bold, line-height, and letter-spacing. Never override w
 
 ## 🛣️ Routes
 
-| Page      | Route          | File                               |
-| --------- | -------------- | ---------------------------------- |
+| Page      | Route          | File                                                                 |
+| --------- | -------------- | -------------------------------------------------------------------- |
 | Home      | `/` or `/home` | `app/(pages)/home/page.tsx` (re-exported via `app/(pages)/page.tsx`) |
-| About Us  | `/about-us`    | `app/(pages)/about-us/page.tsx`    |
-| Shop      | `/shop`        | `app/(pages)/shop/page.tsx`        |
-| Product   | `/shop/[id]`   | `app/(pages)/shop/[id]/page.tsx`   |
-| Blog Post | `/blog/[slug]` | `app/(pages)/blog/[slug]/page.tsx` |
-| Contact   | `/contact-us`  | `app/(pages)/contact-us/page.tsx`  |
-| Cart      | `/cart`        | `app/(pages)/cart/page.tsx`        |
-| Checkout  | `/checkout`    | `app/(pages)/checkout/page.tsx`    |
+| About Us  | `/about-us`    | `app/(pages)/about-us/page.tsx`                                      |
+| Shop      | `/shop`        | `app/(pages)/shop/page.tsx`                                          |
+| Product   | `/shop/[id]`   | `app/(pages)/shop/[id]/page.tsx`                                     |
+| Blog Post | `/blog/[slug]` | `app/(pages)/blog/[slug]/page.tsx`                                   |
+| Contact   | `/contact-us`  | `app/(pages)/contact-us/page.tsx`                                    |
+| Cart      | `/cart`        | `app/(pages)/cart/page.tsx`                                          |
+| Checkout  | `/checkout`    | `app/(pages)/checkout/page.tsx`                                      |
 
 ---
 
@@ -337,28 +351,31 @@ export default function PageNamePage() {
 
 ### General Rules
 
-| Type        | Example                               | Location                                                |
-| ----------- | ------------------------------------- | ------------------------------------------------------- |
-| Pages       | `HomePage`, `AboutUsPage`             | `app/(pages)/[name]/page.tsx` |
-| Sections    | `SliderSection`, `ProductsSection`    | `app/components/sections/`                              |
-| Components  | `Header`, `Footer`, `Badge`           | `app/components/`                                       |
-| Subcomponents | `SliderText`, `SliderProduct`         | `app/components/sections/` (with parent section)       |
-| Directories | `about-us`, `contact-us` (kebab-case) | -                                                       |
+| Type          | Example                               | Location                                         |
+| ------------- | ------------------------------------- | ------------------------------------------------ |
+| Pages         | `HomePage`, `AboutUsPage`             | `app/(pages)/[name]/page.tsx`                    |
+| Sections      | `SliderSection`, `ProductsSection`    | `app/components/sections/`                       |
+| Components    | `Header`, `Footer`, `Badge`           | `app/components/`                                |
+| Subcomponents | `SliderText`, `SliderProduct`         | `app/components/sections/` (with parent section) |
+| Directories   | `about-us`, `contact-us` (kebab-case) | -                                                |
 
 ### Component Naming Details
 
 **Page Components:**
+
 - Always end with `Page` suffix: `HomePage`, `AboutUsPage`, `ShopPage`
 - Use PascalCase
 - Example: `app/(pages)/home/page.tsx` exports `HomePage`
 
 **Section Components:**
+
 - Always end with `Section` suffix: `SliderSection`, `ProductsSection`, `TestimonialsSection`
 - Sections are container/wrapper components for page areas
 - Can contain subcomponents or standalone content
 - Example: `app/components/sections/SliderSection.tsx`
 
 **Subcomponents (Parts of Sections):**
+
 - Use descriptive names based on CONTENT, not POSITION
 - ✅ `SliderText` (describes content: text/title/description)
 - ✅ `SliderProduct` (describes content: product image)
@@ -368,10 +385,12 @@ export default function PageNamePage() {
 - Always keep parent section context in the name
 
 **Layout Components:**
+
 - Use simple, descriptive names: `Header`, `Footer`, `Sidebar`, `Container`
 - No suffix needed for top-level layout components
 
 **Utility/Feature Components:**
+
 - Use descriptive names: `Badge`, `Button`, `Card`, `Modal`
 - Based on functionality/appearance, not usage
 
@@ -436,6 +455,7 @@ npm run lint     # Lint check
 **DO NOT run `npm run build` automatically after every code fix.**
 
 **Rule:**
+
 - ✅ Ask the user first before running a build
 - ✅ Run builds only when explicitly requested
 - ✅ Run builds at the end of a multi-step task if user hasn't mentioned it
@@ -444,12 +464,14 @@ npm run lint     # Lint check
 - ❌ Don't assume a build is needed
 
 **When to Build:**
+
 1. When user explicitly requests: "build the project", "verify", "run build"
 2. When committing changes to git
 3. At the end of a complete feature implementation
 4. When troubleshooting build-related issues
 
 **Why?**
+
 - Faster iteration during development
 - Reduced unnecessary build times
 - Cleaner terminal output
@@ -462,6 +484,7 @@ npm run lint     # Lint check
 **DO NOT commit automatically.** User will commit manually.
 
 **Rule:**
+
 - ✅ Stage files with `git add`
 - ✅ Prepare commit messages when asked
 - ❌ Do NOT run `git commit` automatically
@@ -469,6 +492,7 @@ npm run lint     # Lint check
 - ❌ Wait for explicit user confirmation before committing
 
 **Benefits:**
+
 - User maintains control over commit history
 - Allows for grouping related changes
 - Cleaner commits with user oversight
@@ -497,6 +521,44 @@ npm run lint     # Lint check
 
 ---
 
+## 🗄️ SUPABASE DATABASE
+
+### Schema Management
+
+**Database Schema File:** `utils/supabase/schema.ts`
+
+⚠️ **CRITICAL RULE: Database Schema is Read-Only**
+
+The `schema.ts` file defines the TypeScript interfaces that match your Supabase database structure. This file **MUST NOT be auto-generated or modified by code**.
+
+**Important:**
+- ✅ You can manually update this file when database schema changes
+- ✅ Make schema changes directly in Supabase first
+- ✅ Then update `schema.ts` to reflect those changes
+- ❌ Never use automatic code generation to update schema
+- ❌ Never let tools modify this file without explicit user confirmation
+- ❌ This file is the source of truth for database types in the application
+
+**Current Database Tables:**
+
+**Products Table:**
+```sql
+- id: string (primary key)
+- created_at: timestamp (optional)
+- name: string
+- color: string
+- price: number
+- rating: string
+- volume: string
+- folder: string (Supabase storage folder for product images, e.g., "product-1")
+```
+
+### Supabase Integration Files
+
+- `utils/supabase/server.ts` - Server-side client and product queries
+- `utils/supabase/schema.ts` - Database schema interfaces (DO NOT AUTO-MODIFY)
+- `utils/supabase/storage.ts` - Storage helpers for product images
+
 ## 🎯 Key Points
 
 1. **RESPONSIVE DESIGN IS MANDATORY** - Test on all sizes
@@ -510,12 +572,15 @@ npm run lint     # Lint check
 ## 🖼️ Image Handling - IMPORTANT
 
 ### ❌ DO NOT USE Figma Image Links in Production
+
 **Current Issue:** SliderSection and other components use Figma asset URLs like:
+
 ```
 https://www.figma.com/api/mcp/asset/66ea92ee-1af4-422e-ba74-bfa50c815049
 ```
 
 **Problems:**
+
 - Figma links expire after 7 days
 - Not optimized for web
 - Slow loading
@@ -524,29 +589,33 @@ https://www.figma.com/api/mcp/asset/66ea92ee-1af4-422e-ba74-bfa50c815049
 ### ✅ PROPER WAY: Save Images Locally
 
 **Step 1: Create images directory**
+
 ```bash
 mkdir -p public/images/{slider,products,sections}
 ```
 
 **Step 2: Save Figma images locally**
+
 - Download images from Figma
 - Save in appropriate folder: `public/images/slider/`, `public/images/products/`, etc.
 - Use descriptive names: `thermos-main.jpg`, `feature-badge-1.svg`, etc.
 
 **Step 3: Update imports**
+
 ```tsx
 // ❌ Before (Figma link - DON'T USE)
 const imgSubtract = "https://www.figma.com/api/mcp/asset/...";
 
 // ✅ After (Local image)
-import thermoImg from '@/public/images/slider/thermos-main.jpg';
+import thermoImg from "@/public/images/slider/thermos-main.jpg";
 // Or use static path:
-const thermoImg = '/images/slider/thermos-main.jpg';
+const thermoImg = "/images/slider/thermos-main.jpg";
 ```
 
 **Step 4: Use Next.js Image component**
+
 ```tsx
-import Image from 'next/image';
+import Image from "next/image";
 
 <Image
   src="/images/slider/thermos-main.jpg"
@@ -554,10 +623,72 @@ import Image from 'next/image';
   width={676}
   height={700}
   priority
+/>;
+```
+
+### ✅ SUPABASE STORAGE: Pull Product Images from Database
+
+**For product images stored in Supabase Storage:**
+
+**Pattern:**
+```
+https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public/{folder}/main.jpg
+```
+
+**Where `{folder}` is the value from the Supabase `products` table `Folder` column.**
+
+**Database Schema:**
+```sql
+-- products table
+- id: string (primary key)
+- name: string
+- price: number
+- description: string
+- folder: string  ← Product folder name (e.g., "product-1", "product-2") - REQUIRED for images
+- category: string
+- colorway: string
+- label: string
+- created_at: timestamp
+```
+
+**Usage in Components:**
+
+```tsx
+// ✅ Build image URL from database folder
+const product = await getProductById(id);
+const imageUrl = `https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public/${product.folder}/main.jpg`;
+
+<Image
+  src={imageUrl}
+  alt={product.name}
+  width={400}
+  height={500}
+  priority
 />
 ```
 
-### Benefits:
+**Or use a helper function in `utils/supabase/storage.ts`:**
+
+```tsx
+export function getProductImageUrl(folder: string): string {
+  const baseUrl = 'https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public';
+  return `${baseUrl}/${folder}/main.jpg`;
+}
+
+// Usage:
+const imageUrl = getProductImageUrl(product.folder);
+```
+
+**Benefits of Supabase Storage:**
+
+- ✅ Centralized asset management
+- ✅ Easy to update product images
+- ✅ No need for manual file commits
+- ✅ Scalable for many products
+- ✅ CDN optimized by Supabase
+
+### Benefits of Local Images:
+
 - ✅ Optimized by Next.js (auto compression, formats)
 - ✅ Reliable (no expiry)
 - ✅ Better performance
@@ -565,12 +696,15 @@ import Image from 'next/image';
 - ✅ Version control friendly
 
 ### SliderSection Structure:
+
 **Left Part:** Text, heading, description, CTA button
 **Right Part:** Product image, feature badges, color swatches, slide indicators
+
 - Figma design: https://www.figma.com/design/I7GYdab3FirpOg941b6wTL/Dose-Web-Project?node-id=95-3
 
 **Action Required:**
 Replace all Figma image URLs in:
+
 - `app/components/sections/SliderSection.tsx`
 - Other components using Figma assets
 - Use local images instead
@@ -582,12 +716,14 @@ Replace all Figma image URLs in:
 **ALWAYS USE NATIVE TAILWIND SPACING** - No custom CSS variables for padding/margin
 
 **Rule:**
+
 - ✅ Use Tailwind's native spacing scale: `p-4`, `p-6`, `p-8`, `m-4`, `gap-4`, etc.
 - ✅ Common sizes: `4`, `6`, `8`, `12`, `16`, `24`, `32`, `48`, `64` (all in 4px increments)
 - ❌ Don't use custom CSS variables like `var(--spacing-32)`
 - ❌ Don't create custom spacing values
 
 **Examples:**
+
 ```tsx
 // ✅ GOOD - Use native Tailwind spacing
 <div className="p-8 gap-4 mb-6">Content</div>
@@ -600,6 +736,7 @@ Replace all Figma image URLs in:
 ```
 
 **Tailwind Spacing Reference:**
+
 - `1` = 4px
 - `2` = 8px
 - `3` = 12px
@@ -610,6 +747,7 @@ Replace all Figma image URLs in:
 - `16` = 64px
 
 **Benefits:**
+
 - Consistent spacing across the project
 - Better performance (no custom CSS)
 - Easier to maintain and scale
@@ -622,12 +760,14 @@ Replace all Figma image URLs in:
 **ALWAYS USE PREDEFINED COMPONENTS** - Never duplicate component functionality
 
 **Rule:**
+
 - ✅ Use existing components like `CTAButton`, `ColorSwatch`, `Badge`, etc.
 - ✅ Import and reuse components across sections
 - ❌ Don't create new components if a similar one already exists
 - ❌ Don't inline component logic multiple times
 
 **Examples:**
+
 ```tsx
 // ✅ GOOD - Reuse CTAButton component
 import CTAButton from "../CTAButton";
@@ -641,6 +781,7 @@ import CTAButton from "../CTAButton";
 ```
 
 **Benefits:**
+
 - Single source of truth for components
 - Consistency across the project
 - Easier maintenance and updates

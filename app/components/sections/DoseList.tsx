@@ -45,9 +45,9 @@ export default function DoseList() {
   ];
 
   return (
-    <div className="lg:py-16 py-4 px-4 sm:px-8">
-      <Container>
-        {/* Centered Text Content */}
+    <section className="w-full">
+      <Container className="lg:h-[650px] lg:mt-[164px]">
+        {/* Centered Text Content
         <div className="flex flex-col gap-4 items-center text-center mb-16 max-w-[675px] mx-auto">
           <h2 className="font-bold text-dose-dark text-[40px] sm:text-[56px] tracking-[-0.64px] sm:tracking-[-1.12px] leading-[1.2]">
             DOSE Collection
@@ -55,7 +55,7 @@ export default function DoseList() {
           <p className="font-medium text-dose-mid text-[16px] sm:text-[18px] tracking-[-0.32px] sm:tracking-[-0.36px] leading-[1.5]">
             Discover the perfect DOSE for your lifestyle
           </p>
-        </div>
+        </div> */}
 
         {/* Products Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -100,6 +100,6 @@ export default function DoseList() {
           ))}
         </div>
       </Container>
-    </div>
+    </section>
   );
 }

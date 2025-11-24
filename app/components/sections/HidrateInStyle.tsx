@@ -16,7 +16,7 @@ export default function HidrateInStyle() {
   };
 
   return (
-    <section className="w-full py-16 px-4 sm:px-8">
+    <section className="w-full px-4 sm:px-8">
       <Container>
         <div className="flex flex-col gap-16">
           <div className="flex justify-center flex-col items-center gap-1">

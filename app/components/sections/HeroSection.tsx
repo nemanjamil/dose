@@ -39,9 +39,9 @@ interface HeroSectionProps {
   features: string[];
   productImage: string;
   productName: string;
-  productColorway: string;
+  productColorway?: string;
   productPrice: string;
-  productLabel: string;
+  productLabel?: string;
   textColor: "light" | "dark";
   centerImage?: string;
   showProductCard?: boolean;
@@ -85,10 +85,10 @@ export default function HeroSection({
   const productLabelTextClass = isDarkText ? "text-dose-dark" : "text-white";
 
   return (
-    <section className="w-full sm:px-8">
-      <Container className="lg:px-8 px-4 pt-16 bg-cover bg-center">
+    <section className="w-full">
+      <Container className="lg:px-8 px-4 bg-cover bg-center lg:h-[650px] lg:mb-[164px] flex flex-col lg:justify-center">
         <div
-          className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-md min-h-[500px] lg:h-[650px] bg-cover bg-left bg-no-repeat"
+          className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center rounded-md min-h-[500px] lg:h-full bg-cover bg-left bg-no-repeat"
           style={
             backgroundImage
               ? { backgroundImage: `url(${backgroundImage})` }

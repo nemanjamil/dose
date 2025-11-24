@@ -11,7 +11,7 @@ import Container from "../Container";
 
 export default function DoseInRealLife() {
   return (
-    <section className="w-full py-16 px-4 sm:px-8">
+    <section className="w-full px-4 sm:px-8 lg:mt-[82px]">
       <Container>
         {/* Centered Text Content */}
         <div className="flex flex-col gap-6 items-center text-center mb-8 max-w-[675px] mx-auto">
