@@ -127,8 +127,8 @@ export default function Footer() {
           </div>
 
           {/* Right Section - Product Card */}
-          <div className="w-full sm:w-[304px]">
-            <div className="bg-dose-accent relative rounded-t-[16px] overflow-hidden p-[24px] flex flex-col gap-[24px] h-full min-h-[350px]">
+          <div className="w-full sm:w-[304px] mb-5" id="footerRightSection">
+            <div className="bg-dose-accent relative rounded-[16px] overflow-hidden p-[24px] flex flex-col gap-[24px] h-full min-h-[350px]">
               {/* Logo */}
               <Link
                 href="/"

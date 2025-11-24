@@ -21,8 +21,8 @@ export default function BuyYourDoseToday() {
   };
 
   return (
-    <section className="w-full py-16 px-4 sm:px-8">
-      <Container>
+    <section className="w-full lg:px-0 sm:px-8">
+      <Container className="lg:my-[80px]">
         <div className="flex flex-col gap-8 items-center">
           {/* First Row - Background Image */}
           <div className="relative w-full sm:w-[90%] lg:w-[80%] h-[250px] sm:h-[350px] lg:h-[400px] rounded-[32px] overflow-hidden">

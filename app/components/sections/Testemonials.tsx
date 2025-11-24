@@ -179,9 +179,9 @@ export default function Testemonials() {
           </div>
         </div>
 
-        {/* Desktop View - Grid with 4 columns */}
-        <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {testimonials.map((testimonial) => (
+        {/* Desktop View - Grid with 3 columns, 2 rows */}
+        <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {testimonials.slice(0, 6).map((testimonial) => (
             <div
               key={testimonial.id}
               className="flex flex-col gap-4 p-8 bg-white rounded-[16px] shadow-[0px_10px_24px_0px_rgba(135,84,55,0.1)]"
