@@ -19,7 +19,7 @@ interface ContactFormSectionProps {
 }
 
 export default function ContactFormSection({
-  image = "/images/products/item_peach.png",
+  image = "/images/products/contactUsMainImage.png",
   imageAlt = "Contact us",
 }: ContactFormSectionProps) {
   const [formData, setFormData] = useState({
