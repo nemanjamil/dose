@@ -22,9 +22,9 @@ export default function CenteredText() {
 
           {/* Centered Heading */}
           <div className="w-full sm:w-[80%] lg:w-[60%] max-w-[600px] flex items-center justify-center">
-            <h1 className="font-bold text-dose-dark text-center">
+            <h2 className="font-bold text-dose-dark text-center">
               What our customers have to say
-            </h1>
+            </h2>
           </div>
         </div>
       </Container>

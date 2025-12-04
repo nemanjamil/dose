@@ -157,7 +157,7 @@ export default function HoldingDoseSlider() {
   return (
     <section id="HoldingDoseSlider" className="w-full">
       <div className={`max-w-[1440px] mx-auto`}>
-        <div className="flex justify-end mb-3 lg:mb-6">
+        <div className="flex justify-end mb-3 lg:mb-6 pr-4">
           <ArrowButtonPair
             currentSlide={currentSlide}
             totalSlides={totalSlides}

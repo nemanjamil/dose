@@ -52,80 +52,89 @@ export default function HeroSectionMobile({
 
   return (
     <section className="w-full px-4 sm:px-8 lg:hidden">
-      <Container className="my-[80px] lg:mb-0 mb-24">
+      <Container>
         <div
-          className="flex flex-col gap-6 justify-start items-center h-[1100px] bg-cover bg-center bg-no-repeat rounded-md"
+          className="flex flex-col rounded-md pt-5"
           style={
             backgroundImageMobile
-              ? { backgroundImage: `url(${backgroundImageMobile})` }
+              ? {
+                  backgroundImage: `url(${backgroundImageMobile})`,
+                  backgroundSize: "100% auto",
+                  backgroundPosition: "top",
+                  backgroundRepeat: "no-repeat",
+                }
               : { backgroundColor: backgroundColor || "#FEF8F4" }
           }
         >
-          {/* Text Content */}
-          <div className="flex flex-col mt-12 gap-6 text-center w-3/4">
-            {/* Badge */}
-            {badge && (
-              <div
-                className={`w-fit ${badgeBgClass} rounded-[99px] px-6 py-3 self-center`}
-              >
-                <span className={`${badgeTextClass} font-medium text-[14px]`}>
-                  {badge}
-                </span>
-              </div>
-            )}
+          {/* First Section: Text Content */}
+          <div className="FirstSection flex flex-col justify-start items-center h-[418px]">
+            <div className="flex flex-col text-center w-[85%] gap-4">
+              {/* Badge */}
+              {badge && (
+                <div
+                  className={`w-fit ${badgeBgClass} rounded-[99px] px-6 self-center`}
+                >
+                  <span className={`${badgeTextClass} font-medium text-[14px]`}>
+                    {badge}
+                  </span>
+                </div>
+              )}
 
-            {/* Heading */}
-            <h2 className={`${headingTextClass}`}>{heading}</h2>
+              {/* Heading */}
+              <h2 className={`${headingTextClass}`}>{heading}</h2>
 
-            {/* Description */}
-            <p className={`${descriptionTextClass} text-p-responsive`}>
-              {description}
-            </p>
+              {/* Description */}
+              <p className={`${descriptionTextClass} text-p-responsive `}>
+                {description}
+              </p>
 
-            {/* Feature Badges */}
-            {features && features.length > 0 && (
-              <div className="flex gap-2 flex-wrap justify-center">
-                {features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className={`${featureBgClass} rounded-[99px] px-4 py-2`}
-                  >
-                    <span
-                      className={`${featureTextClass} font-medium text-[12px]`}
+              {/* Feature Badges */}
+              {features && features.length > 0 && (
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {features.map((feature, index) => (
+                    <div
+                      key={index}
+                      className={`${featureBgClass} rounded-[99px] px-4 py-2`}
                     >
-                      {feature}
-                    </span>
-                  </div>
-                ))}
+                      <span
+                        className={`${featureTextClass} font-medium text-[12px]`}
+                      >
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Center Image */}
+            {centerImage && (
+              <div className="relative w-[280px] h-auto mt-4">
+                <Image
+                  src={centerImage}
+                  alt="Featured product"
+                  width={280}
+                  height={400}
+                  className="object-contain"
+                />
               </div>
             )}
           </div>
 
-          {/* Center Image */}
-          {centerImage && (
-            <div className="relative w-[280px] h-auto mt-auto">
-              <Image
-                src={centerImage}
-                alt="Featured product"
-                width={280}
-                height={400}
-                className="object-contain"
-              />
-            </div>
-          )}
-
-          {/* Mobile Product Label */}
-          {productLabel && (
-            <div
-              className={`${productLabelBgClass} rounded-[99px] px-4 py-2 mt-auto mb-8`}
-            >
-              <span
-                className={`${productLabelTextClass} font-medium text-[14px]`}
+          {/* Second Section: Product Label */}
+          <div className="SecondSection flex items-center justify-center h-[370px]">
+            {productLabel && (
+              <div
+                className={`${productLabelBgClass} rounded-[99px] px-4 py-2`}
               >
-                {productLabel}
-              </span>
-            </div>
-          )}
+                <span
+                  className={`${productLabelTextClass} font-medium text-[14px]`}
+                >
+                  {productLabel}
+                </span>
+              </div>
+            )}
+          </div>
         </div>
       </Container>
     </section>

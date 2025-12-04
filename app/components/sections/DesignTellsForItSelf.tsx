@@ -45,7 +45,7 @@ export default async function DesignTellsForItSelf({
 Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
         features={["NO PLASTIC", "STAINLESS STEEL"]}
         centerImage=""
-        productLabel={product.name}
+        productLabel=""
         textColor="light"
       />
 

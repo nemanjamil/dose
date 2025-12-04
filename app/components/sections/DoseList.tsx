@@ -58,7 +58,7 @@ export default function DoseList() {
         </div> */}
 
         {/* Products Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:mx-0 mx-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 lg:gap-6 gap-2 lg:mx-0 mx-2">
           {doseProducts.map((product, index) => (
             <Link
               key={product.id}
@@ -68,7 +68,10 @@ export default function DoseList() {
               }`}
             >
               {/* Product Card with Image and Rating */}
-              <div className="relative w-full h-[480px] rounded-[20px] overflow-hidden bg-dose-light group">
+              <div
+                className="relative w-full aspect-[3/4] rounded-[20px]
+              overflow-hidden bg-dose-light group"
+              >
                 <Image
                   src={product.image}
                   alt={product.name}
