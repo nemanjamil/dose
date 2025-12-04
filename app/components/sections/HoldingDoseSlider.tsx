@@ -168,7 +168,7 @@ export default function HoldingDoseSlider() {
         </div>
       </div>
 
-      <Container className="lg:px-4 sm:px-8 lg:h-[650px] h-full flex flex-col">
+      <Container className="lg:h-[650px] h-full flex flex-col">
         {/* Carousel Container */}
         <div className="flex flex-col items-center gap-12 lg:gap-6 flex-1">
           {/* Testimonial Cards Grid */}

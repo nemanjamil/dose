@@ -33,7 +33,7 @@ export default function SliderText() {
         </h1>
 
         {/* Description */}
-        <p className="font-medium text-dose-mid text-[14px] sm:text-[16px] md:text-[18px] tracking-[-0.28px] sm:tracking-[-0.32px] md:tracking-[-0.36px] leading-[1.5] max-w-[280px] sm:max-w-[355px] text-center md:text-left">
+        <p className="font-medium text-dose-mid text-[18px] tracking-[-0.28px] sm:tracking-[-0.32px] md:tracking-[-0.36px] leading-[1.5] max-w-[280px] sm:max-w-[355px] text-center md:text-left">
           {description}
         </p>
       </div>

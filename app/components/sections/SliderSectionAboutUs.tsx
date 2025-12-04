@@ -14,7 +14,10 @@ import SliderTextForAboutUs from "./SliderTextForAboutUs";
 
 export default function SliderSectionAboutUs() {
   return (
-    <section className="w-full px-4 sm:px-8 lg:mt-0 mt-24">
+    <section
+      id="SliderSectionAboutUs"
+      className="w-full px-4 sm:px-8 lg:mt-0 mt-24"
+    >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Side - Text Content */}

@@ -31,27 +31,33 @@ export default function FeatureBadge({
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Hide top-right badge on mobile
+  if (isMobile && position === "top-right") {
+    return null;
+  }
+
   // Responsive positioning using percentages
   // Mobile: moved 10% to top
   // Desktop: original positioning
   const positionStyles = {
     "top-left": {
-      top: isMobile ? "19%" : "29%",
-      left: "11%",
+      top: isMobile ? "2%" : "29%",
+      left: isMobile ? "2%" : "11%",
     },
     "top-right": {
       top: isMobile ? "37%" : "37%",
-      right: "11%",
+      right: isMobile ? "37%" : "11%",
     },
     "bottom-left": {
-      top: isMobile ? "67%" : "77%",
-      left: "35%",
+      top: isMobile ? "80%" : "77%",
+      left: isMobile ? "5%" : "35%",
     },
   };
 
   return (
     <div
-      className="absolute bg-[rgba(255,255,255,0.4)] box-border flex flex-col gap-[10px] items-start pl-[8px] pr-[24px] py-[8px] rounded-[99px] shadow-[0px_10px_24px_0px_rgba(160,157,151,0.3)]"
+      className="absolute bg-[rgba(255,255,255,0.4)] box-border flex flex-col gap-[10px] 
+      items-start pl-[8px] pr-[24px] py-[8px] rounded-[99px] shadow-[0px_10px_24px_0px_rgba(160,157,151,0.3)]"
       style={positionStyles[position]}
     >
       <div className="flex gap-[12px] items-center">

@@ -18,7 +18,6 @@ import ProductImage from "./ProductImage";
 import FeatureBadge from "./FeatureBadge";
 import ColorSwatch from "./ColorSwatch";
 import SlideIndicators from "./SlideIndicators";
-import TopBar from "./TopBar";
 
 // Feature badge icons - local images
 const iconBPAFree = "/images/icons/bpa-free.svg";
@@ -100,7 +99,7 @@ export default function SliderProduct() {
       ))}
 
       {/* Color Swatches */}
-      <div className="absolute left-[32px] bottom-[32px]">
+      <div className="absolute lg:left-[32px] lg:bottom-[32px] left-2 bottom-0">
         <ColorSwatch />
       </div>
 

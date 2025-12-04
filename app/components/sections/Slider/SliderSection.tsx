@@ -15,7 +15,7 @@ import SliderProduct from "./SliderProduct/SliderProduct";
 
 export default function SliderSection() {
   return (
-    <div
+    <section
       id="SliderSection"
       className="relative w-full pt-8 sm:pt-[47px] md:pt-[60px] lg:pt-0"
     >
@@ -33,6 +33,6 @@ export default function SliderSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
