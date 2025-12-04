@@ -9,7 +9,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import CTAButton from "./CTAButton";
 
 const imgLogotype = "/images/brand/Logotype_white.svg";
 
@@ -38,7 +37,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-dose-light rounded-t-[32px] overflow-hidden shadow-[0px_20px_48px_0px_rgba(135,84,55,0.1)]">
+    <footer className="w-full bg-dose-light rounded-t-[32px] mt-32 overflow-hidden shadow-[0px_20px_48px_0px_rgba(135,84,55,0.1)]">
       <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px] lg:px-[64px] pt-[64px] relative lg:min-h-[570px] flex flex-col bg-white rounded-md">
         {/* Row 1 - Navigation Links + Product Card */}
         <div className="flex flex-col lg:flex-row gap-[48px] lg:gap-[64px] mb-[0px] items-center lg:items-stretch flex-1">

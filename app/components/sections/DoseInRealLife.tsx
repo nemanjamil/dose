@@ -11,10 +11,10 @@ import Container from "../Container";
 
 export default function DoseInRealLife() {
   return (
-    <section className="w-full px-4 sm:px-8 lg:mt-[82px]">
+    <section id="DoseInRealLife" className="w-full px-4 sm:px-8">
       <Container>
         {/* Centered Text Content */}
-        <div className="flex flex-col items-center text-center gap-6 mb-8 mx-auto lg:w-1/2 ">
+        <div className="flex flex-col items-center text-center gap-6 mx-auto lg:w-1/2 ">
           <h1 className="font-bold text-dose-dark">DOSE u stvarnom životu</h1>
           <p className="font-medium text-dose-mid text-[14px] sm:text-[16px] lg:text-[18px] tracking-[-0.28px] sm:tracking-[-0.32px] lg:tracking-[-0.36px] leading-[1.5]">
             Zavirite u trenutke naših korisnica, njihove navike, pokrete i

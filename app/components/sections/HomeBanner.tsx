@@ -25,7 +25,7 @@ export default async function HomeBanner() {
     : "/images/placeholder.png";
 
   return (
-    <>
+    <section id="HomeBanner">
       {/* Mobile View */}
       <HeroSectionMobile
         backgroundImageMobile="/images/products/twoCupsMobile.png"
@@ -39,7 +39,7 @@ export default async function HomeBanner() {
       />
 
       {/* Desktop View */}
-      <section className="w-full lg:px-4 sm:px-8 hidden lg:block my-16">
+      <section className="w-full lg:px-4 sm:px-8 hidden lg:block">
         <div className="rounded-md overflow-hidden">
           <HeroSection
             backgroundImage="/images/products/TwoBottlesBackground.png"
@@ -61,6 +61,6 @@ export default async function HomeBanner() {
           />
         </div>
       </section>
-    </>
+    </section>
   );
 }

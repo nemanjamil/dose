@@ -35,7 +35,7 @@ export default async function DesignTellsForItSelf({
   const productImage = getProductImageUrl(product.folder);
 
   return (
-    <>
+    <section id="DesignTellsForItSelf">
       {/* Mobile View */}
       <HeroSectionMobile
         backgroundImageMobile="/images/products/designMob.png"
@@ -50,7 +50,7 @@ Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
       />
 
       {/* Desktop View */}
-      <section className="w-full lg:px-4 sm:px-8 hidden lg:block my-16">
+      <section className="w-full lg:px-4 sm:px-8 hidden lg:block">
         <div className="rounded-md overflow-hidden">
           <HeroSection
             backgroundImage="/images/products/design.png"
@@ -72,6 +72,6 @@ Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
           />
         </div>
       </section>
-    </>
+    </section>
   );
 }

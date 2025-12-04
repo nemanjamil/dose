@@ -21,8 +21,8 @@ export default function BuyYourDoseToday() {
   };
 
   return (
-    <section className="w-full lg:px-0 sm:px-8">
-      <Container className="lg:my-[80px] lg:mb-24 mb-24">
+    <section id="BuyYourDoseToday" className="w-full lg:px-0 sm:px-8">
+      <Container>
         <div className="flex flex-col items-center gap-6">
           {/* First Row - Background Image */}
           {/* Mobile Image */}

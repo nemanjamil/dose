@@ -27,10 +27,10 @@ export default function SliderText() {
   return (
     <div className="flex flex-col gap-[24px] sm:gap-[32px] items-center md:items-start w-full lg:w-auto">
       {/* Title */}
-      <div className="flex flex-col gap-[12px] sm:gap-[16px] items-center md:items-start w-full">
-        <h2 className="font-bold text-dose-dark lg:text-left text-center">
+      <div className="flex flex-col gap-3 sm:gap-4 items-center md:items-start w-full ">
+        <h1 className="font-bold text-dose-dark lg:text-left text-center lg:pr-32">
           {title}
-        </h2>
+        </h1>
 
         {/* Description */}
         <p className="font-medium text-dose-mid text-[14px] sm:text-[16px] md:text-[18px] tracking-[-0.28px] sm:tracking-[-0.32px] md:tracking-[-0.36px] leading-[1.5] max-w-[280px] sm:max-w-[355px] text-center md:text-left">

@@ -15,7 +15,10 @@ import SliderProduct from "./SliderProduct/SliderProduct";
 
 export default function SliderSection() {
   return (
-    <div className="relative w-full pt-[32px] sm:pt-[47px] md:pt-[60px] lg:pt-[0px] mb-24">
+    <div
+      id="SliderSection"
+      className="relative w-full pt-8 sm:pt-[47px] md:pt-[60px] lg:pt-0"
+    >
       <div className="max-w-[1440px] mx-auto px-[16px] sm:px-[32px]">
         {/* Flex container for text and product parts */}
         <div className="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center lg:items-stretch">

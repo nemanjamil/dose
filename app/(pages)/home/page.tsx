@@ -19,7 +19,7 @@ import BuyYourDoseToday from "../../components/sections/BuyYourDoseToday";
  */
 export default function HomePage() {
   return (
-    <div className="relative w-full" data-name="Homepage Desktop">
+    <div className="relative w-full space-y-32" data-name="Homepage Desktop">
       {/* Slider Section */}
       <SliderSection />
 
@@ -30,7 +30,6 @@ export default function HomePage() {
       <HoldingDoseSlider />
 
       {/* Section: Design Philosophy - Based on Figma node-id 95-33 */}
-      <div className="lg:mt-0 mb-24"></div>
       <DesignTellsForItSelf />
 
       <HidrateInStyle />
@@ -42,10 +41,9 @@ export default function HomePage() {
       <CenteredText />
 
       <Testemonials />
-      <div className="lg:mt-0 mt-24"></div>
 
       <HomeBanner />
-      <div className="lg:mt-0 mt-24"></div>
+
       <BuyYourDoseToday />
     </div>
   );

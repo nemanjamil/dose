@@ -121,8 +121,8 @@ export default function Testemonials() {
   const currentTestimonial = testimonials[currentSlide];
 
   return (
-    <section className="w-full lg:py-0 py-4 lg:px-0 px-4 ">
-      <Container className="lg:h-[650px] lg:mt-[80px]">
+    <section id="Testemonials" className="w-full lg:px-0 px-4 ">
+      <Container className="lg:h-[650px]">
         {/* Mobile View - Single Card with Swipe */}
         <div
           className="lg:hidden"
