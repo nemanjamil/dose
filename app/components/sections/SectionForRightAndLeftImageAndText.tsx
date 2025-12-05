@@ -82,7 +82,7 @@ export default function SectionForRightAndLeftImageAndText({
   );
 
   return (
-    <section className="w-full lg:px-0 sm:px-8 bg-amber-400">
+    <section className="w-full lg:px-0 sm:px-8">
       <Container className="">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch min-h-[400px] sm:min-h-[500px] lg:min-h-[650px]">
           {isImageLeft ? (
