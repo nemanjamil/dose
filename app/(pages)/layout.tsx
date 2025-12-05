@@ -33,6 +33,7 @@ export default function PagesLayout({
       <main className="flex-grow w-full">{children}</main>
 
       {/* Footer - Sticky at bottom */}
+      {/* <div id="footerDevider" className="h-24 bg-amber-500"></div> */}
       <Footer />
     </div>
   );

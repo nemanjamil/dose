@@ -19,7 +19,10 @@ import BuyYourDoseToday from "../../components/sections/BuyYourDoseToday";
  */
 export default function HomePage() {
   return (
-    <div className="relative w-full space-y-32" data-name="Homepage Desktop">
+    <div
+      className="relative w-full space-y-32 mb-24"
+      data-name="Homepage Desktop"
+    >
       {/* Slider Section */}
       <SliderSection />
 

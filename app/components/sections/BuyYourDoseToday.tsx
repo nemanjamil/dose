@@ -22,7 +22,7 @@ export default function BuyYourDoseToday() {
 
   return (
     <section id="BuyYourDoseToday" className="w-full lg:px-0 sm:px-8">
-      <Container>
+      <div className="max-w-[1440px] lg:h-[825px] mx-auto">
         <div className="flex flex-col items-center gap-6">
           {/* First Row - Background Image */}
           {/* Mobile Image */}
@@ -43,13 +43,13 @@ export default function BuyYourDoseToday() {
               fill
               className="object-cover"
             />
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+              <ColorSwatch />
+            </div>
           </div>
 
           {/* Second Row - Text Content */}
           <div className="flex flex-col gap-6 items-center text-center max-w-[600px]">
-            {/* Item 1 - ColorSwatch */}
-            <ColorSwatch />
-
             <div className="flex flex-col items-center gap-3">
               <h1 className="text-dose-dark text-center">
                 Kupi svoj Dose danas!
@@ -64,7 +64,7 @@ export default function BuyYourDoseToday() {
             <CTAButton onClick={handleShopClick} />
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

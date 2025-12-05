@@ -122,7 +122,7 @@ export default function Testemonials() {
 
   return (
     <section id="Testemonials" className="w-full lg:px-0 px-4 ">
-      <Container className="lg:h-[650px]">
+      <Container>
         {/* Mobile View - Single Card with Swipe */}
         <div
           className="lg:hidden"

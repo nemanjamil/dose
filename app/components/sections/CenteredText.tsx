@@ -10,7 +10,7 @@ import Container from "../Container";
 export default function CenteredText() {
   return (
     <section id="CenteredText" className="w-full px-4 sm:px-8">
-      <Container>
+      <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col items-center gap-[24px]">
           {/* Rating Badge */}
           <div className="bg-dose-accent/20 rounded-[99px] px-[24px] py-[12px] flex items-center gap-[12px] w-fit">
@@ -27,7 +27,7 @@ export default function CenteredText() {
             </h2>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

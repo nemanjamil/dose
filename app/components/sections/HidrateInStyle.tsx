@@ -17,7 +17,7 @@ export default function HidrateInStyle() {
 
   return (
     <section id="HidrateInStyle" className="w-full px-4 sm:px-8">
-      <Container>
+      <div className="max-w-[1440px]  mx-auto">
         <div className="flex flex-col items-center gap-16">
           <div className="flex justify-center lg:w-[50%]  flex-col items-center gap-4">
             {/* Item 1 - ColorSwatch */}
@@ -33,7 +33,7 @@ export default function HidrateInStyle() {
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

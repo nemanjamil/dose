@@ -12,7 +12,7 @@ import Container from "../Container";
 export default function DoseInRealLife() {
   return (
     <section id="DoseInRealLife" className="w-full px-4 sm:px-8">
-      <Container>
+      <div className="max-w-[1440px] mx-auto">
         {/* Centered Text Content */}
         <div className="flex flex-col items-center text-center gap-6 mx-auto lg:w-1/2 ">
           <h2 className="font-bold text-dose-dark">DOSE u stvarnom životu</h2>
@@ -22,7 +22,7 @@ export default function DoseInRealLife() {
             stvarno.
           </p>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

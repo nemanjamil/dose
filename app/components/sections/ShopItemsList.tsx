@@ -38,7 +38,7 @@ export default function ShopItemsList({ items }: ShopItemsListProps) {
 
   return (
     <section className="w-full lg:px-8">
-      <div className="max-w-[1440px] mx-auto lg:px-8 px-4">
+      <div className="max-w-[1440px] mx-auto lg:px-0 px-4">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {items.map((item) => {
             const imageUrl =

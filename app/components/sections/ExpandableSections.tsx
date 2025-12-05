@@ -62,7 +62,7 @@ export default function ExpandableSections({
 
           {/* Expandable Content */}
           {expandedIndex === index && (
-            <div className="px-4 py-4 bg-white border-t border-dose-light">
+            <div className="px-4 py-4 border-t border-dose-light">
               <p className="text-dose-mid font-medium text-[14px] sm:text-[16px] leading-[1.6]">
                 {section.content}
               </p>

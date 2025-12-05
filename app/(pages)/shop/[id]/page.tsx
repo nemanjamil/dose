@@ -3,6 +3,7 @@ import ItemMainView from "../../../components/sections/ItemMainView";
 import Testemonials from "@/app/components/sections/Testemonials";
 import DoseList from "@/app/components/sections/DoseList";
 import { createClient } from "@/utils/supabase/server";
+import PhoneAndEmail from "@/app/components/sections/PhoneAndEmail";
 
 interface ShopProductPageProps {
   params: Promise<{ id: string }>;
@@ -32,8 +33,12 @@ export default async function ShopProductPage({
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-dose-dark mb-4">Product not found</h1>
-          <p className="text-dose-mid">The product you&apos;re looking for doesn&apos;t exist.</p>
+          <h1 className="text-2xl font-bold text-dose-dark mb-4">
+            Product not found
+          </h1>
+          <p className="text-dose-mid">
+            The product you&apos;re looking for doesn&apos;t exist.
+          </p>
         </div>
       </div>
     );
@@ -54,7 +59,8 @@ export default async function ShopProductPage({
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-16 sm:py-24">
+      <div className="max-w-[1440px]  space-y-10  mx-auto px-4 sm:px-8 py-16 sm:py-24">
+        <PhoneAndEmail />
         <ItemMainView product={shopProduct} />
         <BottlePageBrakePoint />
         <Testemonials />

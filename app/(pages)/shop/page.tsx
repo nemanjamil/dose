@@ -84,7 +84,7 @@ export default async function ShopPage() {
 
   return (
     <div className="relative w-full" data-name="Shop Desktop">
-      <div className="lg:mt-24">
+      <div className="lg:mt-8">
         <ShopMainBanner />
       </div>
       <ShopItemsList items={shopItems} />
