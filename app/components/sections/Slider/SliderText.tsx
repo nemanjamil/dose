@@ -25,7 +25,7 @@ export default function SliderText() {
     router.push("/shop");
   };
   return (
-    <div className="flex flex-col gap-[24px] sm:gap-[32px] items-center md:items-start w-full lg:w-auto">
+    <div className="flex flex-col gap-6 sm:gap-8 items-center md:items-start w-full lg:w-auto">
       {/* Title */}
       <div className="flex flex-col gap-3 sm:gap-4 items-center md:items-start w-full ">
         <h1 className="font-bold text-dose-dark lg:text-left text-center lg:pr-32">

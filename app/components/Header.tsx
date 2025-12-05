@@ -66,18 +66,11 @@ export default function Header() {
             className="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity"
             aria-label="Shopping cart"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 2L7 6H3V8H4.2L6 20C6 21.1 6.9 22 8 22H16C17.1 22 18 21.1 18 20L19.8 8H21V6H17L15 2H9ZM9 9H11V18H9V9ZM13 9H15V18H13V9Z"
-                fill="#6C2517"
-              />
-            </svg>
+            <img
+              src="/images/icons/social-3.svg"
+              alt="Shopping cart"
+              className="w-6 h-6"
+            />
           </button>
 
           {/* Hamburger Menu Button */}

@@ -12,7 +12,7 @@ export default function AboutUsPage() {
   const router = useRouter();
   return (
     <div
-      className="relative w-full space-y-32 lg:mb-24 mb-5"
+      className="relative w-full lg:space-y-32 space-y-16 lg:mb-24 mb-5"
       data-name="About US Desktop"
     >
       <SliderSectionAboutUs />

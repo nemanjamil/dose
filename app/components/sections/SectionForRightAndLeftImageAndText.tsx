@@ -43,7 +43,7 @@ export default function SectionForRightAndLeftImageAndText({
         alt={imageAlt}
         width={600}
         height={650}
-        className="object-cover rounded-lg w-auto h-[650px]"
+        className="object-cover rounded-lg w-full h-auto lg:w-auto lg:h-[650px]"
       />
     </div>
   );
