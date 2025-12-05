@@ -36,7 +36,7 @@ export default function BuyYourDoseToday() {
           </div>
 
           {/* Desktop Image */}
-          <div className="relative w-[100%] lg:h-[575px] h-[575px] rounded-[32px] overflow-hidden mx-auto hidden lg:block">
+          <div className="relative w-full lg:h-[575px] h-[575px] rounded-[32px] overflow-hidden mx-auto hidden lg:block">
             <Image
               src="/images/sections/grupnaSlika.png"
               alt="Group image"

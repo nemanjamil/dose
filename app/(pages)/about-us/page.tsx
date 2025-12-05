@@ -11,10 +11,8 @@ import BuyYourDoseToday from "@/app/components/sections/BuyYourDoseToday";
 export default function AboutUsPage() {
   const router = useRouter();
   return (
-    <div className="relative w-full" data-name="About US Desktop">
+    <div className="relative w-full space-y-32" data-name="About US Desktop">
       <SliderSectionAboutUs />
-
-      <div className="lg:mt-[104px] mt-12"></div>
 
       <SectionForRightAndLeftImageAndText
         image="/images/products/aboutUSimage.png"
@@ -35,7 +33,7 @@ export default function AboutUsPage() {
           },
         ]}
       />
-      <div className="lg:mt-[82px] mt-12"></div>
+
       <SectionForRightAndLeftImageAndText
         image="/images/sections/AboutUsFourImages.png"
         imageAlt="About Us Section"

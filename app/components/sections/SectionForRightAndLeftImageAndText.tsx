@@ -42,8 +42,8 @@ export default function SectionForRightAndLeftImageAndText({
         src={image}
         alt={imageAlt}
         width={600}
-        height={500}
-        className="object-cover rounded-lg w-full h-auto"
+        height={650}
+        className="object-cover rounded-lg w-auto h-[650px]"
       />
     </div>
   );
@@ -82,9 +82,9 @@ export default function SectionForRightAndLeftImageAndText({
   );
 
   return (
-    <section className="w-full lg:px-0 sm:px-8">
-      <Container className="lg:h-[650px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch min-h-[400px] sm:min-h-[500px] lg:min-h-[650px] lg:px-16">
+    <section className="w-full lg:px-0 sm:px-8 bg-amber-400">
+      <Container className="">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch min-h-[400px] sm:min-h-[500px] lg:min-h-[650px]">
           {isImageLeft ? (
             <>
               <div className="order-2 lg:order-1">{imageContent}</div>

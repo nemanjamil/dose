@@ -10,9 +10,12 @@ interface ContainerProps {
   className?: string;
 }
 
-export default function Container({ children, className = "" }: ContainerProps) {
+export default function Container({
+  children,
+  className = "",
+}: ContainerProps) {
   return (
-    <div className={`max-w-[1440px] mx-auto ${className}`}>
+    <div className={`max-w-[1440px] lg:h-[650px] mx-auto ${className}`}>
       {children}
     </div>
   );

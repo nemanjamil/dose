@@ -155,7 +155,7 @@ export default function HoldingDoseSlider() {
   );
 
   return (
-    <section id="HoldingDoseSlider" className="w-full">
+    <section id="HoldingDoseSlider" className="w-full lg:block">
       <div className={`max-w-[1440px] mx-auto`}>
         <div className="flex justify-end mb-3 lg:mb-6 pr-4">
           <ArrowButtonPair
@@ -168,7 +168,7 @@ export default function HoldingDoseSlider() {
         </div>
       </div>
 
-      <Container className="lg:h-[650px] h-full flex flex-col">
+      <Container className="h-full flex flex-col">
         {/* Carousel Container */}
         <div className="flex flex-col items-center gap-12 lg:gap-6 flex-1">
           {/* Testimonial Cards Grid */}

@@ -26,7 +26,10 @@ export default function RoundedBanner() {
       />
 
       {/* Desktop View */}
-      <section className="w-full lg:px-4 sm:px-8 lg:my-0 my-16 hidden lg:block">
+      <section
+        id="RoundedBanner"
+        className="w-full lg:px-4 sm:px-8 hidden lg:block"
+      >
         <div className="rounded-md overflow-hidden">
           <HeroSection
             backgroundImage="/images/products/twoHandsRoseCup.jpg"

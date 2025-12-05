@@ -27,7 +27,10 @@ export default function GreenBanner() {
       />
 
       {/* Desktop View */}
-      <section className="w-full lg:px-4 sm:px-8 hidden lg:block my-16">
+      <section
+        id="GreenBannerWeb"
+        className="w-full lg:px-4 sm:px-8 hidden lg:block"
+      >
         <div className="rounded-md overflow-hidden">
           <HeroSection
             backgroundImage="/images/products/greenForest.png"
