@@ -65,9 +65,9 @@ export default function ContactFormSection({
     }
   };
   return (
-    <div className="flex flex-col lg:flex-row gap-[64px] items-start">
+    <div className="flex flex-col lg:flex-row gap-16 items-start">
       {/* Right Side - Form Content (Full width on mobile, 50% on desktop) */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-[32px] lg:order-2">
+      <div className="w-full lg:w-1/2 flex flex-col gap-8 lg:order-2 lg:px-0 px-3">
         {/* Header Section */}
         <ProductHeader
           brand="Dose"
@@ -159,7 +159,7 @@ export default function ContactFormSection({
       </div>
 
       {/* Left Side - Image (Shows below form on mobile, beside on desktop) */}
-      <div className="w-full lg:w-1/2 lg:order-1">
+      <div className="w-full lg:w-1/2 lg:order-1 lg:px-0 px-3">
         <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-[20px] overflow-hidden bg-gray-100">
           <Image src={image} alt={imageAlt} fill className="object-cover" />
         </div>
