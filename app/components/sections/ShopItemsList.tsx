@@ -38,8 +38,8 @@ export default function ShopItemsList({ items }: ShopItemsListProps) {
 
   return (
     <section className="w-full lg:px-8">
-      <div className="max-w-[1440px] mx-auto lg:px-0 px-4">
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <div className="max-w-[1440px] mx-auto lg:px-0 px-2">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6 gap-2">
           {items.map((item) => {
             const imageUrl =
               !failedImages.has(item.id) && item.folder
@@ -52,15 +52,15 @@ export default function ShopItemsList({ items }: ShopItemsListProps) {
               <Link
                 key={item.id}
                 href={`/shop/${item.id}`}
-                className="flex flex-col gap-[24px] cursor-pointer hover:opacity-90 transition-opacity"
+                className="flex flex-col lg:gap-6 gap-2 cursor-pointer hover:opacity-90 transition-opacity"
               >
                 {/* Product Image Container */}
-                <div className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px] rounded-[20px] overflow-hidden bg-gray-100 group">
+                <div className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px] rounded-lg overflow-hidden bg-gray-800 group">
                   <Image
                     src={imageUrl}
                     alt={`${item.name} ${item.color}`}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform"
+                    className="object-contain lg:object-cover group-hover:scale-105 transition-transform"
                     onError={() => handleImageError(item.id)}
                   />
 
