@@ -64,7 +64,7 @@ export default function AddToCartButton({
 
       {/* Text and Price */}
       <p className="font-bold text-dose-light lg:text-p-regular text-p-small tracking-[-0.4px] leading-[1.5] uppercase">
-        {label} {formatPrice(price)}
+        {label}
       </p>
     </button>
   );

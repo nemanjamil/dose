@@ -38,6 +38,7 @@
   --font-size-h6: 1rem; /* 16px */
 
   /* Paragraph Font Sizes */
+  --font-size-p-xs: 0.875rem; /* 12px */
   --font-size-p-small: 1.125rem; /* 18px */
   --font-size-p-regular: 1.25rem; /* 20px */
   --font-size-p-large: 1.375rem; /* 20px */
@@ -130,6 +131,10 @@
   }
 }
 
+.text-p-xs {
+  font-size: var(--font-size-p-xs);
+  letter-spacing: -0.28px;
+}
 .text-p-small {
   font-size: var(--font-size-p-small);
   letter-spacing: -0.28px;
