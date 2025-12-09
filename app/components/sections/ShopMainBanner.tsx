@@ -6,13 +6,13 @@
  */
 
 import HeroSection from "./HeroSection";
-import HeroSectionMobile from "./HeroSectionMobile";
+import HeroSectionMobileShop from "./HeroSectionMobileShop";
 
 export default function ShopMainBanner() {
   return (
     <>
       {/* Mobile View */}
-      <HeroSectionMobile
+      <HeroSectionMobileShop
         backgroundImageMobile="/images/products/fourCupsMob.png"
         backgroundColor="#FEF8F4"
         badge="DOSE SHOP"
