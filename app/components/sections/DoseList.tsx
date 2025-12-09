@@ -46,7 +46,7 @@ export default function DoseList() {
 
   return (
     <section id="DoseList" className="w-full">
-      <Container className="lg:h-[650px]">
+      <Container className="lg:h-[570px]">
         {/* Centered Text Content
         <div className="flex flex-col gap-4 items-center text-center mb-16 max-w-[675px] mx-auto">
           <h2 className="font-bold text-dose-dark text-[40px] sm:text-[56px] tracking-[-0.64px] sm:tracking-[-1.12px] leading-[1.2]">

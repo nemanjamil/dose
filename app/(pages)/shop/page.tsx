@@ -84,10 +84,10 @@ export default async function ShopPage() {
 
   return (
     <div
-      className="relative w-full lg:space-y-0 space-y-16"
+      className="relative w-full lg:space-y-24 space-y-16"
       data-name="Shop Desktop"
     >
-      <div className="lg:mt-8 mt-24">
+      <div className="lg:mt-32 mt-24">
         <ShopMainBanner />
       </div>
       <ShopItemsList items={shopItems} />
