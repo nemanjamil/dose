@@ -18,8 +18,8 @@ export default function AboutUsPage() {
       <SliderSectionAboutUs />
 
       <ImageBackgroundSection
-        backgroundImage="/images/sections/AboutUsFourImages.png"
-        backgroundImageMob="/images/products/greenCup750.png"
+        backgroundImage="/images/products/aboutUSimage.png"
+        backgroundImageMob="/images/products/aboutUSimage.png"
         heading="Za nas, hidratacija nije samo navika."
         description="DOSE je tu da te prati na svakom koraku – od jutarnjeg treninga do putovanja, od posla do prirode. Jer lepota je u svakodnevnim trenucima koje učinimo svesnim."
         textPosition="right"
@@ -40,8 +40,8 @@ export default function AboutUsPage() {
       />
 
       <ImageBackgroundSection
-        backgroundImage="/images/products/aboutUSimage.png"
-        backgroundImageMob="/images/products/fourImagesMob.png"
+        backgroundImage="/images/products/AboutUsFourImages.png"
+        backgroundImageMob="/images/products/AboutUsFourImages.png"
         heading="Više od proizvoda. Način života"
         description="Verujemo da kvalitetan dizajn ne mora da bude komplikovan. Naši proizvodi spajaju čistu liniju, praktične detalje i dugotrajne materijale – za one koji cene jednostavnost i izdržljivost."
         textPosition="left"

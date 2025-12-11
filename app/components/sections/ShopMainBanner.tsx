@@ -22,6 +22,7 @@ export default function ShopMainBanner() {
         centerImage=""
         productLabel=""
         textColor="dark"
+        aspectRatio="366/750"
       />
 
       {/* Desktop View */}

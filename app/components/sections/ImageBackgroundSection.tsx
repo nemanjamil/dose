@@ -4,7 +4,7 @@
  * ImageBackgroundSection Component
  *
  * Reusable section with background image and text content
- * Separate mobile (750px) and desktop (650px) views
+ * Separate mobile and desktop views that scale naturally
  * Text can be positioned left or right on desktop
  */
 
@@ -26,8 +26,6 @@ interface ImageBackgroundSectionProps {
   description: string;
   buttons?: Button[];
   textPosition?: "left" | "right";
-  mobileHeight?: number;
-  desktopHeight?: number;
   addMoreCss?: string;
   actionButtonsMobileViewPresented?: boolean;
 }
@@ -39,8 +37,6 @@ export default function ImageBackgroundSection({
   description,
   buttons,
   textPosition = "left",
-  mobileHeight = 750,
-  desktopHeight = 650,
   addMoreCss = "",
   actionButtonsMobileViewPresented = true,
 }: ImageBackgroundSectionProps) {
@@ -52,17 +48,10 @@ export default function ImageBackgroundSection({
       {/* Mobile View */}
       <section
         id="MobileViewSectionAbout"
-        className={`w-full lg:hidden flex   justify-center ${addMoreCss}`}
-        style={{
-          width: "366px",
-          height: `${mobileHeight}px`,
-          backgroundImage: `url(${mobileImage})`,
-          backgroundSize: "100% auto",
-          backgroundPosition: "top",
-          backgroundRepeat: "no-repeat",
-        }}
+        className={`w-full lg:hidden flex flex-col ${addMoreCss}`}
       >
-        <div className="flex flex-col justify-start items-center rounded-md">
+        {/* Text Content */}
+        <div className="flex flex-col justify-center items-center py-8">
           <div className="flex flex-col gap-2 text-center max-w-[90%]">
             <h2 className="text-dose-dark"> {heading}</h2>
             <p className="text-p-responsive text-dose-mid">{description}</p>
@@ -73,20 +62,30 @@ export default function ImageBackgroundSection({
               )}
           </div>
         </div>
+
+        {/* Background Image */}
+        <div
+          className="relative rounded-md overflow-hidden mx-4"
+          style={{ aspectRatio: "725/707" }}
+        >
+          {mobileImage && (
+            <Image
+              src={mobileImage}
+              alt={heading}
+              fill
+              className="object-cover object-center"
+            />
+          )}
+        </div>
       </section>
 
       {/* Desktop View */}
-      <section className="w-full lg:px-4 sm:px-8 hidden lg:block">
-        <Container>
-          <div
-            className="flex flex-row gap-12 items-center rounded-md"
-            style={{
-              height: `${desktopHeight}px`,
-            }}
-          >
+      <section className="w-full h-[650px] lg:px-4 sm:px-8 hidden lg:block">
+        <Container className="h-full">
+          <div className="flex flex-row gap-12 items-stretch rounded-md h-full">
             {/* Text content - positioned left or right */}
             <div
-              className={`flex-1 flex flex-col gap-6 ${
+              className={`flex-1 flex flex-col gap-6 justify-center ${
                 isTextLeft ? "text-left pl-12" : "text-right pr-12 order-2"
               }`}
             >
@@ -101,11 +100,7 @@ export default function ImageBackgroundSection({
             </div>
 
             {/* Image */}
-            <div
-              className={`flex-1 relative h-full ${
-                isTextLeft ? "" : "order-1"
-              }`}
-            >
+            <div className={`flex-1 relative ${isTextLeft ? "" : "order-1"}`}>
               <Image
                 src={backgroundImage}
                 alt={heading}

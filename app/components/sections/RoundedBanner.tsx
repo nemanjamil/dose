@@ -21,8 +21,9 @@ export default function RoundedBanner() {
         description="Naš pristup nije sezonski trend – već dosledan izbor kvaliteta i pažnje. Verujemo da pravi luksuz danas znači birati promišljeno."
         features={["BPA Free", "Stainless Steel"]}
         centerImage=""
-        productLabel="Limited Edition"
+        productLabel=""
         textColor="dark"
+        aspectRatio="1098/2709"
       />
 
       {/* Desktop View */}

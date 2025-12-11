@@ -20,6 +20,7 @@ interface HeroSectionMobileProps {
   centerImage?: string;
   productLabel?: string;
   textColor: "light" | "dark";
+  aspectRatio?: string;
 }
 
 export default function HeroSectionMobile({
@@ -32,6 +33,7 @@ export default function HeroSectionMobile({
   centerImage,
   productLabel,
   textColor,
+  aspectRatio,
 }: HeroSectionMobileProps) {
   const isDarkText = textColor === "dark";
   const badgeBgClass = isDarkText
@@ -50,29 +52,27 @@ export default function HeroSectionMobile({
   const productLabelTextClass = isDarkText ? "text-dose-dark" : "text-white";
 
   return (
-    <section className="w-full lg:hidden flex justify-center px-2">
+    <section className="w-full lg:hidden flex justify-center">
       <div
-        className="flex flex-col rounded-md bg-amber-200 "
+        className="flex flex-col mx-5 rounded-md w-full"
         style={
           backgroundImageMobile
             ? {
-                width: "366px",
-                height: "750px",
                 backgroundImage: `url(${backgroundImageMobile})`,
                 backgroundSize: "cover",
                 backgroundPosition: "top",
                 backgroundRepeat: "no-repeat",
+                aspectRatio: aspectRatio,
               }
             : {
-                width: "366px",
-                height: "750px",
                 backgroundColor: backgroundColor || "#FEF8F4",
+                aspectRatio: aspectRatio,
               }
         }
       >
         {/* First Section: Text Content */}
-        <div className="FirstSection flex flex-col justify-start items-center h-[400px]">
-          <div className="flex flex-col text-center w-[85%] gap-4 pt-8">
+        <div className="FirstSection flex flex-col justify-start items-center py-8">
+          <div className="flex flex-col text-center w-[85%] gap-4">
             {/* Badge */}
             {badge && (
               <div
@@ -113,20 +113,19 @@ export default function HeroSectionMobile({
 
           {/* Center Image */}
           {centerImage && (
-            <div className="relative w-[280px] h-auto mt-4">
+            <div className="relative w-full aspect-[366/903] mt-4">
               <Image
                 src={centerImage}
                 alt="Featured product"
-                width={280}
-                height={400}
-                className="object-contain"
+                fill
+                className="object-cover"
               />
             </div>
           )}
         </div>
 
         {/* Second Section: Product Label */}
-        <div className="SecondSection flex items-center justify-center h-[350px]">
+        <div className="SecondSection flex items-center justify-center py-8">
           {productLabel && (
             <div className={`${productLabelBgClass} rounded-[99px] px-4 py-2`}>
               <span

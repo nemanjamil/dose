@@ -1,7 +1,6 @@
 import ShopMainBanner from "../../components/sections/ShopMainBanner";
-import ShopItemsList, {
-  ShopItem,
-} from "../../components/sections/ShopItemsList";
+import ShopContent from "../../components/sections/ShopContent";
+import { ShopItem } from "../../components/sections/ShopItemsList";
 import { createClient } from "@/utils/supabase/server";
 
 interface SupabaseProduct {
@@ -90,7 +89,7 @@ export default async function ShopPage() {
       <div className="lg:mt-32 mt-24">
         <ShopMainBanner />
       </div>
-      <ShopItemsList items={shopItems} />
+      <ShopContent items={shopItems} />
       <div className="lg:mt-24"></div>
     </div>
   );

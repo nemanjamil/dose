@@ -30,12 +30,13 @@ export default async function HomeBanner() {
       <HeroSectionMobile
         backgroundImageMobile="/images/products/twoCupsMobile.png"
         backgroundColor="#FEF8F4"
-        heading="Dva formata. Jedan ritam."
+        heading="1 Dva formata. Jedan ritam."
         description="Za duže dane bez prekida ili za svaki korak u danu. Obe verzije dolaze sa čvrstom ručkom, preklopnim poklopcem sa slamkom, ne propuštaju, bezbedne su za upotrebu i staju u držače u kolima."
         features={["NO PLASTIC", "STAINLESS STEEL"]}
         centerImage=""
-        productLabel={product.name}
+        productLabel=""
         textColor="dark"
+        aspectRatio="366/836"
       />
 
       {/* Desktop View */}

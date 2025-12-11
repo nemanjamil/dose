@@ -47,6 +47,7 @@ Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
         centerImage=""
         productLabel=""
         textColor="light"
+        aspectRatio="366/903"
       />
 
       {/* Desktop View */}

@@ -21,11 +21,14 @@ export default function BuyYourDoseToday() {
 
   return (
     <section id="BuyYourDoseToday" className="w-full lg:px-0 sm:px-8">
-      <div className="max-w-[1440px] lg:h-[825px] h-[650px]  mx-auto">
+      <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col items-center gap-6">
           {/* First Row - Background Image */}
           {/* Mobile Image */}
-          <div className="relative w-[100%] lg:h-[775px] h-[500px] rounded-[32px] overflow-hidden mx-auto lg:hidden">
+          <div
+            className="relative w-full rounded-[32px] overflow-hidden mx-auto lg:hidden"
+            style={{ aspectRatio: "390/512" }}
+          >
             <Image
               src="/images/products/hubImagesMob.png"
               alt="Group image"
@@ -35,9 +38,12 @@ export default function BuyYourDoseToday() {
           </div>
 
           {/* Desktop Image */}
-          <div className="relative w-full lg:h-[575px] h-[575px] rounded-[32px] overflow-hidden mx-auto hidden lg:block">
+          <div
+            className="relative w-full rounded-[32px] overflow-hidden mx-auto hidden lg:block"
+            style={{ aspectRatio: "1142/419" }}
+          >
             <Image
-              src="/images/sections/grupnaSlika.png"
+              src="/images/products/grupnaSlika.png"
               alt="Group image"
               fill
               className="object-cover"

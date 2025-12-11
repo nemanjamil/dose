@@ -24,6 +24,7 @@ export default function GreenBanner() {
         centerImage=""
         productLabel=""
         textColor="light"
+        aspectRatio="366/900"
       />
 
       {/* Desktop View */}
