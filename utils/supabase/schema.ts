@@ -14,6 +14,7 @@ export interface Product {
   id: string;
   created_at?: string;
   name: string;
+  description?: string;
   color: string;
   price: number;
   rating: string;

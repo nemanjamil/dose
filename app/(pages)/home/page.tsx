@@ -27,10 +27,10 @@ export default function HomePage() {
       <SliderSection />
 
       {/* Section: Featured Product - Based on Figma node-id 95-15 */}
-      <DoseInRealLife />
+      {/* <DoseInRealLife /> */}
 
       {/* Section: Testimonials - Holding Dose Slider */}
-      <HoldingDoseSlider />
+      {/* <HoldingDoseSlider /> */}
 
       {/* Section: Design Philosophy - Based on Figma node-id 95-33 */}
       <DesignTellsForItSelf />

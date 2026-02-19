@@ -20,12 +20,14 @@ import ExpandableSections from "./ExpandableSections";
 import ProductImageThumbnails from "./ProductImageThumbnails";
 
 const PLACEHOLDER_IMAGE = "/images/placeholder.png";
-const SUPABASE_STORAGE_URL = "https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public";
+const SUPABASE_STORAGE_URL =
+  "https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public";
 
 interface ItemMainViewProps {
   product: {
     id: number;
     name: string;
+    description: string;
     color: string;
     price: string;
     rating: string;
@@ -48,7 +50,12 @@ export default function ItemMainView({ product }: ItemMainViewProps) {
   };
 
   // Product images from Supabase Storage
-  const imageFiles = ["main.jpg", "gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg"];
+  const imageFiles = [
+    "main.jpg",
+    "gallery-1.jpg",
+    "gallery-2.jpg",
+    "gallery-3.jpg",
+  ];
   const productImages = imageFiles.map((filename, index) => {
     const url = buildImageUrl(filename);
     return failedImages.has(index) ? PLACEHOLDER_IMAGE : url;
@@ -62,7 +69,11 @@ export default function ItemMainView({ product }: ItemMainViewProps) {
   return (
     <div className="flex flex-col lg:flex-row lg:gap-16 items-start">
       {/* Left Side - Product Image Gallery (50%) */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-6" role="region" aria-label="Product images">
+      <div
+        className="w-full lg:w-1/2 flex flex-col gap-6"
+        role="region"
+        aria-label="Product images"
+      >
         {/* Main Image */}
         <div className="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-[20px] overflow-hidden bg-gray-100">
           <Image
@@ -83,13 +94,13 @@ export default function ItemMainView({ product }: ItemMainViewProps) {
         />
 
         {/* Expandable Sections */}
-        <ExpandableSections />
+        <ExpandableSections productDescription={product.description} />
       </div>
 
       {/* Right Side - Product Details (50%) */}
       <div className="w-full lg:w-1/2 flex flex-col gap-6 pt-5">
         {/* Product Rating Badge */}
-        <ProductRatingBadge rating={rating} totalReviews={166} />
+        {/* <ProductRatingBadge rating={rating} totalReviews={166} /> */}
 
         {/* Product Header Section */}
         <ProductHeader
@@ -105,7 +116,7 @@ export default function ItemMainView({ product }: ItemMainViewProps) {
         <ProductFeaturesBox />
 
         {/* Product Bundle Offer */}
-        <ProductBundleOffer />
+        <ProductBundleOffer unitPrice={priceNumber} productImage={mainImage} />
 
         {/* Add to Cart Button */}
         <AddToCartButton

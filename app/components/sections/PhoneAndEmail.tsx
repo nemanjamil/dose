@@ -11,10 +11,8 @@
 import Image from "next/image";
 import Container from "../Container";
 
-const imgEmail =
-  "https://www.figma.com/api/mcp/asset/866eebab-9d75-4a50-a59f-fb6d3a3bcefb";
-const imgPhone =
-  "https://www.figma.com/api/mcp/asset/823e06e9-87a5-47ac-82b9-aa7a58a1408c";
+const imgEmail = "/images/icons/email.svg";
+const imgPhone = "/images/icons/phone.svg";
 
 export default function PhoneAndEmail() {
   return (

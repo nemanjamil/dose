@@ -48,6 +48,7 @@ export default async function ShopProductPage({
   const shopProduct = {
     id: product.id,
     name: product.name || "",
+    description: product.description || "",
     color: product.color || "",
     price: `${product.price} RSD`,
     rating: product.rating || "0/5.0",

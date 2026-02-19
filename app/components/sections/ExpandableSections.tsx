@@ -13,35 +13,40 @@ interface Section {
 }
 
 interface ExpandableSectionsProps {
+  productDescription?: string;
   sections?: Section[];
 }
 
-const defaultSections: Section[] = [
+const staticSections: Section[] = [
   {
-    title: "Image Description",
+    title: "Specifikacija",
     content:
-      "This is a high-quality product image showing the thermos from multiple angles. The image demonstrates the premium design, color options, and functional features of our DOSE thermos collection. Perfect for viewing product details before purchase.",
+      "Vrhunski nerđajući čelik 18/8, izolovana konstrukcija sa dvostrukim zidom, materijali bez BPA, gumena osnova stabilnosti, sistem zaptivke otporan na curenje, ergonomski dizajn rukohvata.",
   },
   {
-    title: "Sastav",
+    title: "Oržavanje",
     content:
-      "Premium food-grade stainless steel 18/8, double-wall insulated construction, BPA-free materials, rubber base for stability, leak-proof sealing system, ergonomic grip design.",
-  },
-  {
-    title: "Nacin Upotrebe",
-    content:
-      "Pour hot or cold beverages into the thermos. Ensure the lid is tightly sealed before use. For best insulation, fill with hot beverages first to preheat the container. Avoid placing in dishwasher. Hand wash with warm water and mild soap. Store with lid open to prevent odors.",
+      "Za optimalno održavanje i dugotrajnu upotrebu, termos perite blagim deterdžentom te ga nakon toga detaljno isperite pod mlazom tekuće vode.",
   },
 ];
 
 export default function ExpandableSections({
-  sections = defaultSections,
+  productDescription,
+  sections,
 }: ExpandableSectionsProps) {
+  const defaultSections: Section[] = [
+    ...(productDescription
+      ? [{ title: "Opis Proizvoda", content: productDescription }]
+      : []),
+    ...staticSections,
+  ];
+
+  const displaySections = sections ?? defaultSections;
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
     <div className="flex flex-col gap-[12px]">
-      {sections.map((section, index) => (
+      {displaySections.map((section, index) => (
         <div
           key={index}
           className="w-full border border-dose-accent/20 rounded-[12px] overflow-hidden"

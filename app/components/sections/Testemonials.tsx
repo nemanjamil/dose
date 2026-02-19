@@ -12,7 +12,6 @@
 
 import { useState, useRef } from "react";
 import Container from "../Container";
-import Image from "next/image";
 
 interface TestimonialCard {
   id: number;
@@ -20,7 +19,6 @@ interface TestimonialCard {
   surname: string;
   text: string;
   rating: number;
-  image: string;
 }
 
 const testimonials: TestimonialCard[] = [
@@ -30,7 +28,6 @@ const testimonials: TestimonialCard[] = [
     surname: "Marković",
     text: "Savršeno drži temperaturu i izgleda fenomenalno, koristim ga svakog dana u kancelariji.",
     rating: 5,
-    image: "/images/testimonials/test.png",
   },
   {
     id: 2,
@@ -38,7 +35,6 @@ const testimonials: TestimonialCard[] = [
     surname: "Nikolić",
     text: "Odličan kvalitet i dizajn. DOSE termos je postala moja omljena stvar za putovanja.",
     rating: 5,
-    image: "/images/testimonials/test.png",
   },
   {
     id: 3,
@@ -46,7 +42,6 @@ const testimonials: TestimonialCard[] = [
     surname: "Jovanović",
     text: "Preporučujem svima. Izdržljiv, lep i funkcionalan. Vredi svaki dinar!",
     rating: 5,
-    image: "/images/testimonials/test.png",
   },
   {
     id: 4,
@@ -54,7 +49,6 @@ const testimonials: TestimonialCard[] = [
     surname: "Petrović",
     text: "Elegantno i funkciono. Baš ono što sam tražio. Toplo preporučujem!",
     rating: 5,
-    image: "/images/testimonials/test.png",
   },
   {
     id: 5,
@@ -62,7 +56,6 @@ const testimonials: TestimonialCard[] = [
     surname: "Ristić",
     text: "Sjajni dizajn i odličan kvalitet. DOSE je postao deo moje svakodnevne rutine.",
     rating: 5,
-    image: "/images/testimonials/test.png",
   },
   {
     id: 6,
@@ -70,7 +63,6 @@ const testimonials: TestimonialCard[] = [
     surname: "Stanković",
     text: "Apsolutno preporučujem svima. Najbolji termos koji sam ikada posedovao!",
     rating: 5,
-    image: "/images/testimonials/test.png",
   },
   {
     id: 7,
@@ -78,7 +70,6 @@ const testimonials: TestimonialCard[] = [
     surname: "Milinović",
     text: "Savršen za kancelariju i putovanja. Izdržljiv i lep. Sreća od njega!",
     rating: 5,
-    image: "/images/testimonials/test.png",
   },
   {
     id: 8,
@@ -86,7 +77,6 @@ const testimonials: TestimonialCard[] = [
     surname: "Nikolić",
     text: "Kvalitet koji se oseti od prvog korišćenja. Topla preporuka za sve!",
     rating: 5,
-    image: "/images/testimonials/test.png",
   },
 ];
 
@@ -135,25 +125,11 @@ export default function Testemonials() {
               {currentTestimonial.text}
             </p>
 
-            {/* Customer Info and Rating */}
-            <div className="flex lg:gap-4 items-center lg:mt-auto">
-              {/* Avatar */}
-              <div className="w-11 h-11 rounded-[12px] overflow-hidden bg-white/10 flex-shrink-0 mr-5">
-                <Image
-                  src={currentTestimonial.image}
-                  alt={`${currentTestimonial.name} ${currentTestimonial.surname}`}
-                  width={44}
-                  height={44}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-
-              {/* Name */}
-              <h4 className="font-bold text-dose-dark text-[12px] leading-[1.5] flex-1">
+            {/* Customer Name and Rating */}
+            <div className="flex items-center justify-between mt-auto">
+              <h4 className="font-bold text-dose-dark text-[12px] leading-[1.5]">
                 {currentTestimonial.name} {currentTestimonial.surname}
               </h4>
-
-              {/* Rating Stars */}
               <div className="flex gap-1 flex-shrink-0">
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
                   <span key={i} className="text-[14px]">
@@ -191,31 +167,18 @@ export default function Testemonials() {
                 {testimonial.text}
               </p>
 
-              {/* Customer Info and Rating */}
-              <div className="flex gap-4 items-center">
-                {/* Avatar */}
-                <div className="w-11 h-11 rounded-[12px] overflow-hidden bg-white/10 flex-shrink-0">
-                  <Image
-                    src={testimonial.image}
-                    alt={`${testimonial.name} ${testimonial.surname}`}
-                    width={44}
-                    height={44}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-
-                {/* Name */}
-                <h4 className="font-bold text-dose-dark text-[16px] leading-[1.5] flex-1">
+              {/* Customer Name and Rating */}
+              <div className="flex items-center justify-between mt-auto">
+                <h4 className="font-bold text-dose-dark text-[16px] leading-[1.5]">
                   {testimonial.name} {testimonial.surname}
                 </h4>
-              </div>
-              {/* Rating Stars */}
-              <div className="flex gap-1 flex-shrink-0">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-[18px]">
-                    ⭐
-                  </span>
-                ))}
+                <div className="flex gap-1 flex-shrink-0">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-[18px]">
+                      ⭐
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

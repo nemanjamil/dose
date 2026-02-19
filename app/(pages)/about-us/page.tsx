@@ -62,7 +62,7 @@ export default function AboutUsPage() {
 
       <RoundedBanner />
 
-      <HoldingDoseSlider />
+      {/* <HoldingDoseSlider /> */}
 
       <GreenBanner />
 

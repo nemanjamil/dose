@@ -571,20 +571,17 @@ The `schema.ts` file defines the TypeScript interfaces that match your Supabase 
 
 ## 🖼️ Image Handling - IMPORTANT
 
-### ❌ DO NOT USE Figma Image Links in Production
+### ❌ NEVER USE Figma Image Links — Always Download and Store Locally
 
-**Current Issue:** SliderSection and other components use Figma asset URLs like:
+**CRITICAL RULE:** Never use Figma asset URLs (`https://www.figma.com/api/mcp/asset/...`) directly in code. Always download images from Figma first and save them to `public/images/` before referencing them in components.
 
-```
-https://www.figma.com/api/mcp/asset/66ea92ee-1af4-422e-ba74-bfa50c815049
-```
-
-**Problems:**
+**Problems with Figma links:**
 
 - Figma links expire after 7 days
 - Not optimized for web
 - Slow loading
 - Unreliable in production
+- Will break in deployed builds
 
 ### ✅ PROPER WAY: Save Images Locally
 
