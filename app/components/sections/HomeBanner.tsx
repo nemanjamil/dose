@@ -52,7 +52,7 @@ export default async function HomeBanner() {
             productImage={productImage}
             productName={product.name}
             productColorway=""
-            productPrice={`$${product.price}`}
+            productPrice={`${product.price} RSD`}
             productLabel={product.name}
             textColor="dark"
             centerImage="/images/products/designTwoCups.png"

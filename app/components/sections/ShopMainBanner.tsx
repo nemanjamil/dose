@@ -37,7 +37,7 @@ export default function ShopMainBanner() {
           productImage="/images/products/malaSlikaHeader.png"
           productName="Featured Product"
           productColorway="All Colors"
-          productPrice="Starting at $35"
+          productPrice="Od 2999 RSD"
           productLabel="Explore All Products"
           textColor="dark"
           centerImage="/images/products/designTwoCups.png"

@@ -63,7 +63,7 @@ Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
             productImage={productImage}
             productName={product.name}
             productColorway={""}
-            productPrice={`$${product.price}`}
+            productPrice={`${product.price} RSD`}
             productLabel={product.name}
             textColor="light"
             centerImage="/images/products/designCup.png"

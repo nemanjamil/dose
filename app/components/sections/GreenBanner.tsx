@@ -44,7 +44,7 @@ export default function GreenBanner() {
             productImage="/images/products/handHoldingDose1.png"
             productName="Dose Max"
             productColorway="Forest Green"
-            productPrice="$89.99"
+            productPrice="2999 RSD"
             productLabel="Eco Edition"
             textColor="light"
             centerImage=""

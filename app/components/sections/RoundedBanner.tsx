@@ -43,7 +43,7 @@ export default function RoundedBanner() {
             productImage="/images/products/handHoldingDose.png"
             productName="Dose Max"
             productColorway="Midnight Black"
-            productPrice="$89.99"
+            productPrice="2999 RSD"
             productLabel="Limited Edition"
             textColor="dark"
             centerImage="/images/products/handHoldingDose.png"
