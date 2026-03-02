@@ -68,9 +68,16 @@ export default function ExpandableSections({
           {/* Expandable Content */}
           {expandedIndex === index && (
             <div className="px-4 py-4 border-t border-dose-light">
-              <p className="text-dose-mid font-medium text-[14px] sm:text-[16px] leading-[1.6]">
-                {section.content}
-              </p>
+              {section.content.includes("<") ? (
+                <div
+                  className="text-dose-mid font-medium text-[14px] sm:text-[16px] leading-[1.6] [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-2"
+                  dangerouslySetInnerHTML={{ __html: section.content }}
+                />
+              ) : (
+                <p className="text-dose-mid font-medium text-[14px] sm:text-[16px] leading-[1.6]">
+                  {section.content}
+                </p>
+              )}
             </div>
           )}
         </div>
