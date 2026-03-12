@@ -12,7 +12,7 @@ import { useState } from "react";
 export interface FilterOption {
   id: string;
   label: string;
-  type: "all" | "volume" | "color" | "price";
+  type: "all" | "volume" | "color";
   value?: string;
 }
 
@@ -25,12 +25,9 @@ export default function ShopFilters({ onFilterChange }: ShopFiltersProps) {
 
   const filters: FilterOption[] = [
     { id: "all", label: "Svi proizvodi", type: "all" },
-    { id: "volume-small", label: "Max 0,5 L", type: "volume", value: "0.5" },
-    { id: "volume-medium", label: "Max 1,2 L", type: "volume", value: "1.2" },
-    { id: "volume-large", label: "Max 2 L", type: "volume", value: "2" },
-    { id: "price-low", label: "Do 3000 RSD", type: "price", value: "3000" },
-    { id: "price-mid", label: "3000-5000 RSD", type: "price", value: "5000" },
-    { id: "price-high", label: "Preko 5000 RSD", type: "price", value: "5001" },
+    { id: "volume-060", label: "0,6 L", type: "volume", value: "0.6" },
+    { id: "volume-088", label: "0,88 L", type: "volume", value: "0.88" },
+    { id: "volume-120", label: "1,2 L", type: "volume", value: "1.2" },
   ];
 
   const handleFilterClick = (filter: FilterOption) => {

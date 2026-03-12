@@ -31,30 +31,12 @@ export default function ShopContent({ items }: ShopContentProps) {
     return items.filter((item) => {
       switch (currentFilter.type) {
         case "volume": {
-          // Extract volume number (e.g., "1.2L" -> 1.2)
-          const volumeMatch = item.volume.match(/[\d.]+/);
+          // Extract volume number, handling comma decimals (e.g., "0,88 L" -> 0.88)
+          const volumeMatch = item.volume.match(/[\d,]+/);
           if (!volumeMatch) return false;
-          const itemVolume = parseFloat(volumeMatch[0]);
+          const itemVolume = parseFloat(volumeMatch[0].replace(",", "."));
           const filterVolume = parseFloat(currentFilter.value || "0");
-          return itemVolume <= filterVolume;
-        }
-
-        case "price": {
-          // Extract price number (e.g., "3500 RSD" -> 3500)
-          const priceMatch = item.price.match(/[\d,]+/);
-          if (!priceMatch) return false;
-          const itemPrice = parseFloat(priceMatch[0].replace(",", ""));
-          const filterPrice = parseFloat(currentFilter.value || "0");
-
-          // Handle different price ranges
-          if (currentFilter.id === "price-low") {
-            return itemPrice <= filterPrice;
-          } else if (currentFilter.id === "price-mid") {
-            return itemPrice >= 3000 && itemPrice <= filterPrice;
-          } else if (currentFilter.id === "price-high") {
-            return itemPrice > 5000;
-          }
-          return false;
+          return itemVolume === filterVolume;
         }
 
         case "color":
