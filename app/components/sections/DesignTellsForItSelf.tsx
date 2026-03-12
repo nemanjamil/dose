@@ -41,8 +41,7 @@ export default async function DesignTellsForItSelf({
         backgroundImageMobile="/images/products/designMob.png"
         backgroundColor="#1a1a1a"
         heading="Dizajn koji govori sam za sebe."
-        description="Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni poklopac i boje koje izražavaju tvoj karakter. Savršen balans između lepote i praktičnosti.
-Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
+        description="Minimalistički ali upečatljiv. Dose termos spaja estetiku i funkcionalnost. Mat završnica, ergonomska ručka i praktičan pokolopac pruzaju savrsen balans stila i svakodnevne upotrebe. Jednostavan, funkcionalan i stvoren da traje."
         features={["NO PLASTIC", "STAINLESS STEEL"]}
         centerImage=""
         productLabel=""
@@ -58,7 +57,7 @@ Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
             backgroundColor="#1a1a1a"
             badge="DOSE"
             heading="Dizajn koji govori sam za sebe."
-            description="Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni poklopac i boje koje izražavaju tvoj karakter. Savršen balans između lepote i praktičnosti. Jer stil nije samo ono što nosimo, već ono što biramo svakog dana."
+            description="Minimalistički ali upečatljiv. Dose termos spaja estetiku i funkcionalnost. Mat završnica, ergonomska ručka i praktičan pokolopac pruzaju savrsen balans stila i svakodnevne upotrebe. Jednostavan, funkcionalan i stvoren da traje."
             features={["NO PLASTIC", "STAINLESS STEEL"]}
             productImage={productImage}
             productName={product.name}

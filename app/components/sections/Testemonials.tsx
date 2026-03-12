@@ -103,7 +103,7 @@ export default function Testemonials() {
       setCurrentSlide((prev) => (prev + 1) % testimonials.length);
     } else if (isRightSwipe) {
       setCurrentSlide(
-        (prev) => (prev - 1 + testimonials.length) % testimonials.length
+        (prev) => (prev - 1 + testimonials.length) % testimonials.length,
       );
     }
   };

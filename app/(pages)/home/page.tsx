@@ -5,9 +5,9 @@ import HoldingDoseSlider from "../../components/sections/HoldingDoseSlider";
 import HidrateInStyle from "../../components/sections/HidrateInStyle";
 import DoseList from "../../components/sections/DoseList";
 import BottlePageBrakePoint from "../../components/sections/BottlePageBrakePoint";
-import CenteredText from "../../components/sections/CenteredText";
-import Testemonials from "../../components/sections/Testemonials";
-import HomeBanner from "../../components/sections/HomeBanner";
+//import CenteredText from "../../components/sections/CenteredText";
+//import Testemonials from "../../components/sections/Testemonials";
+// import HomeBanner from "../../components/sections/HomeBanner";
 import BuyYourDoseToday from "../../components/sections/BuyYourDoseToday";
 
 /**
@@ -41,11 +41,11 @@ export default function HomePage() {
 
       <BottlePageBrakePoint />
 
-      <CenteredText />
+      {/* <CenteredText /> */}
 
-      <Testemonials />
+      {/* <Testemonials /> */}
 
-      <HomeBanner />
+      {/* <HomeBanner /> */}
 
       <BuyYourDoseToday />
     </div>

@@ -1,4 +1,4 @@
-import CenteredText from "@/app/components/sections/CenteredText";
+//import CenteredText from "@/app/components/sections/CenteredText";
 import ContactFormSection from "../../components/sections/ContactFormSection";
 import Testemonials from "@/app/components/sections/Testemonials";
 import BuyYourDoseToday from "@/app/components/sections/BuyYourDoseToday";
@@ -10,8 +10,8 @@ export default function ContactUsPage() {
       <div className="max-w-[1440px] lg:space-y-22 space-y-12 mx-auto px-0 sm:px-8 py-16 sm:py-24">
         <PhoneAndEmail />
         <ContactFormSection />
-        <CenteredText />
-        <Testemonials />
+        {/* <CenteredText /> */}
+        {/* <Testemonials /> */}
         <BuyYourDoseToday />
       </div>
     </div>

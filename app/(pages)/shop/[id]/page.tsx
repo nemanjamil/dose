@@ -1,6 +1,6 @@
 import BottlePageBrakePoint from "@/app/components/sections/BottlePageBrakePoint";
 import ItemMainView from "../../../components/sections/ItemMainView";
-import Testemonials from "@/app/components/sections/Testemonials";
+//import Testemonials from "@/app/components/sections/Testemonials";
 import DoseList from "@/app/components/sections/DoseList";
 import { createClient } from "@/utils/supabase/server";
 import PhoneAndEmail from "@/app/components/sections/PhoneAndEmail";
@@ -64,7 +64,7 @@ export default async function ShopProductPage({
         <PhoneAndEmail />
         <ItemMainView product={shopProduct} />
         <BottlePageBrakePoint />
-        <Testemonials />
+        {/* <Testemonials /> */}
         <DoseList />
       </div>
     </div>

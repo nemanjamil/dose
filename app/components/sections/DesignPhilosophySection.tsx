@@ -19,9 +19,10 @@ export function DesignPhilosophySection() {
               Dizajn koji govori sam za sebe.
             </p>
             <p className="font-medium font-medium text-white text-[18px] tracking-[-0.36px] leading-[1.5]">
-              Sveden, ali izražajan. DOSE termosi nastaju sa idejom da spoje
-              estetiku i svrhu. Mat završnica, ergonomska ručka, preklopni
-              poklopac i boje koje izražavaju tvoj karakter.
+              Minimalistički ali upečatljiv. Dose termos spaja estetiku i
+              funkcionalnost. Mat završnica, ergonomska ručka i praktičan
+              pokolopac pruzaju savrsen balans stila i svakodnevne upotrebe.
+              Jednostavan, funkcionalan i stvoren da traje.
             </p>
           </div>
           <div className="flex gap-[12px] items-start">

@@ -14,7 +14,7 @@
 import { useRouter } from "next/navigation";
 import CTAButton from "@/app/components/CTAButton";
 
-const title = "Termos koji ti treba. Svaki dan.";
+const title = "Tvoja dnevna doza hidratacije! Termosi koji prate tvoj ritam.";
 const description =
   "Dose nije samo termos. To je navika, stil i briga o sebi, u pokretu. Svaki gutljaj, sigurnost i stil uvek sa tobom.";
 
@@ -28,7 +28,7 @@ export default function SliderText() {
     <div className="flex flex-col gap-6 sm:gap-8 items-center md:items-start w-full lg:w-auto">
       {/* Title */}
       <div className="flex flex-col gap-3 sm:gap-4 items-center md:items-start w-full ">
-        <h1 className="font-bold text-dose-dark lg:text-left text-center lg:pr-32">
+        <h1 className="font-bold text-dose-dark lg:text-left text-center lg:pr-12">
           {title}
         </h1>
 
