@@ -32,7 +32,7 @@ export default function ShopContent({ items }: ShopContentProps) {
       switch (currentFilter.type) {
         case "volume": {
           // Extract volume number, handling comma decimals (e.g., "0,88 L" -> 0.88)
-          const volumeMatch = item.volume.match(/[\d,]+/);
+          const volumeMatch = item.volume.match(/[\d.,]+/);
           if (!volumeMatch) return false;
           const itemVolume = parseFloat(volumeMatch[0].replace(",", "."));
           const filterVolume = parseFloat(currentFilter.value || "0");

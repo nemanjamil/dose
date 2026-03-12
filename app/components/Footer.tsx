@@ -20,8 +20,9 @@ export default function Footer() {
   ];
 
   const shopLinks = [
+    { label: "Dose Mini 0,6 L", href: "/shop" },
+    { label: "Dose Regular 0,88 L", href: "/shop" },
     { label: "Dose Max 1,2 L", href: "/shop" },
-    { label: "Dose Regular 0,88L", href: "/shop" },
     { label: "Shop all", href: "/shop" },
   ];
 
