@@ -8,7 +8,7 @@
  * - FeatureBadge: Feature badges (dynamic based on slide)
  * - ColorSwatch: Color options display
  * - SlideIndicators: Slide navigation (01, 02, 03)
- * - TopBar: Social icons and Shop Now button
+ * - TopBar: Social icons and Izaberi svoj termos button
  *
  * Figma design: https://www.figma.com/design/I7GYdab3FirpOg941b6wTL/Dose-Web-Project?node-id=95-3
  */

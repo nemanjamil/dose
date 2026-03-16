@@ -532,6 +532,7 @@ npm run lint     # Lint check
 The `schema.ts` file defines the TypeScript interfaces that match your Supabase database structure. This file **MUST NOT be auto-generated or modified by code**.
 
 **Important:**
+
 - ✅ You can manually update this file when database schema changes
 - ✅ Make schema changes directly in Supabase first
 - ✅ Then update `schema.ts` to reflect those changes
@@ -542,6 +543,7 @@ The `schema.ts` file defines the TypeScript interfaces that match your Supabase 
 **Current Database Tables:**
 
 **Products Table:**
+
 ```sql
 - id: string (primary key)
 - created_at: timestamp (optional)
@@ -628,6 +630,7 @@ import Image from "next/image";
 **For product images stored in Supabase Storage:**
 
 **Pattern:**
+
 ```
 https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public/{folder}/main.jpg
 ```
@@ -635,6 +638,7 @@ https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public/{folder}/main.
 **Where `{folder}` is the value from the Supabase `products` table `Folder` column.**
 
 **Database Schema:**
+
 ```sql
 -- products table
 - id: string (primary key)
@@ -655,20 +659,15 @@ https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public/{folder}/main.
 const product = await getProductById(id);
 const imageUrl = `https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public/${product.folder}/main.jpg`;
 
-<Image
-  src={imageUrl}
-  alt={product.name}
-  width={400}
-  height={500}
-  priority
-/>
+<Image src={imageUrl} alt={product.name} width={400} height={500} priority />;
 ```
 
 **Or use a helper function in `utils/supabase/storage.ts`:**
 
 ```tsx
 export function getProductImageUrl(folder: string): string {
-  const baseUrl = 'https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public';
+  const baseUrl =
+    "https://uhizkbechdhzugjcokym.supabase.co/storage/v1/object/public";
   return `${baseUrl}/${folder}/main.jpg`;
 }
 
@@ -769,11 +768,11 @@ Replace all Figma image URLs in:
 // ✅ GOOD - Reuse CTAButton component
 import CTAButton from "../CTAButton";
 
-<CTAButton onClick={handleClick} label="Shop now" />
+<CTAButton onClick={handleClick} label="Izaberi svoj termos" />
 <CTAButton onClick={onShopClick} />
 
 // ❌ BAD - Duplicating button logic
-<button onClick={handleClick} className="...">Shop now</button>
+<button onClick={handleClick} className="...">Izaberi svoj termos</button>
 <button onClick={onShopClick} className="...">Shop</button>
 ```
 

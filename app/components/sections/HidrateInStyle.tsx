@@ -25,7 +25,7 @@ export default function HidrateInStyle() {
 
             <div className="flex flex-col items-center gap-4">
               <h2 className="text-dose-dark text-center">
-                Hydrate in Style. Choose. Your Dose Flask.
+                Izaberi svoj DOSE termos.
               </h2>
               <div className="w-fit">
                 <CTAButton onClick={handleShopClick} />

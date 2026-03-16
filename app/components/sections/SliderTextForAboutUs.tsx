@@ -8,7 +8,7 @@
  */
 
 export default function SliderTextForAboutUs() {
-  const title = "Tvoja doza svakodnevne inspiracije.";
+  const title = "Tvoja doza svakodnevne hidratacije.";
   const description = `DOSE je nastao iz jednostavne ideje – da svakodnevni predmeti mogu imati dublji smisao.
 
 Naša misija je da spojimo funkcionalnost, estetiku i svesnost u proizvodima koji prate tvoj ritam dana – bilo da si u pokretu, na poslu ili u trenutku mira kod kuće.`;

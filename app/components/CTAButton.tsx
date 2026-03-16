@@ -16,7 +16,7 @@ interface CTAButtonProps {
 }
 
 export default function CTAButton({
-  label = "Shop now",
+  label = "Izaberi svoj termos",
   onClick,
   iconSrc = "/images/products/frame.svg",
   iconAlt = "Shop icon",

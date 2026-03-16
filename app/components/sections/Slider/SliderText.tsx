@@ -33,14 +33,14 @@ export default function SliderText() {
         </h1>
 
         {/* Description */}
-        <p className="font-medium text-dose-mid text-[18px] tracking-[-0.28px] sm:tracking-[-0.32px] md:tracking-[-0.36px] leading-[1.5] max-w-[280px] sm:max-w-[355px] text-center md:text-left">
+        {/* <p className="font-medium text-dose-mid text-[18px] tracking-[-0.28px] sm:tracking-[-0.32px] md:tracking-[-0.36px] leading-[1.5] max-w-[280px] sm:max-w-[355px] text-center md:text-left">
           {description}
-        </p>
+        </p> */}
       </div>
 
       {/* CTA Button */}
       <CTAButton
-        label="Shop now"
+        label="Izaberi svoj termos"
         iconSrc="/images/products/frame.svg"
         iconAlt="Shop icon"
         onClick={handleShopClick}

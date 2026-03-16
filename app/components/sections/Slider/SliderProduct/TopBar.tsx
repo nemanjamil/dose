@@ -2,7 +2,7 @@
 
 /**
  * TopBar Component
- * Top bar with social icons and Shop Now button
+ * Top bar with social icons and Izaberi svoj termos button
  * Shows cart item notification badge
  */
 
@@ -31,7 +31,7 @@ export default function TopBar({ onShopNowClick }: TopBarProps) {
         <img alt="Instagram" className="w-full h-full" src={imgInstagram} />
       </div>
 
-      {/* Shop Now Button */}
+      {/* Izaberi svoj termos Button */}
       <button
         onClick={onShopNowClick}
         className="bg-white box-border flex flex-col gap-[10px] items-start pl-[8px] pr-[24px] py-[8px] rounded-[20px] shadow-[0px_10px_24px_0px_rgba(160,157,151,0.3)] hover:shadow-[0px_12px_32px_0px_rgba(160,157,151,0.4)] transition-shadow active:scale-95 cursor-pointer"
@@ -53,7 +53,7 @@ export default function TopBar({ onShopNowClick }: TopBarProps) {
             </div>
           </div>
           <p className="font-bold text-dose-accent text-[16px] tracking-[-0.32px] uppercase">
-            Shop now
+            Izaberi svoj termos
           </p>
         </div>
       </button>

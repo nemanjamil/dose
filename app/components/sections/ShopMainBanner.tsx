@@ -16,8 +16,8 @@ export default function ShopMainBanner() {
         backgroundImageMobile="/images/products/fourCupsMob.png"
         backgroundColor="#FEF8F4"
         badge="DOSE SHOP"
-        heading="Shop now"
-        description="Explore our collections and products and choose the one that fits the best with your lifestyle"
+        heading="Izaberi svoj termos"
+        description="Istražite naše kolekcije i proizvode i izaberite onaj koji najbolje odgovara vašem načinu života"
         features={[]}
         centerImage=""
         productLabel=""
@@ -31,8 +31,8 @@ export default function ShopMainBanner() {
           backgroundImage="/images/products/ShopMainImageBanner.jpg"
           backgroundColor="#FEF8F4"
           badge="DOSE SHOP"
-          heading="Shop now"
-          description="Explore our collections and products and choose the one that fits the best with your lifestyle"
+          heading="Izaberi svoj termos"
+          description="Istražite naše kolekcije i proizvode i izaberite onaj koji najbolje odgovara vašem načinu života"
           features={[]}
           productImage="/images/products/malaSlikaHeader.png"
           productName="Featured Product"
