@@ -164,7 +164,7 @@ export default function Footer() {
         {/* Row 2 - Copyright */}
 
         {/* Large Letters - Positioned Below Copyright */}
-        <div className="absolute left-[70px] bottom-[0px] flex gap-5">
+        <div className="hidden lg:flex absolute left-[70px] bottom-[0px] gap-5">
           <img
             src="/images/brand/d.svg"
             alt="D"

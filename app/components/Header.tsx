@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import TopBar from "./sections/Slider/SliderProduct/TopBar";
 import CartSidebar from "./CartSidebar";
+import { useCart } from "@/app/contexts/CartContext";
 
 const imgLogotype = "/images/brand/logotype.svg";
 
@@ -12,12 +13,14 @@ export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const { items } = useCart();
+  const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
   const navItems = [
-    { label: "HOMEPAGE", href: "/" },
-    { label: "ABOUT US", href: "/about-us" },
-    { label: "CONTACT US", href: "/contact-us" },
-    { label: "SHOP", href: "/shop" },
+    { label: "POČETNA", href: "/" },
+    { label: "O NAMA", href: "/about-us" },
+    { label: "KONTAKT", href: "/contact-us" },
+    { label: "PRODAVNICA", href: "/shop" },
   ];
 
   const isActive = (href: string) => {
@@ -63,7 +66,7 @@ export default function Header() {
           {/* Basket Icon */}
           <button
             onClick={() => setIsCartOpen(true)}
-            className="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity"
+            className="relative w-11 h-11 flex items-center justify-center hover:opacity-70 transition-opacity"
             aria-label="Shopping cart"
           >
             <img
@@ -71,12 +74,17 @@ export default function Header() {
               alt="Shopping cart"
               className="w-6 h-6"
             />
+            {totalItems > 0 && (
+              <div className="absolute -top-2 -right-2 bg-dose-accent text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">
+                {totalItems}
+              </div>
+            )}
           </button>
 
           {/* Hamburger Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="w-6 h-6 flex flex-col items-center justify-center gap-1.5 hover:opacity-70 transition-opacity"
+            className="w-11 h-11 flex flex-col items-center justify-center gap-1.5 hover:opacity-70 transition-opacity"
             aria-label="Menu"
             aria-expanded={isMenuOpen}
           >
@@ -97,7 +105,7 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown - Slide from Right */}
       <div
-        className={`fixed top-0 right-0 h-screen w-3/4 md:hidden bg-white z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-screen w-full sm:w-3/4 md:hidden bg-white z-40 transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

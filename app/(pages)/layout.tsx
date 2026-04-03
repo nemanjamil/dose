@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import CartToast from "../components/CartToast";
 
 /**
  * Main Pages Layout Wrapper
@@ -31,6 +32,7 @@ export default function PagesLayout({
 
       {/* Main content - Grows to fill available space */}
       <main className="flex-grow w-full">{children}</main>
+      <CartToast />
 
       {/* Footer - Sticky at bottom */}
       {/* <div id="footerDevider" className="h-24 bg-amber-500"></div> */}

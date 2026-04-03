@@ -13,6 +13,7 @@ interface CTAButtonProps {
   iconSrc?: string;
   iconAlt?: string;
   className?: string;
+  disabled?: boolean;
 }
 
 export default function CTAButton({
@@ -21,11 +22,13 @@ export default function CTAButton({
   iconSrc = "/images/products/frame.svg",
   iconAlt = "Shop icon",
   className = "",
+  disabled = false,
 }: CTAButtonProps) {
   return (
     <button
       onClick={onClick}
-      className={`bg-dose-accent flex gap-4 sm:gap-6 items-center pl-2 pr-4 sm:pr-[24px] py-[8px] rounded-lg shadow-[0px_10px_24px_0px_rgba(135,84,55,0.3)] hover:opacity-90 transition-opacity active:scale-95 w-auto justify-start cursor-pointer ${className}`}
+      disabled={disabled}
+      className={`bg-dose-accent flex gap-4 sm:gap-6 items-center pl-2 pr-4 sm:pr-[24px] py-[8px] rounded-lg shadow-[0px_10px_24px_0px_rgba(135,84,55,0.3)] hover:opacity-90 transition-opacity active:scale-95 w-auto justify-start cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
     >
       <div
         className="bg-dose-peach flex gap-[10px] items-center justify-center 

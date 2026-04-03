@@ -54,7 +54,7 @@ export default function BuyYourDoseToday() {
           </div>
 
           {/* Second Row - Text Content */}
-          <div className="flex flex-col gap-6 items-center text-center max-w-[600px]">
+          <div className="flex flex-col gap-6 items-center text-center max-w-[600px] px-4 sm:px-0">
             <div className="flex flex-col items-center gap-3">
               <h1 className="text-dose-dark text-center">
                 Kupi svoj Dose danas!

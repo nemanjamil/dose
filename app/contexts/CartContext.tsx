@@ -22,6 +22,7 @@ interface CartContextType {
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
   getTotalPrice: () => number;
+  toast: string | null;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -29,6 +30,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isHydrated, setIsHydrated] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -72,7 +74,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const existingItem = prevItems.find((item) => item.id === newItem.id);
 
       if (existingItem) {
-        // If item exists, increase quantity
         return prevItems.map((item) =>
           item.id === newItem.id
             ? { ...item, quantity: item.quantity + newItem.quantity }
@@ -80,9 +81,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
         );
       }
 
-      // If item doesn't exist, add it
       return [...prevItems, newItem];
     });
+
+    setToast(`${newItem.name} je dodat u korpu!`);
+    setTimeout(() => setToast(null), 3000);
   };
 
   const removeItem = (id: string) => {
@@ -121,6 +124,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         updateQuantity,
         clearCart,
         getTotalPrice,
+        toast,
       }}
     >
       {children}

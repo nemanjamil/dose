@@ -12,7 +12,8 @@ export interface DeliveryFormData {
   email: string;
   emailOptIn: boolean;
   country: string;
-  fullName: string;
+  firstName: string;
+  lastName: string;
   address: string;
   apartment: string;
   postalCode: string;
@@ -23,14 +24,16 @@ export interface DeliveryFormData {
 
 interface DeliveryFormProps {
   onSubmit?: (formData: DeliveryFormData) => void;
+  onChange?: (formData: DeliveryFormData) => void;
 }
 
-export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
+export default function DeliveryForm({ onSubmit, onChange }: DeliveryFormProps) {
   const [formData, setFormData] = useState<DeliveryFormData>({
     email: "",
     emailOptIn: false,
     country: "Serbia",
-    fullName: "",
+    firstName: "",
+    lastName: "",
     address: "",
     apartment: "",
     postalCode: "",
@@ -43,11 +46,13 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
-    setFormData((prev) => ({
-      ...prev,
+    const updated = {
+      ...formData,
       [name]:
         type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-    }));
+    };
+    setFormData(updated);
+    if (onChange) onChange(updated);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -60,7 +65,7 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
   return (
     <div className="w-full">
       <h5 className="font-bold text-dose-dark mb-4">
-        Delivery
+        Dostava
       </h5>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -68,6 +73,7 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
         <input
           type="email"
           name="email"
+          autoComplete="email"
           placeholder="Email"
           value={formData.email}
           onChange={handleInputChange}
@@ -85,40 +91,49 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
             className="w-[18px] h-[18px] border border-dose-accent/20 rounded cursor-pointer"
           />
           <span className="text-dose-mid font-medium text-small">
-            Email me with news and offers
+            Pošaljite mi vesti i ponude na email
           </span>
         </label>
 
         {/* Country Dropdown */}
         <div className="flex flex-col gap-1">
           <label className="text-dose-mid/60 text-extra-small font-medium">
-            Country
+            Zemlja
           </label>
           <select
             name="country"
+            autoComplete="country-name"
             value={formData.country}
             onChange={handleInputChange}
             className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid font-medium text-small focus:outline-none focus:border-dose-accent transition-colors"
             style={{ backgroundColor: "#ffffff" }}
           >
-            <option value="Serbia">Serbia</option>
-            <option value="Croatia">Croatia</option>
-            <option value="Bosnia">Bosnia</option>
+            <option value="Serbia">Srbija</option>
+            <option value="Croatia">Hrvatska</option>
+            <option value="Bosnia">Bosna i Hercegovina</option>
           </select>
         </div>
 
-        {/* Full Name Input */}
-        <div className="flex flex-col gap-1">
-          <label className="text-dose-mid/60 text-extra-small font-medium">
-            Full name
-          </label>
+        {/* First Name and Last Name - Side by Side */}
+        <div className="flex gap-4">
           <input
             type="text"
-            name="fullName"
-            placeholder="Nemanja Stojanovic"
-            value={formData.fullName}
+            name="firstName"
+            autoComplete="given-name"
+            placeholder="Ime"
+            value={formData.firstName}
             onChange={handleInputChange}
-            className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
+            className="flex-1 h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
+            style={{ backgroundColor: "#ffffff" }}
+          />
+          <input
+            type="text"
+            name="lastName"
+            autoComplete="family-name"
+            placeholder="Prezime"
+            value={formData.lastName}
+            onChange={handleInputChange}
+            className="flex-1 h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
             style={{ backgroundColor: "#ffffff" }}
           />
         </div>
@@ -127,7 +142,8 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
         <input
           type="text"
           name="address"
-          placeholder="Address"
+          autoComplete="address-line1"
+          placeholder="Adresa"
           value={formData.address}
           onChange={handleInputChange}
           className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
@@ -138,7 +154,8 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
         <input
           type="text"
           name="apartment"
-          placeholder="Apartment, suite, etc"
+          autoComplete="address-line2"
+          placeholder="Stan, sprat, itd."
           value={formData.apartment}
           onChange={handleInputChange}
           className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
@@ -150,7 +167,8 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
           <input
             type="text"
             name="postalCode"
-            placeholder="Postal code"
+            autoComplete="postal-code"
+            placeholder="Poštanski broj"
             value={formData.postalCode}
             onChange={handleInputChange}
             className="flex-1 h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
@@ -159,7 +177,8 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
           <input
             type="text"
             name="city"
-            placeholder="City"
+            autoComplete="address-level2"
+            placeholder="Grad"
             value={formData.city}
             onChange={handleInputChange}
             className="flex-1 h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"
@@ -171,7 +190,8 @@ export default function DeliveryForm({ onSubmit }: DeliveryFormProps) {
         <input
           type="tel"
           name="phone"
-          placeholder="Phone"
+          autoComplete="tel"
+          placeholder="Telefon"
           value={formData.phone}
           onChange={handleInputChange}
           className="w-full h-[50px] px-2 py-4 border border-dose-accent/20 rounded-sm text-dose-mid text-small placeholder:text-dose-mid/60 focus:outline-none focus:border-dose-accent transition-colors"

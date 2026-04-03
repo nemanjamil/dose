@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * PhoneAndEmail Component
  *
@@ -28,8 +26,8 @@ export default function PhoneAndEmail() {
                 src={imgEmail}
               />
             </div>
-            <p className="font-medium text-dose-mid text-[10px] sm:text-[12px] text-center tracking-[-0.24px] uppercase whitespace-nowrap">
-              Email support: orders@dose.rs
+            <p className="font-medium text-dose-mid text-[10px] sm:text-[12px] text-center tracking-[-0.24px] uppercase sm:whitespace-nowrap">
+              Email support: {process.env.NEXT_EMAIL}
             </p>
           </div>
 
@@ -42,7 +40,7 @@ export default function PhoneAndEmail() {
                 src={imgPhone}
               />
             </div>
-            <p className="font-medium text-dose-mid text-[10px] sm:text-[12px] text-center tracking-[-0.24px] uppercase whitespace-nowrap">
+            <p className="font-medium text-dose-mid text-[10px] sm:text-[12px] text-center tracking-[-0.24px] uppercase sm:whitespace-nowrap">
               Phone number: +381 66 500 500
             </p>
           </div>

@@ -34,7 +34,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
 
       {/* Cart Sidebar - Slide from Right */}
       <div
-        className={`fixed top-0 right-0 bottom-0 w-3/4 md:w-1/3 bg-white z-40 transform transition-transform duration-300 ease-in-out overflow-hidden flex flex-col ${
+        className={`fixed top-0 right-0 bottom-0 w-full sm:w-3/4 md:w-1/3 bg-white z-40 transform transition-transform duration-300 ease-in-out overflow-hidden flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -69,7 +69,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
           <div className="flex flex-col gap-4 px-4 py-6 flex-1 overflow-y-auto">
             {items.length === 0 ? (
               <p className="text-dose-mid text-[16px]">
-                Your shopping cart is empty...
+                Vaša korpa je prazna...
               </p>
             ) : (
               <div className="flex flex-col gap-4">
@@ -127,7 +127,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                             onClick={() => removeItem(item.id)}
                             className="ml-auto text-dose-accent hover:text-dose-dark text-[12px] underline"
                           >
-                            Remove
+                            Ukloni
                           </button>
                         </div>
                       </div>
@@ -143,7 +143,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
             {/* Subtotal */}
             <div className="flex items-center justify-between">
               <p className="font-medium text-dose-accent text-[18px] tracking-[-0.36px]">
-                SUBTOTAL
+                MEĐUZBIR
               </p>
               <div className="bg-dose-accent/10 rounded-[8px] px-[12px] py-[6px]">
                 <p className="font-bold text-dose-accent text-[18px] tracking-[-0.36px]">
@@ -154,16 +154,16 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
 
             {/* Shipping Info */}
             <p className="font-medium text-dose-accent text-[16px] tracking-[-0.32px] leading-[1.5]">
-              Shipping, taxes, and discount codes calculated at checkout.
+              Dostava, porezi i popusti obračunavaju se pri plaćanju.
             </p>
 
             {/* Checkout Button */}
             {items.length > 0 ? (
               <IconButton
                 href="/cart"
-                label="Check out"
+                label="Naruči"
                 icon={imgCheckoutIcon}
-                iconAlt="Checkout"
+                iconAlt="Naruči"
                 onClick={onClose}
               />
             ) : (
@@ -182,7 +182,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                     />
                   </div>
                 </div>
-                <span>Check out</span>
+                <span>Naruči</span>
               </button>
             )}
           </div>
