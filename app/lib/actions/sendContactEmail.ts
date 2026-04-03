@@ -1,6 +1,6 @@
 "use server";
 
-import nodemailer from "nodemailer";
+import { createMailTransporter } from "./mailer";
 
 interface ContactFormData {
   name: string;
@@ -26,16 +26,7 @@ export async function sendContactEmail(formData: ContactFormData) {
 
     // Create transporter
     console.log("📡 Creating nodemailer transporter...");
-    const transporter = nodemailer.createTransport({
-      host: process.env.NEXT_EMAIL_SERVER,
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.NEXT_EMAIL,
-        pass: process.env.NEXT_PASSWORD,
-      },
-    });
-
+    const transporter = createMailTransporter();
     console.log("✅ Transporter created successfully");
 
     // Send email to company

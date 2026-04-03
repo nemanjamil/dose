@@ -1,6 +1,6 @@
 "use server";
 
-import nodemailer from "nodemailer";
+import { createMailTransporter } from "./mailer";
 import { DeliveryFormData } from "@/app/components/sections/DeliveryForm";
 
 interface OrderItem {
@@ -17,15 +17,7 @@ interface SendOrderEmailParams {
 
 export async function sendOrderEmail({ delivery, items, total }: SendOrderEmailParams) {
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.NEXT_EMAIL_SERVER,
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.NEXT_EMAIL,
-        pass: process.env.NEXT_PASSWORD,
-      },
-    });
+    const transporter = createMailTransporter();
 
     const itemsHtml = items
       .map(
