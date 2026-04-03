@@ -8,7 +8,6 @@
 
 import { useCart } from "@/app/contexts/CartContext";
 
-const imgFacebook = "/images/icons/social-1.svg";
 const imgInstagram = "/images/icons/social-2.svg";
 const imgShopIcon = "/images/icons/social-3.svg";
 
@@ -21,15 +20,15 @@ export default function TopBar({ onShopNowClick }: TopBarProps) {
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   return (
     <>
-      {/* Facebook Icon */}
-      <div className="relative size-[40px]">
-        <img alt="Facebook" className="w-full h-full" src={imgFacebook} />
-      </div>
-
       {/* Instagram Icon */}
-      <div className="relative size-[40px]">
+      <a
+        href="https://www.instagram.com/dose_rs"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative size-[40px]"
+      >
         <img alt="Instagram" className="w-full h-full" src={imgInstagram} />
-      </div>
+      </a>
 
       {/* Izaberi svoj termos Button */}
       <button

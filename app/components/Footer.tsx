@@ -33,8 +33,7 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { label: "Facebook", href: "#", icon: "/images/brand/facebookIcon.svg" },
-    { label: "Instagram", href: "#", icon: "/images/brand/InstagramIcon.svg" },
+    { label: "Instagram", href: "https://www.instagram.com/dose_rs", icon: "/images/brand/InstagramIcon.svg" },
   ];
 
   return (
@@ -102,6 +101,8 @@ export default function Footer() {
                     <a
                       key={link.label}
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-white px-[16px] py-[6px] rounded-[8px] h-[44px] flex items-center gap-[10px] hover:shadow-[0px_10px_24px_0px_rgba(135,84,55,0.15)] transition-shadow"
                     >
                       <img
@@ -121,7 +122,10 @@ export default function Footer() {
             {/* Row 2 - Additional Content */}
             <div className="flex justify-center sm:justify-left mt-8">
               <p className="font-medium text-dose-mid/60 text-[12px] tracking-[-0.24px] text-center lg:text-left">
-                @ Dose 2025. All rights reserved. Design by Growww.
+                © Dose {new Date().getFullYear()}. All rights reserved. Design by Growww. Created by{" "}
+                <a href="https://tridan.rs" target="_blank" rel="noopener noreferrer" className="hover:text-dose-mid transition-colors">tridan.rs</a>
+                {" "}and{" "}
+                <a href="https://tridan-ai.com" target="_blank" rel="noopener noreferrer" className="hover:text-dose-mid transition-colors">tridan-ai.com</a>
               </p>
             </div>
           </div>

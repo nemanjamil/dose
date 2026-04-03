@@ -19,7 +19,7 @@ export default function RoundedBanner() {
         backgroundColor="#E6E6E8"
         heading="Manje žurbe. Više svesti."
         description="Naš pristup nije sezonski trend – već dosledan izbor kvaliteta i pažnje. Verujemo da pravi luksuz danas znači birati promišljeno."
-        features={["BPA Free", "Stainless Steel"]}
+        features={["Bez BPA", "Nerđajući čelik"]}
         centerImage=""
         productLabel=""
         textColor="dark"
@@ -38,7 +38,7 @@ export default function RoundedBanner() {
             badge="Dostupno sada"
             heading="Manje žurbe. Više svesti."
             description="Naš pristup nije sezonski trend – već dosledan izbor kvaliteta i pažnje. Verujemo da pravi luksuz danas znači birati promišljeno, živeti odgovorno i uživati u jednostavnosti."
-            features={["BPA Free", "Stainless Steel", "Premium Design"]}
+            features={["Bez BPA", "Nerđajući čelik", "Premium dizajn"]}
             showFeatures={false}
             productImage="/images/products/handHoldingDose.png"
             productName="Dose Max"

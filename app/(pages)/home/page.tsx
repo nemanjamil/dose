@@ -3,7 +3,7 @@ import DoseInRealLife from "../../components/sections/DoseInRealLife";
 import DesignTellsForItSelf from "../../components/sections/DesignTellsForItSelf";
 import HoldingDoseSlider from "../../components/sections/HoldingDoseSlider";
 import HidrateInStyle from "../../components/sections/HidrateInStyle";
-import DoseList from "../../components/sections/DoseList";
+//import DoseList from "../../components/sections/DoseList";
 import BottlePageBrakePoint from "../../components/sections/BottlePageBrakePoint";
 //import CenteredText from "../../components/sections/CenteredText";
 //import Testemonials from "../../components/sections/Testemonials";
@@ -37,7 +37,7 @@ export default function HomePage() {
 
       <HidrateInStyle />
 
-      <DoseList />
+      {/* <DoseList /> */}
 
       <BottlePageBrakePoint />
 

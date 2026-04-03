@@ -15,7 +15,7 @@ export default function ShopMainBanner() {
       <HeroSectionMobileShop
         backgroundImageMobile="/images/products/fourCupsMob.png"
         backgroundColor="#FEF8F4"
-        badge="DOSE SHOP"
+        badge="DOSE PRODAVNICA"
         heading="Izaberi svoj termos"
         description="Istražite naše kolekcije i proizvode i izaberite onaj koji najbolje odgovara vašem načinu života"
         features={[]}
@@ -30,7 +30,7 @@ export default function ShopMainBanner() {
         <HeroSection
           backgroundImage="/images/products/ShopMainImageBanner.jpg"
           backgroundColor="#FEF8F4"
-          badge="DOSE SHOP"
+          badge="DOSE PRODAVNICA"
           heading="Izaberi svoj termos"
           description="Istražite naše kolekcije i proizvode i izaberite onaj koji najbolje odgovara vašem načinu života"
           features={[]}

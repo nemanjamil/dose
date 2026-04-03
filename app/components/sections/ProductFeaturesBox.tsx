@@ -17,12 +17,12 @@ interface ProductFeaturesBoxProps {
 }
 
 const defaultFeatures: Feature[] = [
-  { icon: "/images/icons/bpa-free.svg", label: "BPA-free" },
-  { icon: "/images/icons/leak-proof.svg", label: "Leak proof" },
-  { icon: "/images/icons/miniBoxes.svg", label: "18/8 Stainless Steel" },
-  { icon: "/images/icons/rubberBase.svg", label: "Rubber base" },
-  { icon: "/images/icons/24h-cold.svg", label: "24h cold water" },
-  { icon: "/images/icons/cupHolderFriendly.svg", label: "Cup Holder Friendly" },
+  { icon: "/images/icons/bpa-free.svg", label: "Bez BPA" },
+  { icon: "/images/icons/leak-proof.svg", label: "Ne propušta" },
+  { icon: "/images/icons/miniBoxes.svg", label: "18/8 nerđajući čelik" },
+  { icon: "/images/icons/rubberBase.svg", label: "Gumena osnova" },
+  { icon: "/images/icons/24h-cold.svg", label: "24h hladna voda" },
+  { icon: "/images/icons/cupHolderFriendly.svg", label: "Staje u držač čaša" },
 ];
 
 export default function ProductFeaturesBox({

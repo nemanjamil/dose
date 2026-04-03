@@ -47,9 +47,9 @@ const slides: Slide[] = [
     id: 1,
     image: "/images/products/subtract.png",
     features: [
-      { icon: iconBPAFree, label: "BPA Free", position: "top-left" },
-      { icon: iconLeakProof, label: "Leak proof", position: "top-right" },
-      { icon: icon24hCold, label: "24h cold water", position: "bottom-left" },
+      { icon: iconBPAFree, label: "Bez BPA", position: "top-left" },
+      { icon: iconLeakProof, label: "Ne propušta", position: "top-right" },
+      { icon: icon24hCold, label: "24h hladna voda", position: "bottom-left" },
     ],
   },
   {
@@ -58,10 +58,10 @@ const slides: Slide[] = [
     features: [
       {
         icon: cupHolderFrinedly,
-        label: "Cup Holder Friendly",
+        label: "Staje u držač čaša",
         position: "top-left",
       },
-      { icon: rubberBase, label: "Rubber base", position: "top-right" },
+      { icon: rubberBase, label: "Gumena osnova", position: "top-right" },
     ],
   },
   {
@@ -70,11 +70,11 @@ const slides: Slide[] = [
     features: [
       {
         icon: iconBPAFree,
-        label: "Food Grade Stainless",
+        label: "Prehrambeni čelik",
         position: "top-left",
       },
-      { icon: icon24hCold, label: "24h cold water", position: "top-right" },
-      { icon: iconLeakProof, label: "Durable Design", position: "bottom-left" },
+      { icon: icon24hCold, label: "24h hladna voda", position: "top-right" },
+      { icon: iconLeakProof, label: "Izdržljiv dizajn", position: "bottom-left" },
     ],
   },
 ];
